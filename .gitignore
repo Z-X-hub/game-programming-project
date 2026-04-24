@@ -1,0 +1,48 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Unity cache / generated files
+*.pidb
+*.booproj
+*.svd
+*.user
+*.userprefs
+*.csproj
+*.sln
+*.suo
+*.tmp
+*.unityproj
+*.pidb.meta
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity crash reports
+sysinfo.txt
+
+# OS generated files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Trashes
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Archives/submission packages
+*.zip
+*.rar
+*.7z
+
+# Logs
+*.log
