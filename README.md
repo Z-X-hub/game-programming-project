@@ -1,6 +1,6 @@
 # Game Programming Project Repository
 
-This repository is used for my Game Programming module.
+This repository is used for my Game Programming module coursework.
 
 ## Repository Structure
 
@@ -9,9 +9,21 @@ This repository is used for my Game Programming module.
 
 ## Current Contents
 
-### Classroom Exercise: Unity Solar System Kids
+### Classroom Exercise: Interactive 2D Game Improvement
 
-The current Unity project is a classroom exercise, not the final course project.
+Location:
+
+`class-exercises/interactive-2d-game-improvement/`
+
+Main scenes:
+
+- `Assets/SpaceShooter/Scenes/MainMenu.unity`
+- `Assets/SpaceShooter/Scenes/Level1.unity`
+- `Assets/SpaceShooter/Scenes/Level2.unity`
+
+This Unity exercise improves a 2D space shooter with a main menu, level select, instructions, polished HUD, easier first level, power-ups, boss enemy, hazards, sound feedback, and clearer visual effects.
+
+### Classroom Exercise: Unity Solar System Kids
 
 Location:
 
@@ -19,7 +31,7 @@ Location:
 
 Main scene:
 
-`class-exercises/unity-solar-system-kids/Assets/SolarSystem/Scenes/MainScene.unity`
+`Assets/SolarSystem/Scenes/MainScene.unity`
 
 ## Notes
 
