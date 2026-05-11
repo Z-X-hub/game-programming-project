@@ -15,6 +15,7 @@ This log should be updated during Unity playtesting. It is structured to show ev
 | 2026-05-10 | Hazard fail state | Walker touching hazard shows fail panel | Not tested in Unity yet | Pending | Check trigger collider and GameManager reference |
 | 2026-05-10 | Exit win state | Walker reaching exit shows win panel | Not tested in Unity yet | Pending | Check trigger collider and exit placement |
 | 2026-05-10 | Restart | Pressing `R` reloads the level | Not tested in Unity yet | Pending | Add Level01 to Build Settings |
+| 2026-05-11 | Static code review for Stage 3 | Core scripts remain focused and compile-ready for Unity import | Reviewed locally, not Unity-compiled yet | Unity Editor not run in this environment | Refined movement stopping, UI selection refresh, switch safety, door physics timing, and platform carry behaviour |
 
 ## Planned Iteration Evidence
 
@@ -32,3 +33,4 @@ During testing, record changes such as:
 - Moving platforms may need tuning to carry the walker reliably.
 - Door collider disabling should be tested to ensure the walker can pass after the door opens.
 - Trigger zones need clear collider sizes so fail/win states feel fair.
+- Moving platform carry behaviour should be tested with the walker standing fully on top of the platform.

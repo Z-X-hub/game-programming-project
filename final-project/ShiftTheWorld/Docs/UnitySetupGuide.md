@@ -149,6 +149,7 @@ Recommended `MovingPlatform3D`:
 - Move Speed: `2`
 - Toggle Target On Activate: enabled
 - Return To Start When Inactive: enabled
+- Carry Walker On Top: enabled
 
 Recommended `ControllableObject`:
 
@@ -219,6 +220,7 @@ Recommended `SwitchTrigger3D`:
 - Toggle Mode: disabled
 - Deactivate When Walker Leaves: disabled
 - Activation Targets: drag `ExitDoor` into the list
+- Pressed Scale Multiplier: `(1, 0.55, 1)`
 
 The switch collider is automatically set as a trigger by the script.
 

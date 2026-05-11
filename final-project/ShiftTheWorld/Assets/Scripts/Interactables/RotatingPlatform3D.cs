@@ -22,7 +22,7 @@ public class RotatingPlatform3D : MonoBehaviour, IWorldActivatable, IWorldRotata
 
     private void Update()
     {
-        if (!isRotating)
+        if (!isRotating || IsLevelStopped())
         {
             return;
         }
@@ -59,5 +59,10 @@ public class RotatingPlatform3D : MonoBehaviour, IWorldActivatable, IWorldRotata
         Vector3 axis = localRotationAxis.sqrMagnitude > 0f ? localRotationAxis.normalized : Vector3.forward;
         targetRotation = targetRotation * Quaternion.AngleAxis(stepAngle * Mathf.Sign(direction), axis);
         isRotating = true;
+    }
+
+    private bool IsLevelStopped()
+    {
+        return GameManager.Instance != null && !GameManager.Instance.IsGameplayActive;
     }
 }

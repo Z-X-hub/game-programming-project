@@ -72,6 +72,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+            Time.timeScale = 1f;
+        }
+    }
+
     public void WinLevel(string message)
     {
         if (HasLevelEnded)
@@ -81,6 +90,7 @@ public class GameManager : MonoBehaviour
 
         currentState = LevelState.Won;
         Time.timeScale = 1f;
+        StopAllWalkers();
         UIManager.InstanceSafeShowWin(message);
     }
 
@@ -93,6 +103,7 @@ public class GameManager : MonoBehaviour
 
         currentState = LevelState.Failed;
         Time.timeScale = 1f;
+        StopAllWalkers();
         UIManager.InstanceSafeShowFail(reason);
     }
 
@@ -139,5 +150,14 @@ public class GameManager : MonoBehaviour
         }
 
         TogglePause();
+    }
+
+    private void StopAllWalkers()
+    {
+        AutoWalker3D[] walkers = FindObjectsOfType<AutoWalker3D>();
+        for (int i = 0; i < walkers.Length; i++)
+        {
+            walkers[i].StopWalking();
+        }
     }
 }

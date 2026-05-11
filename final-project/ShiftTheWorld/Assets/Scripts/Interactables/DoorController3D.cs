@@ -38,12 +38,18 @@ public class DoorController3D : MonoBehaviour, IWorldActivatable
         isOpen = startOpen;
         SetDoorPositionInstant(isOpen ? openPosition : closedPosition);
         UpdateFeedback();
+        UpdateCollider();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        if (GameManager.Instance != null && !GameManager.Instance.IsGameplayActive)
+        {
+            return;
+        }
+
         Vector3 target = isOpen ? openPosition : closedPosition;
-        Vector3 nextPosition = Vector3.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
+        Vector3 nextPosition = Vector3.MoveTowards(transform.position, target, moveSpeed * Time.fixedDeltaTime);
 
         if (rb != null)
         {
@@ -66,6 +72,10 @@ public class DoorController3D : MonoBehaviour, IWorldActivatable
     public void Deactivate()
     {
         isOpen = false;
+        if (doorCollider != null)
+        {
+            doorCollider.enabled = true;
+        }
         UpdateFeedback();
     }
 

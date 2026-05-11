@@ -21,11 +21,11 @@ public class SwitchTrigger3D : MonoBehaviour, IWorldActivatable
     [SerializeField] private Renderer[] feedbackRenderers;
     [SerializeField] private Color inactiveColor = new Color(0.8f, 0.8f, 0.8f, 1f);
     [SerializeField] private Color activeColor = new Color(0.3f, 1f, 0.45f, 1f);
-    [SerializeField] private Vector3 pressedScale = new Vector3(1f, 0.55f, 1f);
+    [SerializeField] private Vector3 pressedScaleMultiplier = new Vector3(1f, 0.55f, 1f);
 
     [Header("Events")]
-    public UnityEvent OnActivated;
-    public UnityEvent OnDeactivated;
+    public UnityEvent OnActivated = new UnityEvent();
+    public UnityEvent OnDeactivated = new UnityEvent();
 
     private Collider triggerCollider;
     private Vector3 originalScale;
@@ -103,12 +103,18 @@ public class SwitchTrigger3D : MonoBehaviour, IWorldActivatable
         if (isActive)
         {
             SendActivateToTargets();
-            OnActivated.Invoke();
+            if (OnActivated != null)
+            {
+                OnActivated.Invoke();
+            }
         }
         else
         {
             SendDeactivateToTargets();
-            OnDeactivated.Invoke();
+            if (OnDeactivated != null)
+            {
+                OnDeactivated.Invoke();
+            }
         }
     }
 
@@ -169,7 +175,7 @@ public class SwitchTrigger3D : MonoBehaviour, IWorldActivatable
             }
         }
 
-        transform.localScale = isActive ? pressedScale : originalScale;
+        transform.localScale = isActive ? Vector3.Scale(originalScale, pressedScaleMultiplier) : originalScale;
     }
 
     private bool IsWalker(Collider other)

@@ -19,12 +19,17 @@ public class MovingPlatform3D : MonoBehaviour, IWorldActivatable
     [SerializeField] private bool pingPongWhileActive;
     [SerializeField] private bool returnToStartWhenInactive = true;
 
+    [Header("2.5D Platform Feel")]
+    [SerializeField] private bool carryWalkerOnTop = true;
+
     private Rigidbody rb;
     private Vector3 startPosition;
     private Vector3 endPosition;
     private Vector3 targetPosition;
     private bool isActive;
     private bool movingToEnd = true;
+    private AutoWalker3D carriedWalker;
+    private Transform carriedWalkerOriginalParent;
 
     private void Awake()
     {
@@ -51,6 +56,11 @@ public class MovingPlatform3D : MonoBehaviour, IWorldActivatable
 
         UpdateTarget();
         MoveTowardsTarget();
+    }
+
+    private void OnDisable()
+    {
+        ReleaseWalker();
     }
 
     public void Activate()
@@ -105,5 +115,75 @@ public class MovingPlatform3D : MonoBehaviour, IWorldActivatable
         {
             movingToEnd = !movingToEnd;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        TryCarryWalker(collision);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        TryCarryWalker(collision);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        AutoWalker3D walker = collision.collider.GetComponentInParent<AutoWalker3D>();
+        if (walker != null && walker == carriedWalker)
+        {
+            ReleaseWalker();
+        }
+    }
+
+    private void TryCarryWalker(Collision collision)
+    {
+        if (!carryWalkerOnTop || carriedWalker != null)
+        {
+            return;
+        }
+
+        AutoWalker3D walker = collision.collider.GetComponentInParent<AutoWalker3D>();
+        if (walker == null || !CollisionIsOnTop(collision, walker.transform))
+        {
+            return;
+        }
+
+        carriedWalker = walker;
+        carriedWalkerOriginalParent = walker.transform.parent;
+        walker.transform.SetParent(transform, true);
+    }
+
+    private bool CollisionIsOnTop(Collision collision, Transform walkerTransform)
+    {
+        if (walkerTransform.position.y <= transform.position.y)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < collision.contactCount; i++)
+        {
+            ContactPoint contact = collision.GetContact(i);
+
+            // A contact normal with strong Y means the walker is standing on the platform face.
+            if (Mathf.Abs(contact.normal.y) > 0.5f)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void ReleaseWalker()
+    {
+        if (carriedWalker == null)
+        {
+            return;
+        }
+
+        carriedWalker.transform.SetParent(carriedWalkerOriginalParent, true);
+        carriedWalker = null;
+        carriedWalkerOriginalParent = null;
     }
 }

@@ -96,6 +96,8 @@ public class WorldObjectSelector : MonoBehaviour
 
     public void SelectNext()
     {
+        RemoveMissingObjects();
+
         if (controllableObjects.Count == 0)
         {
             SelectIndex(-1);
@@ -107,6 +109,8 @@ public class WorldObjectSelector : MonoBehaviour
 
     public void SelectPrevious()
     {
+        RemoveMissingObjects();
+
         if (controllableObjects.Count == 0)
         {
             SelectIndex(-1);
@@ -123,7 +127,7 @@ public class WorldObjectSelector : MonoBehaviour
             SelectedObject.SetSelected(false);
         }
 
-        selectedIndex = index;
+        selectedIndex = IsValidIndex(index) ? index : -1;
 
         if (SelectedObject != null)
         {
@@ -138,6 +142,8 @@ public class WorldObjectSelector : MonoBehaviour
 
     public void ActivateSelected()
     {
+        RemoveMissingObjects();
+
         if (SelectedObject != null)
         {
             SelectedObject.ActivateSelected();
@@ -146,6 +152,8 @@ public class WorldObjectSelector : MonoBehaviour
 
     public void RotateSelected(int direction)
     {
+        RemoveMissingObjects();
+
         if (SelectedObject != null)
         {
             SelectedObject.RotateSelected(direction);
@@ -155,6 +163,27 @@ public class WorldObjectSelector : MonoBehaviour
     private bool CanReadInput()
     {
         return GameManager.Instance == null || GameManager.Instance.IsGameplayActive;
+    }
+
+    private bool IsValidIndex(int index)
+    {
+        return index >= 0 && index < controllableObjects.Count;
+    }
+
+    private void RemoveMissingObjects()
+    {
+        for (int i = controllableObjects.Count - 1; i >= 0; i--)
+        {
+            if (controllableObjects[i] == null || !controllableObjects[i].CanBeSelected)
+            {
+                controllableObjects.RemoveAt(i);
+            }
+        }
+
+        if (selectedIndex >= controllableObjects.Count)
+        {
+            selectedIndex = controllableObjects.Count - 1;
+        }
     }
 
     private int CompareByWorldPosition(ControllableObject first, ControllableObject second)

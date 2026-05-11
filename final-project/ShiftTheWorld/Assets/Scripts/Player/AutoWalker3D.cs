@@ -54,6 +54,7 @@ public class AutoWalker3D : MonoBehaviour
     {
         if (!isWalking || IsLevelStopped())
         {
+            StopHorizontalMotion();
             KeepDepthLocked();
             return;
         }
@@ -85,7 +86,7 @@ public class AutoWalker3D : MonoBehaviour
     public void StopWalking()
     {
         isWalking = false;
-        rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+        StopHorizontalMotion();
     }
 
     public void ResetWalker()
@@ -101,6 +102,14 @@ public class AutoWalker3D : MonoBehaviour
     private bool IsLevelStopped()
     {
         return GameManager.Instance != null && !GameManager.Instance.IsGameplayActive;
+    }
+
+    private void StopHorizontalMotion()
+    {
+        Vector3 velocity = rb.velocity;
+        velocity.x = 0f;
+        velocity.z = 0f;
+        rb.velocity = velocity;
     }
 
     private void CheckForWallCollision(Collision collision)

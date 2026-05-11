@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         ShowGameplay();
-        UpdateSelectedObject("None");
+        RefreshSelectedObjectText();
     }
 
     public void ShowGameplay()
@@ -79,6 +79,18 @@ public class UIManager : MonoBehaviour
     public void UpdateSelectedObject(string objectName)
     {
         SetText(selectedObjectText, "Selected: " + objectName);
+    }
+
+    private void RefreshSelectedObjectText()
+    {
+        WorldObjectSelector selector = FindObjectOfType<WorldObjectSelector>();
+        if (selector != null && selector.SelectedObject != null)
+        {
+            UpdateSelectedObject(selector.SelectedObject.DisplayName);
+            return;
+        }
+
+        UpdateSelectedObject("None");
     }
 
     public static void InstanceSafeShowGameplay()
