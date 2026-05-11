@@ -32,17 +32,41 @@ Create:
 
 - `Canvas`
 - `EventSystem`
-- Title text: `Shift the World`
-- Button: `Play`
-- Button: `Quit`
 - Empty GameObject: `SceneLoader`
+- Panel: `MenuPanel`
+- Text: `TitleText`
+- Text: `SubtitleText`
+- Button: `PlayButton`
+- Button: `QuitButton`
 
 Add `SceneLoader.cs` to the `SceneLoader` GameObject.
 
+Recommended Canvas setup:
+
+- Render Mode: `Screen Space - Overlay`
+- Canvas Scaler UI Scale Mode: `Scale With Screen Size`
+- Reference Resolution: `1920 x 1080`
+- Match: `0.5`
+
+Recommended menu layout:
+
+- `MenuPanel`: centered vertical layout, bright blue or light cream background, rounded-looking panel if using a sliced sprite
+- `TitleText`: `Shift the World`, large and bold
+- `SubtitleText`: `Guide the walker by shifting the world.`
+- `PlayButton`: bright green or blue
+- `QuitButton`: neutral grey or red
+
 Button setup:
 
-- `Play` button `OnClick`: call `SceneLoader.LoadLevelSelect`
-- `Quit` button `OnClick`: call `SceneLoader.QuitGame`
+- `PlayButton` `OnClick`: drag in `SceneLoader`, call `SceneLoader.LoadLevelSelect`
+- `QuitButton` `OnClick`: drag in `SceneLoader`, call `SceneLoader.QuitGame`
+
+Recommended `SceneLoader` values:
+
+- Main Menu Scene Name: `MainMenu`
+- Level Select Scene Name: `LevelSelect`
+- Level 01 Scene Name: `Level01`
+- Quit Game On Cancel: enabled if you want `Esc` to quit from the main menu in a built version
 
 Suggested menu text:
 
@@ -55,17 +79,39 @@ Create:
 
 - `Canvas`
 - `EventSystem`
-- Text: `Select Level`
-- Button: `Level 01`
-- Button: `Back`
 - Empty GameObject: `SceneLoader`
+- Panel: `LevelSelectPanel`
+- Text: `TitleText`
+- Text: `LevelDescriptionText`
+- Button: `Level01Button`
+- Button: `BackButton`
 
 Add `SceneLoader.cs` to the `SceneLoader` GameObject.
 
+Recommended Canvas setup:
+
+- Render Mode: `Screen Space - Overlay`
+- Canvas Scaler UI Scale Mode: `Scale With Screen Size`
+- Reference Resolution: `1920 x 1080`
+- Match: `0.5`
+
+Suggested screen copy:
+
+- Title: `Select Level`
+- Description: `Level 01 - First World Shift`
+- Small note: `Use platforms, switches, and rotating bridges to guide the walker.`
+
 Button setup:
 
-- `Level 01` button `OnClick`: call `SceneLoader.LoadLevel01`
-- `Back` button `OnClick`: call `SceneLoader.LoadMainMenu`
+- `Level01Button` `OnClick`: drag in `SceneLoader`, call `SceneLoader.LoadLevel01`
+- `BackButton` `OnClick`: drag in `SceneLoader`, call `SceneLoader.LoadMainMenu`
+
+Recommended `SceneLoader` values:
+
+- Load Main Menu On Cancel: enabled
+- Cancel Key: `Escape`
+
+This lets the player press `Esc` on the level select screen to return to the main menu.
 
 ## 5. Level01 Scene Core Objects
 
@@ -262,6 +308,7 @@ Suggested visual:
 
 Create a Canvas with:
 
+- Empty GameObject or Panel: `HUDRoot`
 - Text: `ObjectiveText`
 - Text: `SelectedObjectText`
 - Text: `RestartHintText`
@@ -271,6 +318,34 @@ Create a Canvas with:
 
 Assign these objects to `UIManager.cs`.
 
+Recommended Canvas setup:
+
+- Render Mode: `Screen Space - Overlay`
+- Canvas Scaler UI Scale Mode: `Scale With Screen Size`
+- Reference Resolution: `1920 x 1080`
+- Match: `0.5`
+
+Recommended `UIManager` references:
+
+- HUD Root: drag `HUDRoot`
+- Objective Text: drag `ObjectiveText`
+- Selected Object Text: drag `SelectedObjectText`
+- Restart Hint Text: drag `RestartHintText`
+- Win Panel: drag `WinPanel`
+- Fail Panel: drag `FailPanel`
+- Pause Panel: drag `PausePanel`
+- Win Message Text: drag the body text inside `WinPanel`
+- Fail Message Text: drag the body text inside `FailPanel`
+- Pause Message Text: drag the body text inside `PausePanel`
+- Hide HUD When Panel Open: optional; keep disabled for a simple prototype
+
+Recommended HUD layout:
+
+- `HUDRoot` anchored to the top of the screen
+- `ObjectiveText` top-left or top-center
+- `SelectedObjectText` under the objective
+- `RestartHintText` bottom-center or bottom-left
+
 Suggested text:
 
 - Objective: `Guide the walker to the exit`
@@ -279,15 +354,34 @@ Suggested text:
 
 Panel setup:
 
-- `WinPanel`: title `Success`, body `The walker reached the exit.`, button `Restart`
-- `FailPanel`: title `Try Again`, body `The walker touched a hazard.`, button `Restart`
-- `PausePanel`: title `Paused`, buttons `Resume`, `Restart`, `Main Menu`
+- `WinPanel`: centered panel, title `Success`, body `The walker reached the exit.`, buttons `Restart`, `Main Menu`
+- `FailPanel`: centered panel, title `Try Again`, body `The walker touched a hazard.`, buttons `Restart`, `Main Menu`
+- `PausePanel`: centered panel, title `Paused`, body `Take a moment to plan the next world shift.`, buttons `Resume`, `Restart`, `Main Menu`
+- Disable all three panels in the Inspector before pressing Play. `UIManager` will turn them on when needed.
 
 Button setup:
 
-- Restart buttons call `GameManager.RestartLevel`
-- Main Menu button calls `GameManager.LoadMainMenu`
-- Resume button calls `GameManager.TogglePause`
+- Restart buttons: drag in `UIManager`, call `UIManager.RestartButtonPressed`
+- Resume button: drag in `UIManager`, call `UIManager.ResumeButtonPressed`
+- Main Menu buttons: drag in `UIManager`, call `UIManager.MainMenuButtonPressed`
+
+Alternative button setup:
+
+- Restart buttons may call `GameManager.RestartLevel`
+- Resume button may call `GameManager.TogglePause`
+- Main Menu buttons may call `GameManager.LoadMainMenu`
+
+Using `UIManager` button wrappers is slightly easier because all panel buttons can target one object.
+
+Recommended visual style:
+
+- Bright background panels with high contrast text
+- Large button labels
+- Yellow or cyan selected-object feedback
+- Green success panel
+- Red/orange fail panel
+- Blue pause panel
+- Keep text short and readable
 
 ## 15. How to Test the Level
 
@@ -308,5 +402,32 @@ Button setup:
 15. Confirm the level restarts.
 16. Guide the walker to the exit.
 17. Confirm the win panel appears.
+
+## 16. How to Test UI and Menus
+
+1. Open `MainMenu`.
+2. Press Play.
+3. Confirm `LevelSelect` loads.
+4. Press Back.
+5. Confirm `MainMenu` loads again.
+6. Open `LevelSelect`.
+7. Press `Esc`.
+8. Confirm it returns to `MainMenu` if `Load Main Menu On Cancel` is enabled.
+9. Press `Level 01`.
+10. Confirm `Level01` loads.
+11. Confirm the HUD shows:
+    - `Guide the walker to the exit`
+    - `Selected: <object name>`
+    - restart/control hints
+12. Press `A/D` or arrow keys.
+13. Confirm selected-object text updates.
+14. Press `Esc` in `Level01`.
+15. Confirm the pause panel appears.
+16. Press Resume.
+17. Confirm gameplay resumes.
+18. Trigger hazard failure.
+19. Confirm the fail panel appears and Restart works.
+20. Trigger the exit.
+21. Confirm the win panel appears and Main Menu works.
 
 Record results and fixes in `Docs/TestingLog.md`.

@@ -69,3 +69,34 @@
 - Import the scripts into Unity and check for Console errors.
 - Assemble `Level01` using the setup guide.
 - Playtest the moving platform, rotating platform, switch-door route, hazard fail state, exit win state, and restart key.
+
+## 2026-05-11 - UI and Menu Support
+
+### Implemented
+
+- Improved `SceneLoader` for Main Menu and Level Select button flows.
+- Added optional `Esc` handling in menu scenes, so Level Select can return to Main Menu.
+- Improved `UIManager` with optional HUD root control, clearer default win/fail/pause text, and button-friendly methods.
+- Added UI button wrapper methods:
+  - `RestartButtonPressed`
+  - `ResumeButtonPressed`
+  - `MainMenuButtonPressed`
+- Expanded `UnitySetupGuide.md` with detailed Canvas, panel, button, and testing instructions.
+
+### Problems Encountered
+
+- Menu scenes need to be manually assembled, so button setup must be very explicit.
+- In-game buttons are easier to connect if all panel buttons can target a single UI object.
+- UI should support a cartoon look without depending on external UI assets.
+
+### Solutions
+
+- Kept UI implementation based on standard Unity Canvas, `Text`, `Button`, and `Panel` objects.
+- Used `SceneLoader` for menu navigation and `UIManager` for in-game HUD and panel actions.
+- Documented recommended colours, layout, anchors, and button connections instead of generating fragile scene YAML.
+
+### Next Steps
+
+- Build the Main Menu, Level Select, and Level01 Canvas objects inside Unity.
+- Verify all button `OnClick` events.
+- Record UI readability and navigation test results in `TestingLog.md`.

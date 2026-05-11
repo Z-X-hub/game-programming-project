@@ -9,6 +9,10 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
 
+    [Header("HUD Root")]
+    [SerializeField] private GameObject hudRoot;
+    [SerializeField] private bool hideHudWhenPanelOpen;
+
     [Header("HUD Text")]
     [SerializeField] private Text objectiveText;
     [SerializeField] private Text selectedObjectText;
@@ -22,10 +26,16 @@ public class UIManager : MonoBehaviour
     [Header("Result Text")]
     [SerializeField] private Text winMessageText;
     [SerializeField] private Text failMessageText;
+    [SerializeField] private Text pauseMessageText;
 
     [Header("Default Copy")]
     [SerializeField] private string objectiveCopy = "Guide the walker to the exit";
     [SerializeField] private string restartHintCopy = "A/D or Left/Right: select  |  Q/E: rotate  |  Space: activate  |  R: restart  |  Esc: pause";
+    [SerializeField] private string selectedPrefix = "Selected: ";
+    [SerializeField] private string noneSelectedCopy = "None";
+    [SerializeField] private string winDefaultCopy = "Puzzle solved! The walker reached the exit.";
+    [SerializeField] private string failDefaultCopy = "Try again. The walker was not guided safely.";
+    [SerializeField] private string pauseDefaultCopy = "Paused";
 
     private void Awake()
     {
@@ -46,6 +56,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowGameplay()
     {
+        SetPanelActive(hudRoot, true);
         SetPanelActive(winPanel, false);
         SetPanelActive(failPanel, false);
         SetPanelActive(pausePanel, false);
@@ -55,30 +66,45 @@ public class UIManager : MonoBehaviour
 
     public void ShowPause()
     {
+        SetPanelActive(hudRoot, !hideHudWhenPanelOpen);
         SetPanelActive(winPanel, false);
         SetPanelActive(failPanel, false);
         SetPanelActive(pausePanel, true);
+        SetText(pauseMessageText, pauseDefaultCopy);
     }
 
     public void ShowWin(string message)
     {
+        SetPanelActive(hudRoot, !hideHudWhenPanelOpen);
         SetPanelActive(winPanel, true);
         SetPanelActive(failPanel, false);
         SetPanelActive(pausePanel, false);
-        SetText(winMessageText, string.IsNullOrEmpty(message) ? "Puzzle solved." : message);
+        SetText(winMessageText, string.IsNullOrEmpty(message) ? winDefaultCopy : message);
     }
 
     public void ShowFail(string message)
     {
+        SetPanelActive(hudRoot, !hideHudWhenPanelOpen);
         SetPanelActive(winPanel, false);
         SetPanelActive(failPanel, true);
         SetPanelActive(pausePanel, false);
-        SetText(failMessageText, string.IsNullOrEmpty(message) ? "Try again." : message);
+        SetText(failMessageText, string.IsNullOrEmpty(message) ? failDefaultCopy : message);
     }
 
     public void UpdateSelectedObject(string objectName)
     {
-        SetText(selectedObjectText, "Selected: " + objectName);
+        if (string.IsNullOrEmpty(objectName))
+        {
+            objectName = noneSelectedCopy;
+        }
+
+        SetText(selectedObjectText, selectedPrefix + objectName);
+    }
+
+    public void SetObjectiveText(string message)
+    {
+        objectiveCopy = string.IsNullOrEmpty(message) ? objectiveCopy : message;
+        SetText(objectiveText, objectiveCopy);
     }
 
     private void RefreshSelectedObjectText()
@@ -90,7 +116,32 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        UpdateSelectedObject("None");
+        UpdateSelectedObject(noneSelectedCopy);
+    }
+
+    // Button-friendly wrapper methods. These keep Canvas button setup simple in the Inspector.
+    public void RestartButtonPressed()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.RestartLevel();
+        }
+    }
+
+    public void ResumeButtonPressed()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.TogglePause();
+        }
+    }
+
+    public void MainMenuButtonPressed()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.LoadMainMenu();
+        }
     }
 
     public static void InstanceSafeShowGameplay()

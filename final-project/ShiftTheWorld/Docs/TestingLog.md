@@ -16,6 +16,10 @@ This log should be updated during Unity playtesting. It is structured to show ev
 | 2026-05-10 | Exit win state | Walker reaching exit shows win panel | Not tested in Unity yet | Pending | Check trigger collider and exit placement |
 | 2026-05-10 | Restart | Pressing `R` reloads the level | Not tested in Unity yet | Pending | Add Level01 to Build Settings |
 | 2026-05-11 | Static code review for Stage 3 | Core scripts remain focused and compile-ready for Unity import | Reviewed locally, not Unity-compiled yet | Unity Editor not run in this environment | Refined movement stopping, UI selection refresh, switch safety, door physics timing, and platform carry behaviour |
+| 2026-05-11 | Main Menu buttons | Play opens Level Select and Quit exits a built player | Not tested in Unity yet | Pending | Connect buttons to `SceneLoader` in Unity |
+| 2026-05-11 | Level Select buttons | Level 01 opens `Level01` and Back returns to Main Menu | Not tested in Unity yet | Pending | Connect buttons to `SceneLoader` in Unity |
+| 2026-05-11 | Pause UI | `Esc` opens pause panel, Resume continues, Restart reloads, Main Menu returns | Not tested in Unity yet | Pending | Connect pause panel buttons to `UIManager` |
+| 2026-05-11 | Win/Fail UI | Correct result panel appears with useful message and buttons | Not tested in Unity yet | Pending | Assign Win/Fail panels and message text references |
 
 ## Planned Iteration Evidence
 
