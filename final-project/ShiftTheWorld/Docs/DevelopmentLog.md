@@ -100,3 +100,40 @@
 - Build the Main Menu, Level Select, and Level01 Canvas objects inside Unity.
 - Verify all button `OnClick` events.
 - Record UI readability and navigation test results in `TestingLog.md`.
+
+## 2026-05-13 - Polish and Test Readiness Review
+
+### Implemented
+
+- Reviewed all C# scripts in `Assets/Scripts/` for compile-risk, missing references, empty UI states, and Inspector setup clarity.
+- Improved `ControllableObject` selection feedback:
+  - selectable objects now support display name, normal colour override, selected highlight colour, and selected scale feedback
+  - renderers are found automatically if not assigned manually
+  - highlight colour now uses `MaterialPropertyBlock`, so runtime selection feedback does not permanently edit shared materials
+- Added `TutorialHint.cs` for a lightweight Level01 intro prompt.
+- Updated default feedback wording:
+  - fail reason: `The walker hit a hazard.`
+  - win message: `Level Complete`
+- Strengthened `UnitySetupGuide.md` with project-opening instructions, scene layout, material colours, UI styling, and demo capture guidance.
+- Reworked `TestingLog.md` into a more professional and honest test plan for Unity playtesting.
+
+### Problems Encountered
+
+- Selection feedback needed to be more visible for a first-time player.
+- Direct material edits can make runtime highlighting harder to explain and can accidentally affect materials.
+- The project is script-ready, but still needs manual Unity scene assembly before full playtesting.
+
+### Solutions
+
+- Used colour highlight plus slight object scale increase for selected objects.
+- Used `MaterialPropertyBlock` for non-destructive renderer colour overrides.
+- Added a short tutorial hint instead of expanding the game with a full tutorial level or dialogue system.
+- Kept all polish work inside the existing vertical slice scope.
+
+### Next Steps
+
+- Open the project in Unity and confirm there are no Console compile errors.
+- Manually create `MainMenu`, `LevelSelect`, and `Level01`.
+- Assign Inspector references for UI panels, buttons, controllable objects, switch targets, camera target, and trigger zones.
+- Playtest the full route and update `TestingLog.md` with actual results.
+- Tune platform positions, UI text size, camera framing, and material colours based on playtest evidence.

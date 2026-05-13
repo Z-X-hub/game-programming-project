@@ -136,7 +136,7 @@ public class WorldObjectSelector : MonoBehaviour
         }
         else
         {
-            UIManager.InstanceSafeUpdateSelected("None");
+            UIManager.InstanceSafeUpdateSelected(controllableObjects.Count == 0 ? "No controllable objects" : "None");
         }
     }
 

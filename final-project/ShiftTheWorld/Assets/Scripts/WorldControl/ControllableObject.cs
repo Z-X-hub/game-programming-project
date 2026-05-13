@@ -33,7 +33,11 @@ public class ControllableObject : MonoBehaviour
 
     [Header("Highlight")]
     [SerializeField] private Renderer[] highlightRenderers;
-    [SerializeField] private Color selectedColor = new Color(1f, 0.86f, 0.2f, 1f);
+    [SerializeField] private bool useNormalColorOverride;
+    [SerializeField] private Color normalColor = new Color(0.25f, 0.65f, 1f, 1f);
+    [SerializeField] private Color selectedHighlightColor = new Color(1f, 0.9f, 0.15f, 1f);
+    [SerializeField] private bool scaleWhenSelected = true;
+    [SerializeField] private Vector3 selectedScaleMultiplier = new Vector3(1.08f, 1.08f, 1.08f);
 
     [Header("Optional Targets")]
     [Tooltip("Leave empty to activate components on this same GameObject.")]
@@ -42,6 +46,8 @@ public class ControllableObject : MonoBehaviour
     [SerializeField] private MonoBehaviour[] rotationTargets;
 
     private readonly List<MaterialColorState> originalColors = new List<MaterialColorState>();
+    private readonly MaterialPropertyBlock propertyBlock = new MaterialPropertyBlock();
+    private Vector3 originalScale;
     private bool isSelected;
 
     public string DisplayName
@@ -61,6 +67,8 @@ public class ControllableObject : MonoBehaviour
 
     private void Awake()
     {
+        originalScale = transform.localScale;
+
         if (highlightRenderers == null || highlightRenderers.Length == 0)
         {
             highlightRenderers = GetComponentsInChildren<Renderer>();
@@ -72,6 +80,13 @@ public class ControllableObject : MonoBehaviour
         {
             selectionIndicator.SetActive(false);
         }
+
+        ApplyHighlight(false);
+    }
+
+    private void OnDisable()
+    {
+        SetSelected(false);
     }
 
     public void SetSelected(bool selected)
@@ -81,6 +96,11 @@ public class ControllableObject : MonoBehaviour
         if (selectionIndicator != null)
         {
             selectionIndicator.SetActive(selected);
+        }
+
+        if (scaleWhenSelected)
+        {
+            transform.localScale = selected ? Vector3.Scale(originalScale, selectedScaleMultiplier) : originalScale;
         }
 
         ApplyHighlight(selected);
@@ -140,10 +160,7 @@ public class ControllableObject : MonoBehaviour
         if (activatable != null)
         {
             activatable.Activate();
-            return;
         }
-
-        target.SendMessage("Activate", SendMessageOptions.DontRequireReceiver);
     }
 
     private void RotateTarget(MonoBehaviour target, int direction)
@@ -157,10 +174,7 @@ public class ControllableObject : MonoBehaviour
         if (rotatable != null)
         {
             rotatable.RotateByStep(direction);
-            return;
         }
-
-        target.SendMessage("RotateByStep", direction, SendMessageOptions.DontRequireReceiver);
     }
 
     private void CacheOriginalColors()
@@ -180,7 +194,7 @@ public class ControllableObject : MonoBehaviour
                 continue;
             }
 
-            Material[] materials = targetRenderer.materials;
+            Material[] materials = targetRenderer.sharedMaterials;
             for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
             {
                 Material material = materials[materialIndex];
@@ -195,7 +209,7 @@ public class ControllableObject : MonoBehaviour
                     continue;
                 }
 
-                originalColors.Add(new MaterialColorState(material, colorProperty, material.GetColor(colorProperty)));
+                originalColors.Add(new MaterialColorState(targetRenderer, materialIndex, colorProperty, material.GetColor(colorProperty)));
             }
         }
     }
@@ -205,9 +219,22 @@ public class ControllableObject : MonoBehaviour
         for (int i = 0; i < originalColors.Count; i++)
         {
             MaterialColorState colorState = originalColors[i];
-            Color color = selected ? selectedColor : colorState.OriginalColor;
-            colorState.Material.SetColor(colorState.ColorProperty, color);
+            if (colorState.Renderer == null)
+            {
+                continue;
+            }
+
+            Color color = selected ? selectedHighlightColor : GetNormalColor(colorState);
+
+            colorState.Renderer.GetPropertyBlock(propertyBlock, colorState.MaterialIndex);
+            propertyBlock.SetColor(colorState.ColorProperty, color);
+            colorState.Renderer.SetPropertyBlock(propertyBlock, colorState.MaterialIndex);
         }
+    }
+
+    private Color GetNormalColor(MaterialColorState colorState)
+    {
+        return useNormalColorOverride ? normalColor : colorState.OriginalColor;
     }
 
     private string GetColorProperty(Material material)
@@ -227,13 +254,15 @@ public class ControllableObject : MonoBehaviour
 
     private class MaterialColorState
     {
-        public readonly Material Material;
+        public readonly Renderer Renderer;
+        public readonly int MaterialIndex;
         public readonly string ColorProperty;
         public readonly Color OriginalColor;
 
-        public MaterialColorState(Material material, string colorProperty, Color originalColor)
+        public MaterialColorState(Renderer renderer, int materialIndex, string colorProperty, Color originalColor)
         {
-            Material = material;
+            Renderer = renderer;
+            MaterialIndex = materialIndex;
             ColorProperty = colorProperty;
             OriginalColor = originalColor;
         }

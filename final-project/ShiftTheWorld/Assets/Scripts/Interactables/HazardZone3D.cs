@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class HazardZone3D : MonoBehaviour
 {
-    [SerializeField] private string failReason = "The walker touched a hazard.";
+    [SerializeField] private string failReason = "The walker hit a hazard.";
 
     private void Awake()
     {

@@ -2,17 +2,59 @@
 
 This guide explains how to assemble the prototype manually in Unity without generated `.unity` scene files.
 
-## 1. Create the Unity Project
+## 1. Open the Project From This Repository
+
+The current GitHub repository path on the local machine is:
+
+```text
+/Users/zhuxuan/2D 游戏课堂练习/github-submit/game-programming-project-upload
+```
+
+The final project files are inside:
+
+```text
+final-project/ShiftTheWorld/
+```
+
+Open the folder in Finder with:
+
+```bash
+open "/Users/zhuxuan/2D 游戏课堂练习/github-submit/game-programming-project-upload/final-project/ShiftTheWorld"
+```
+
+Important: `final-project/ShiftTheWorld/` currently contains Unity-ready `Assets/` and documentation, but it may not yet be a complete Unity project root because `Packages/` and `ProjectSettings/` are normally created by Unity.
+
+## 2. Create or Connect a Unity 3D Project
+
+Option A - try opening `ShiftTheWorld` directly:
 
 1. Open Unity Hub.
-2. Create a new 3D project.
-3. Name it `ShiftTheWorld`.
-4. Use a stable Unity LTS version if available.
-5. Copy or keep this repository's `Assets/` folder inside the Unity project.
-6. Let Unity import the scripts.
-7. Check the Console for compile errors before building scenes.
+2. Click `Add > Add project from disk`.
+3. Select `final-project/ShiftTheWorld/`.
+4. If Unity Hub recognises it as a project, open it.
+5. If Unity Hub does not recognise it because `Packages/` and `ProjectSettings/` are missing, use Option B below.
 
-## 2. Create Required Scenes
+Option B - create a fresh Unity project and copy the game files:
+
+1. Open Unity Hub.
+2. Create a new `3D` project named `ShiftTheWorld`.
+3. Open the new Unity project folder in Finder.
+4. Copy this repository folder's `final-project/ShiftTheWorld/Assets/` into the Unity project.
+5. Copy `final-project/ShiftTheWorld/Docs/` and `README.md` if you want the documentation inside the Unity project folder.
+
+Use a stable Unity LTS version if available. After import, wait for Unity to compile all scripts.
+
+## 3. Check Console Compile Errors
+
+1. In Unity, open `Window > General > Console`.
+2. Clear the Console.
+3. Wait for script import to finish.
+4. If any red errors appear, double-click the error and fix that script before building scenes.
+5. Do not start scene assembly until the Console has no red compile errors.
+
+Warnings are less serious, but red compile errors must be fixed because they stop all scripts from running.
+
+## 4. Create Required Scenes
 
 Create these scenes in `Assets/Scenes/`:
 
@@ -26,7 +68,7 @@ Add them to `File > Build Settings` in this order:
 2. `LevelSelect`
 3. `Level01`
 
-## 3. MainMenu Scene
+## 5. MainMenu Scene
 
 Create:
 
@@ -73,7 +115,7 @@ Suggested menu text:
 - Title: `Shift the World`
 - Subtitle: `Guide the walker by shifting the world.`
 
-## 4. LevelSelect Scene
+## 6. LevelSelect Scene
 
 Create:
 
@@ -113,7 +155,7 @@ Recommended `SceneLoader` values:
 
 This lets the player press `Esc` on the level select screen to return to the main menu.
 
-## 5. Level01 Scene Core Objects
+## 7. Level01 Scene Core Objects
 
 Create these empty GameObjects:
 
@@ -127,7 +169,7 @@ Add scripts:
 - `WorldObjectSelector` gets `WorldObjectSelector.cs`
 - `UIManager` gets `UIManager.cs`
 
-## 6. Camera Setup
+## 8. Camera Setup
 
 1. Select `Main Camera`.
 2. Position it at approximately `(5, 3, -10)`.
@@ -139,7 +181,7 @@ Add scripts:
 
 This creates a fixed side-view 2.5D camera.
 
-## 7. Player Setup
+## 9. Player Setup
 
 Create a simple player:
 
@@ -163,7 +205,7 @@ Recommended `AutoWalker3D` values:
 - Turn Around When Blocked: enabled
 - Freeze Depth Position: enabled
 
-## 8. Ground and Static Platforms
+## 10. Ground and Static Platforms
 
 Create simple cubes:
 
@@ -172,7 +214,47 @@ Create simple cubes:
 
 Use bright cartoon materials. Static platforms only need a Collider.
 
-## 9. Moving Platform
+## 11. Recommended Level01 Layout
+
+Use a small left-to-right route so the mechanic is easy to understand:
+
+| Part | Suggested Position | Purpose |
+| --- | --- | --- |
+| Start | `(-6, 1, 0)` | Walker begins here and automatically moves right |
+| Static ground | `(0, -0.25, 0)` | Safe base floor |
+| First moving platform | `(-2, 0.8, 0)` | Teaches `Space` activation |
+| Rotating bridge | `(1.5, 1.1, 0)` | Teaches `Q/E` rotation |
+| Door | `(5.5, 1, 0)` | Blocks progress until switch is triggered |
+| Switch | `(4, 0.15, 0)` | Opens the door |
+| Hazard | `(2.8, -0.1, 0)` | Creates fail state and restart reason |
+| Exit | `(7.5, 1, 0)` | Triggers win state |
+
+Keep the route visible in one camera view where possible. If the level is longer, let `CameraFollow2_5D` follow only the X axis.
+
+## 12. Recommended Cartoon Materials
+
+Create simple Unity materials in `Assets/Materials/`:
+
+| Object Type | Suggested Colour | Why |
+| --- | --- | --- |
+| Player | blue or white | friendly and readable |
+| Controllable objects | bright blue or purple | tells the player these are special |
+| Selected object | yellow or cyan | strong contrast for selection feedback |
+| Hazard | pink or red | clear danger language |
+| Exit | green or cyan | clear success/goal language |
+| Static platforms | soft blue-purple | calm background support |
+| Door | orange or red when closed, cyan when open | state feedback |
+| Switch | grey when inactive, green when active | readable mechanism feedback |
+
+For a more polished 2.5D look:
+
+- Use slightly thick platforms, for example Z scale `2`.
+- Add a directional light and soft ambient colour.
+- Use orthographic camera for clarity.
+- Keep all gameplay objects near `Z = 0`.
+- Use rounded-looking proportions even if the objects are simple cubes.
+
+## 13. Moving Platform
 
 Create:
 
@@ -201,8 +283,13 @@ Recommended `ControllableObject`:
 
 - Display Name: `Moving Lift`
 - Highlight Renderers: assign the cube renderer, or leave empty to auto-detect
+- Use Normal Color Override: optional
+- Normal Color: bright blue or purple
+- Selected Highlight Color: yellow or cyan
+- Scale When Selected: enabled
+- Selected Scale Multiplier: `(1.08, 1.08, 1.08)`
 
-## 10. Rotating Platform / Block
+## 14. Rotating Platform / Block
 
 Create:
 
@@ -222,10 +309,13 @@ Recommended `RotatingPlatform3D`:
 Recommended `ControllableObject`:
 
 - Display Name: `Rotating Bridge`
+- Selected Highlight Color: yellow or cyan
+- Scale When Selected: enabled
+- Selected Scale Multiplier: `(1.08, 1.08, 1.08)`
 
 Use `Q` and `E` to rotate this object when selected.
 
-## 11. Switch and Door
+## 15. Switch and Door
 
 ### Door
 
@@ -270,7 +360,7 @@ Recommended `SwitchTrigger3D`:
 
 The switch collider is automatically set as a trigger by the script.
 
-## 12. Hazard Zone
+## 16. Hazard Zone
 
 Create:
 
@@ -287,7 +377,7 @@ Suggested visual:
 - Red material
 - Low flat cube or simple spike shapes
 
-## 13. Exit Zone
+## 17. Exit Zone
 
 Create:
 
@@ -304,7 +394,7 @@ Suggested visual:
 - Green or blue transparent gate
 - Text label above it: `Exit`
 
-## 14. UI Canvas for Level01
+## 18. UI Canvas for Level01
 
 Create a Canvas with:
 
@@ -315,6 +405,7 @@ Create a Canvas with:
 - Panel: `WinPanel`
 - Panel: `FailPanel`
 - Panel: `PausePanel`
+- Panel: `TutorialHintPanel`
 
 Assign these objects to `UIManager.cs`.
 
@@ -383,7 +474,36 @@ Recommended visual style:
 - Blue pause panel
 - Keep text short and readable
 
-## 15. How to Test the Level
+## 19. Tutorial Hint Setup
+
+Create a small first-time hint panel:
+
+1. Inside the Level01 Canvas, create a Panel named `TutorialHintPanel`.
+2. Anchor it near the top-center or upper-left, where it does not cover the walker.
+3. Add a Text child named `TutorialHintText`.
+4. Add `TutorialHint.cs` to `TutorialHintPanel`.
+5. Assign:
+   - Hint Panel: `TutorialHintPanel`
+   - Hint Text: `TutorialHintText`
+6. Suggested message:
+
+```text
+The walker moves by itself.
+Your job is to shift the world.
+Select highlighted objects and guide the walker to the exit.
+```
+
+Recommended values:
+
+- Show On Start: enabled
+- Auto Hide: enabled
+- Auto Hide Delay: `7`
+- Dismiss Key: `Return`
+- Hide When Player Uses World Controls: enabled
+
+This gives enough tutorial information without adding dialogue or a large tutorial system.
+
+## 20. How to Test the Level
 
 1. Press Play in `Level01`.
 2. Confirm the walker automatically moves along X.
@@ -403,7 +523,7 @@ Recommended visual style:
 16. Guide the walker to the exit.
 17. Confirm the win panel appears.
 
-## 16. How to Test UI and Menus
+## 21. How to Test UI and Menus
 
 1. Open `MainMenu`.
 2. Press Play.
@@ -431,3 +551,28 @@ Recommended visual style:
 21. Confirm the win panel appears and Main Menu works.
 
 Record results and fixes in `Docs/TestingLog.md`.
+
+## 22. Recording a Demo or Screenshots for the Report
+
+Recommended evidence for coursework:
+
+1. Screenshot the Main Menu.
+2. Screenshot the Level Select screen.
+3. Screenshot Level01 with the HUD visible.
+4. Screenshot a selected object with yellow/cyan highlight.
+5. Screenshot the switch opening the door.
+6. Screenshot the fail panel after touching a hazard.
+7. Screenshot the win panel showing `Level Complete`.
+8. Record a 30-60 second gameplay clip:
+   - Start from Level01.
+   - Select a platform.
+   - Activate or rotate mechanisms.
+   - Trigger the switch-door interaction.
+   - Reach the exit.
+
+On macOS, use:
+
+- `Shift + Command + 5` for screen recording
+- `Shift + Command + 4` for screenshots
+
+Keep evidence honest. If something is still not working, record the issue in `TestingLog.md` and explain the planned fix.

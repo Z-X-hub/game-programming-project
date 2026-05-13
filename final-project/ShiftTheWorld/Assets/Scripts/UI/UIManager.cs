@@ -30,11 +30,11 @@ public class UIManager : MonoBehaviour
 
     [Header("Default Copy")]
     [SerializeField] private string objectiveCopy = "Guide the walker to the exit";
-    [SerializeField] private string restartHintCopy = "A/D or Left/Right: select  |  Q/E: rotate  |  Space: activate  |  R: restart  |  Esc: pause";
+    [SerializeField] private string restartHintCopy = "A/D or Left/Right: select | Q/E: rotate | Space: activate | R: restart | Esc: pause";
     [SerializeField] private string selectedPrefix = "Selected: ";
     [SerializeField] private string noneSelectedCopy = "None";
-    [SerializeField] private string winDefaultCopy = "Puzzle solved! The walker reached the exit.";
-    [SerializeField] private string failDefaultCopy = "Try again. The walker was not guided safely.";
+    [SerializeField] private string winDefaultCopy = "Level Complete";
+    [SerializeField] private string failDefaultCopy = "The walker hit a hazard.";
     [SerializeField] private string pauseDefaultCopy = "Paused";
 
     private void Awake()

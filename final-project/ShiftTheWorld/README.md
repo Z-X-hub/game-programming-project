@@ -31,7 +31,8 @@ No `.unity` scene files are generated in this repository because hand-written Un
 - Auto-walking 3D character constrained to side-view 2.5D movement
 - Fixed side-view camera helper
 - Keyboard selection of controllable world objects
-- Selected object highlighting and selected-name UI feedback
+- Selected object highlighting, slight scale feedback, and selected-name UI feedback
+- Lightweight Level01 tutorial hint
 - Moving platform activation
 - Smooth 90 degree rotating platform/block
 - Switch/button trigger that can control mechanisms

@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class ExitZone3D : MonoBehaviour
 {
-    [SerializeField] private string winMessage = "The walker reached the exit.";
+    [SerializeField] private string winMessage = "Level Complete";
 
     private void Awake()
     {
