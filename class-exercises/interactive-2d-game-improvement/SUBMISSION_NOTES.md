@@ -37,3 +37,8 @@ Unity batch validation passed for:
 - `Assets/SpaceShooter/Scenes/Level2.unity`
 
 The project includes `Packages`, `ProjectSettings`, and the Unity `.meta` files needed for asset references.
+
+## Code Study Notes
+
+- `Assets/SpaceShooter/Scripts/Health.cs` contains the player health state and the `TakeDamage(int damageAmount)` function.
+- `Assets/SpaceShooter/Scripts/Damage.cs` is the event-chain helper used by projectile collisions before the target damage function runs.

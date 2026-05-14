@@ -37,9 +37,9 @@ public class DestructibleAsteroid : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damageAmount)
     {
-        health -= damage;
+        health -= damageAmount;
         if (hitClip != null)
         {
             AudioSource.PlayClipAtPoint(hitClip, transform.position);
@@ -64,9 +64,9 @@ public class DestructibleAsteroid : MonoBehaviour
 
     private void Break()
     {
-        if (GameSession.instance != null)
+        if (Health.instance != null)
         {
-            GameSession.instance.RegisterHazardDestroyed(scoreValue);
+            Health.instance.RegisterHazardDestroyed(scoreValue);
         }
         if (breakClip != null)
         {

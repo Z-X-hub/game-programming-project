@@ -27,31 +27,9 @@ public class ArcadeProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (teamId == 0)
+        if (Damage.Apply(other.gameObject, damage, teamId))
         {
-            ArcadeEnemy enemy = other.GetComponent<ArcadeEnemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-                Impact();
-                return;
-            }
-
-            DestructibleAsteroid asteroid = other.GetComponent<DestructibleAsteroid>();
-            if (asteroid != null)
-            {
-                asteroid.TakeDamage(damage);
-                Impact();
-            }
-        }
-        else
-        {
-            ArcadePlayerController player = other.GetComponent<ArcadePlayerController>();
-            if (player != null)
-            {
-                player.TakeDamage(damage);
-                Impact();
-            }
+            Impact();
         }
     }
 

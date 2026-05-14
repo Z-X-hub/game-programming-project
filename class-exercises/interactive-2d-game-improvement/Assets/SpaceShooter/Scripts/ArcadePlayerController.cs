@@ -37,7 +37,7 @@ public class ArcadePlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (GameSession.instance == null || !GameSession.instance.CanPlay)
+        if (Health.instance == null || !Health.instance.CanPlay)
         {
             return;
         }
@@ -47,7 +47,7 @@ public class ArcadePlayerController : MonoBehaviour
         TryFire();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damageAmount)
     {
         if (Time.time < invulnerableUntil)
         {
@@ -55,9 +55,9 @@ public class ArcadePlayerController : MonoBehaviour
         }
 
         invulnerableUntil = Time.time + damageInvulnerability;
-        if (GameSession.instance != null)
+        if (Health.instance != null)
         {
-            GameSession.instance.DamagePlayer(damage);
+            Health.instance.TakeDamage(damageAmount);
         }
         StartCoroutine(FlashDamage());
     }
@@ -99,7 +99,7 @@ public class ArcadePlayerController : MonoBehaviour
             return;
         }
 
-        float fireMultiplier = GameSession.instance != null ? GameSession.instance.FireRateMultiplier : 1f;
+        float fireMultiplier = Health.instance != null ? Health.instance.FireRateMultiplier : 1f;
         if (Time.time < nextFireTime)
         {
             return;

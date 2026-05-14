@@ -47,9 +47,9 @@ public class PowerUpPickup : MonoBehaviour
             return;
         }
 
-        if (GameSession.instance != null)
+        if (Health.instance != null)
         {
-            GameSession.instance.ApplyPowerUp(kind);
+            Health.instance.ApplyPowerUp(kind);
         }
         Destroy(gameObject);
     }

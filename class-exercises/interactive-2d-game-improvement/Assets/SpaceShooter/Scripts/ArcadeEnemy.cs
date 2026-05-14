@@ -58,14 +58,14 @@ public class ArcadeEnemy : MonoBehaviour
             player = playerController.transform;
         }
 
-        float difficulty = GameSession.instance != null ? GameSession.instance.DifficultyMultiplier : 1f;
+        float difficulty = Health.instance != null ? Health.instance.DifficultyMultiplier : 1f;
         moveSpeed *= difficulty;
         fireRate = Mathf.Max(0.7f, fireRate / difficulty);
     }
 
     private void Update()
     {
-        if (GameSession.instance != null && !GameSession.instance.CanPlay)
+        if (Health.instance != null && !Health.instance.CanPlay)
         {
             return;
         }
@@ -79,9 +79,9 @@ public class ArcadeEnemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damageAmount)
     {
-        health -= damage;
+        health -= damageAmount;
         if (hitClip != null)
         {
             AudioSource.PlayClipAtPoint(hitClip, transform.position);
@@ -152,9 +152,9 @@ public class ArcadeEnemy : MonoBehaviour
 
     private void Die()
     {
-        if (GameSession.instance != null)
+        if (Health.instance != null)
         {
-            GameSession.instance.RegisterEnemyDefeated(scoreValue, transform.position);
+            Health.instance.RegisterEnemyDefeated(scoreValue, transform.position);
         }
 
         TryDropPowerUp();

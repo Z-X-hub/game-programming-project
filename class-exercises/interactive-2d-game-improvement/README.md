@@ -21,6 +21,16 @@ Clear each sector by defeating the target number of enemies before the ship hull
 
 Sector 1 is a training level with slower enemy spawning, more hull, no boss, and no asteroid hazards. Sector 2 adds the harder enemy mix, destructible hazards, faster threat scaling, and a boss ship.
 
+## Damage Code For Group Study
+
+- Main script studied: `Assets/SpaceShooter/Scripts/Health.cs`
+- Selected function: `TakeDamage(int damageAmount)`
+- Related event-chain script: `Assets/SpaceShooter/Scripts/Damage.cs`
+
+Projectile collision flow:
+
+`ArcadeProjectile.cs` -> `Damage.cs` -> `TakeDamage()`
+
 ## Main Improvements
 
 - Main menu, level select, instructions, credits, pause, retry, next-level, and return-to-menu flow.

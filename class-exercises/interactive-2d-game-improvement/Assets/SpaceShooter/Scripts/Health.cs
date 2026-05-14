@@ -6,9 +6,9 @@ using UnityEngine.UI;
 using UnityEditor;
 #endif
 
-public class GameSession : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    public static GameSession instance;
+    public static Health instance;
 
     [Header("Objective")]
     public string levelName = "Sector 1";
@@ -52,9 +52,14 @@ public class GameSession : MonoBehaviour
     public AudioClip gameOverClip;
     public AudioClip clickClip;
 
+    [Header("Damage")]
+    public float invincibilityTime = 1.1f;
+    public bool isAlwaysInvincible;
+    public GameObject hitEffect;
+
     private int score;
     private int highScore;
-    private int hull;
+    private int currentHealth;
     private int enemiesDefeated;
     private float runTimer;
     private float rapidFireTimer;
@@ -62,6 +67,8 @@ public class GameSession : MonoBehaviour
     private float scoreBoostTimer;
     private float messageTimer;
     private float dangerFlashTimer;
+    private float timeToBecomeDamagableAgain;
+    private bool isInvincableFromDamage;
     private bool paused;
     private bool ended;
 
@@ -105,7 +112,7 @@ public class GameSession : MonoBehaviour
         instance = this;
         Time.timeScale = 1f;
         highScore = PlayerPrefs.GetInt("space_shooter_training_highscore", 0);
-        hull = maxHull;
+        currentHealth = maxHull;
 
         if (overlayRoot != null)
         {
@@ -118,6 +125,8 @@ public class GameSession : MonoBehaviour
 
     private void Update()
     {
+        InvincibilityCheck();
+
         if (Input.GetKeyDown(KeyCode.Escape) && !ended)
         {
             TogglePause();
@@ -142,6 +151,14 @@ public class GameSession : MonoBehaviour
         }
 
         UpdateHud();
+    }
+
+    private void InvincibilityCheck()
+    {
+        if (timeToBecomeDamagableAgain <= Time.time)
+        {
+            isInvincableFromDamage = false;
+        }
     }
 
     public void AddScore(int amount)
@@ -175,9 +192,9 @@ public class GameSession : MonoBehaviour
         CameraShake.Shake(0.08f, 0.05f);
     }
 
-    public void DamagePlayer(int damage)
+    public void TakeDamage(int damageAmount)
     {
-        if (ended)
+        if (ended || isInvincableFromDamage || isAlwaysInvincible)
         {
             return;
         }
@@ -189,13 +206,20 @@ public class GameSession : MonoBehaviour
             return;
         }
 
-        hull = Mathf.Max(0, hull - damage);
+        if (hitEffect != null)
+        {
+            Instantiate(hitEffect, transform.position, transform.rotation);
+        }
+
+        timeToBecomeDamagableAgain = Time.time + invincibilityTime;
+        isInvincableFromDamage = true;
+        currentHealth = Mathf.Max(0, currentHealth - damageAmount);
         dangerFlashTimer = 0.45f;
         PlayClip(playerHitClip);
         CameraShake.Shake(0.18f, 0.2f);
         ShowMessage("Hull damaged", 1.2f);
 
-        if (hull <= 0)
+        if (currentHealth <= 0)
         {
             LoseGame();
         }
@@ -212,7 +236,7 @@ public class GameSession : MonoBehaviour
                 ShowMessage("Rapid fire online", 2f);
                 break;
             case PowerUpKind.Repair:
-                hull = Mathf.Min(maxHull, hull + 2);
+                currentHealth = Mathf.Min(maxHull, currentHealth + 2);
                 ShowMessage("Hull repaired", 2f);
                 break;
             case PowerUpKind.Shield:
@@ -399,7 +423,7 @@ public class GameSession : MonoBehaviour
         }
         if (hullText != null)
         {
-            hullText.text = ShieldActive ? "Hull: " + hull + "/" + maxHull + "  Shield" : "Hull: " + hull + "/" + maxHull;
+            hullText.text = ShieldActive ? "Hull: " + currentHealth + "/" + maxHull + "  Shield" : "Hull: " + currentHealth + "/" + maxHull;
         }
         if (objectiveText != null)
         {
@@ -427,7 +451,7 @@ public class GameSession : MonoBehaviour
         }
         if (hullFillImage != null)
         {
-            hullFillImage.fillAmount = maxHull <= 0 ? 0f : (float)hull / maxHull;
+            hullFillImage.fillAmount = maxHull <= 0 ? 0f : (float)currentHealth / maxHull;
             hullFillImage.color = ShieldActive ? new Color(1f, 0.84f, 0.25f, 1f) : Color.Lerp(new Color(1f, 0.2f, 0.22f, 1f), new Color(0.25f, 1f, 0.45f, 1f), hullFillImage.fillAmount);
         }
         if (objectiveFillImage != null)
@@ -436,7 +460,7 @@ public class GameSession : MonoBehaviour
         }
         if (dangerFlashImage != null)
         {
-            float lowHullPulse = hull <= 2 && !ended ? (Mathf.Sin(Time.unscaledTime * 8f) + 1f) * 0.07f : 0f;
+            float lowHullPulse = currentHealth <= 2 && !ended ? (Mathf.Sin(Time.unscaledTime * 8f) + 1f) * 0.07f : 0f;
             float hitFlash = dangerFlashTimer > 0f ? dangerFlashTimer : 0f;
             Color flashColor = dangerFlashImage.color;
             flashColor.a = Mathf.Clamp01(lowHullPulse + hitFlash);

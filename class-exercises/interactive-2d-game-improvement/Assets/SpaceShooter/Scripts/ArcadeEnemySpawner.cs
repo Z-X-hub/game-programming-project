@@ -33,22 +33,22 @@ public class ArcadeEnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (GameSession.instance != null && !GameSession.instance.CanPlay)
+        if (Health.instance != null && !Health.instance.CanPlay)
         {
             return;
         }
 
         CleanEnemyList();
 
-        float difficulty = GameSession.instance != null ? GameSession.instance.DifficultyMultiplier : 1f;
+        float difficulty = Health.instance != null ? Health.instance.DifficultyMultiplier : 1f;
         int maxAlive = baseMaxAlive + Mathf.FloorToInt(Mathf.Max(0f, difficulty - 1f));
         float spawnDelay = Mathf.Max(minimumSpawnDelay, baseSpawnDelay / difficulty);
 
-        if (allowBoss && !bossSpawned && bossPrefab != null && GameSession.instance != null && GameSession.instance.EnemiesDefeated >= bossAfterDefeats)
+        if (allowBoss && !bossSpawned && bossPrefab != null && Health.instance != null && Health.instance.EnemiesDefeated >= bossAfterDefeats)
         {
             SpawnSpecificEnemy(bossPrefab, new Vector3(0f, spawnY, 0f));
             bossSpawned = true;
-            GameSession.instance.Announce("Boss ship entering the sector", 2.5f);
+            Health.instance.Announce("Boss ship entering the sector", 2.5f);
             CameraShake.Shake(0.2f, 0.18f);
             nextSpawnTime = Time.time + spawnDelay;
         }
