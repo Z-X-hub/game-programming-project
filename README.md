@@ -39,23 +39,23 @@ final-project/00-project-management/
 
 ```text
 final-project/
-├── README.md
-├── 00-project-management/
-│   ├── DEVELOPMENT_PLAN.md
-│   └── KANBAN.md
-├── 01-concept-design/
-│   ├── GAME_CONCEPT.md
-│   ├── CHARACTER_DESIGN.md
-│   ├── SCOPE_TOOLS_ASSETS.md
-│   └── LEGAL_ACCESSIBILITY_SECURITY.md
-├── 02-game-development/
-│   └── README.md
-├── 03-testing/
-│   └── README.md
-├── 04-report/
-│   └── README.md
-└── 05-presentation/
-    └── README.md
+|-- README.md
+|-- 00-project-management/
+|   |-- DEVELOPMENT_PLAN.md
+|   `-- KANBAN.md
+|-- 01-concept-design/
+|   |-- GAME_CONCEPT.md
+|   |-- CHARACTER_DESIGN.md
+|   |-- SCOPE_TOOLS_ASSETS.md
+|   `-- LEGAL_ACCESSIBILITY_SECURITY.md
+|-- 02-game-development/
+|   `-- README.md
+|-- 03-testing/
+|   `-- README.md
+|-- 04-report/
+|   `-- README.md
+`-- 05-presentation/
+    `-- README.md
 ```
 
 ## Planned Character Roles
