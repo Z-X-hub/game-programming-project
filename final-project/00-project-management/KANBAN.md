@@ -31,3 +31,11 @@ This board tracks the staged submission plan. Only completed evidence is marked 
 
 - [ ] Full Unity project source still needs to be committed into the repository if it is not already present.
 - [ ] Unity generated folders must be excluded from upload: `Library`, `Temp`, `Logs`, `UserSettings`, and local build caches.
+
+## GitHub Issue Tracking
+
+- [x] Stage 1: https://github.com/Z-X-hub/game-programming-project/issues/13
+- [ ] Stage 2: https://github.com/Z-X-hub/game-programming-project/issues/14
+- [ ] Stage 3: https://github.com/Z-X-hub/game-programming-project/issues/15
+- [ ] Stage 4: https://github.com/Z-X-hub/game-programming-project/issues/16
+- [ ] Stage 5: https://github.com/Z-X-hub/game-programming-project/issues/17
