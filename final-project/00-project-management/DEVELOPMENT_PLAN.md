@@ -1,6 +1,6 @@
 # Fox Dash Development Plan
 
-This plan follows the module assessment structure. The project will not be uploaded as one final dump. Each stage will be committed as evidence of planning, development, testing, reflection, and presentation preparation.
+This plan follows the module assessment structure. The project will not be uploaded as one final dump. Each stage is committed as evidence of planning, development, testing, reflection, and presentation preparation.
 
 ## Assessment Breakdown
 
@@ -23,7 +23,7 @@ Evidence:
 
 Status: complete.
 
-## Stage 2 - Core Playable Game (Documentation Complete, Source Upload In Progress)
+## Stage 2 - Core Playable Game (Complete)
 
 Goal: organise the Unity project source evidence and record visible progress on a playable Fox Dash vertical slice.
 
@@ -36,6 +36,18 @@ Documentation evidence:
 - `02-game-development/UPLOAD_NOTES.md`
 - `02-game-development/CODE_STAGING_PLAN.md`
 
+Source evidence:
+
+- `02-game-development/source/FoxDash/`
+
+Completed source upload batches:
+
+- Code Stage 2A: base Unity runtime source
+- Code Stage 2B: runner world gameplay systems
+- Code Stage 2C: character selection source
+- Code Stage 2D: character ability implementation
+- Code Stage 2E: character visual and UI polish source
+
 Implemented and documented:
 
 - Unity project source structure
@@ -47,21 +59,9 @@ Implemented and documented:
 - Build/run instructions
 - Unity generated-folder exclusions
 
-Source-code upload status:
+Status: complete.
 
-```text
-In progress. Source code must be committed in staged batches, not as one final dump.
-```
-
-Planned source upload batches:
-
-- Code Stage 2A: base Unity runtime source
-- Code Stage 2B: runner world gameplay systems
-- Code Stage 2C: character selection source
-- Code Stage 2D: character ability implementation
-- Code Stage 2E: character visual and UI polish source
-
-## Stage 3 - Testing and Iteration
+## Stage 3 - Testing and Iteration (Next)
 
 Goal: prove that the game was tested, debugged, and improved over time.
 
@@ -73,7 +73,7 @@ Planned evidence:
 - Stability checklist
 - Known limitations
 
-Status: waiting for Stage 2 source upload to be completed.
+Status: next stage.
 
 ## Stage 4 - Report
 
