@@ -9,13 +9,13 @@ The project is uploaded in stages so the repository clearly shows planning, deve
 ```text
 Stage 1 - Game Concept and Design: complete
 Stage 2 - Core Playable Game documentation: complete
-Stage 2 - Source-code upload: in progress, staged commits required
-Stage 3 - Testing and Iteration: waiting for Stage 2 source upload
+Stage 2 - Source-code upload: complete in staged commits
+Stage 3 - Testing and Iteration: next
 ```
 
 Stage 1 focuses on the idea, design reasoning, realistic scope, tools, assets, legal considerations, accessibility, and development planning.
 
-Stage 2 records the playable Unity vertical slice: project structure, main scene, character-selection implementation, gameplay systems, run instructions, and staged source-code upload plan.
+Stage 2 records the playable Unity vertical slice: project structure, main scene, character-selection implementation, gameplay systems, run instructions, and staged source-code commits.
 
 ## Folder Structure
 
@@ -36,7 +36,8 @@ final-project/
 |   |-- RUN_INSTRUCTIONS.md
 |   |-- IMPLEMENTATION_NOTES.md
 |   |-- UPLOAD_NOTES.md
-|   `-- CODE_STAGING_PLAN.md
+|   |-- CODE_STAGING_PLAN.md
+|   `-- source/FoxDash/
 |-- 03-testing/
 |   `-- README.md
 |-- 04-report/
@@ -94,12 +95,12 @@ Run instructions are in:
 final-project/02-game-development/RUN_INSTRUCTIONS.md
 ```
 
-Source-code staging plan:
+Source code is uploaded under:
 
 ```text
-final-project/02-game-development/CODE_STAGING_PLAN.md
+final-project/02-game-development/source/FoxDash/
 ```
 
-## Next Action
+## Next Stage
 
-Complete the Stage 2 source-code upload in staged commits before moving to Stage 3 testing evidence.
+The next stage is `Stage 3 - Testing and Iteration`. This will focus on playtesting, bug records, fixes, before/after improvement notes, and the final stability checklist.
