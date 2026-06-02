@@ -4,9 +4,9 @@ Updated: 2026-06-02
 
 ## Upload Goal
 
-Stage 2 records the playable Unity vertical slice and should show that the project has moved from planning into implementation.
+Stage 2 records the playable Unity vertical slice and shows that the project has moved from planning into implementation.
 
-The uploaded documentation currently covers:
+The uploaded evidence covers:
 
 - Unity project structure
 - main scene and run instructions
@@ -14,16 +14,26 @@ The uploaded documentation currently covers:
 - character role implementation
 - source-file mapping
 - generated-folder exclusions
-- staged source-code upload plan
+- staged source-code upload history
 
-## Source-Code Upload Correction
+## Source-Code Upload Completed
 
-The actual Unity source code should be uploaded in staged commits, not as one final dump. The repository should therefore treat Stage 2 source upload as **in progress** until the staged source commits are completed.
+The actual Unity source code was uploaded in staged commits, not as one final dump.
 
-The staged upload order is documented in:
+Source location:
 
 ```text
-final-project/02-game-development/CODE_STAGING_PLAN.md
+final-project/02-game-development/source/FoxDash/
+```
+
+Completed source commits:
+
+```text
+53a5ec3a7f7a2e1ca02e7b72ae67b15fc808e541 - Stage 2A: add Fox Dash base Unity runtime source
+c3cb0eb899199b7de32f77aae2308d0989ff86e6 - Stage 2B: add runner world gameplay systems
+b02bac92951d8e5a3fdf5975e92d5baeb65d4324 - Stage 2C: add character selection source
+c18155784c1e8cfeb90e1205452aedb75e957410 - Stage 2D: add character ability implementation
+aaca69d84b36bc3ad70a3ef0e57d8f58c5d8025a - Stage 2E: add character visual and UI polish source
 ```
 
 ## Local Clean Package
@@ -66,9 +76,7 @@ FoxDash/Builds/*
 
 Unity rebuilds `Library`, temporary build caches, IDE project files, logs, and local user settings automatically. These files are not source evidence and make GitHub repositories noisy and hard to review.
 
-## Repository Evidence Uploaded So Far
-
-The current repository evidence includes readable documentation:
+## Repository Evidence Uploaded
 
 ```text
 final-project/02-game-development/README.md
@@ -77,16 +85,9 @@ final-project/02-game-development/RUN_INSTRUCTIONS.md
 final-project/02-game-development/IMPLEMENTATION_NOTES.md
 final-project/02-game-development/UPLOAD_NOTES.md
 final-project/02-game-development/CODE_STAGING_PLAN.md
+final-project/02-game-development/source/FoxDash/
 ```
 
-## GitHub CLI Note
+## Large Asset Note
 
-The local `gh` authentication is currently invalid, so normal staged `git push` from the local Unity folder is not available until GitHub authentication is refreshed.
-
-Recommended next command:
-
-```text
-gh auth login -h github.com
-```
-
-After authentication is fixed, commit the clean Unity source tree in the staged order from `CODE_STAGING_PLAN.md` while keeping generated folders excluded.
+The staged source upload focuses on code and text source metadata. Large runtime assets should be reviewed carefully before any future full asset-level sync.
