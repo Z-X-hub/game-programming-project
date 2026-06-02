@@ -22,15 +22,14 @@ Completed:
 ```text
 Stage 1 - Game Concept and Design
 Stage 2 - Core Playable Game documentation
-```
-
-In progress:
-
-```text
 Stage 2 - staged source-code upload
 ```
 
-Stage 3 testing should begin after the Stage 2 source-code upload is complete.
+Next stage:
+
+```text
+Stage 3 - Testing and Iteration
+```
 
 Stage 1 documents are in:
 
@@ -38,7 +37,7 @@ Stage 1 documents are in:
 final-project/01-concept-design/
 ```
 
-Stage 2 development evidence and source-code staging plan are in:
+Stage 2 development evidence and source code are in:
 
 ```text
 final-project/02-game-development/
@@ -69,7 +68,8 @@ final-project/
 |   |-- RUN_INSTRUCTIONS.md
 |   |-- IMPLEMENTATION_NOTES.md
 |   |-- UPLOAD_NOTES.md
-|   `-- CODE_STAGING_PLAN.md
+|   |-- CODE_STAGING_PLAN.md
+|   `-- source/FoxDash/
 |-- 03-testing/
 |   `-- README.md
 |-- 04-report/
@@ -107,10 +107,10 @@ Run instructions:
 final-project/02-game-development/RUN_INSTRUCTIONS.md
 ```
 
-Source-code staging plan:
+Source code:
 
 ```text
-final-project/02-game-development/CODE_STAGING_PLAN.md
+final-project/02-game-development/source/FoxDash/
 ```
 
 ## Credits And Licences
