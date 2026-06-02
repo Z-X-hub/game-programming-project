@@ -2,15 +2,19 @@
 
 **Fox Dash** is my final Game Programming module project. It replaces the earlier working title **旋转世界 / Rotating World**.
 
-The project will be uploaded in stages so the repository clearly shows planning, development, testing, reflection, and presentation preparation over time.
+The project is uploaded in stages so the repository clearly shows planning, development, testing, reflection, and presentation preparation over time.
 
 ## Current Stage
 
 ```text
 Stage 1 - Game Concept and Design: complete
+Stage 2 - Core Playable Game: complete as development evidence
+Stage 3 - Testing and Iteration: next
 ```
 
 Stage 1 focuses on the idea, design reasoning, realistic scope, tools, assets, legal considerations, accessibility, and development planning.
+
+Stage 2 records the playable Unity vertical slice: project structure, main scene, character-selection implementation, gameplay systems, and run instructions.
 
 ## Folder Structure
 
@@ -26,7 +30,11 @@ final-project/
 |   |-- SCOPE_TOOLS_ASSETS.md
 |   `-- LEGAL_ACCESSIBILITY_SECURITY.md
 |-- 02-game-development/
-|   `-- README.md
+|   |-- README.md
+|   |-- SOURCE_MANIFEST.md
+|   |-- RUN_INSTRUCTIONS.md
+|   |-- IMPLEMENTATION_NOTES.md
+|   `-- UPLOAD_NOTES.md
 |-- 03-testing/
 |   `-- README.md
 |-- 04-report/
@@ -40,7 +48,7 @@ final-project/
 | Assessment Area | Repository Evidence |
 | --- | --- |
 | Game Concept and Design | `01-concept-design/` |
-| Final Game | `02-game-development/` |
+| Final Game / Core Playable Build | `02-game-development/` |
 | Testing and Improvement | `03-testing/` |
 | Report | `04-report/` |
 | Demo / Presentation | `05-presentation/` |
@@ -58,7 +66,13 @@ Fox Dash is a 2D Unity platform runner. The player chooses one of three characte
 | `SOLDIER` | One automatic revive after falling or landing in water | More forgiving route for less experienced players |
 | `ADVENTURER` | Double jump | More flexible movement and recovery |
 
-## Planned Unity Project
+## Unity Project
+
+Local project folder used for development:
+
+```text
+/Users/zhuxuan/Downloads/FoxDash
+```
 
 Unity version:
 
@@ -72,6 +86,12 @@ Main scene:
 Assets/Scenes/Play.unity
 ```
 
+Run instructions are in:
+
+```text
+final-project/02-game-development/RUN_INSTRUCTIONS.md
+```
+
 ## Next Stage
 
-The next stage is `Stage 2 - Final Game / Core Playable Build`. This will focus on uploading or organising the Unity project source and recording playable feature progress through GitHub commits.
+The next stage is `Stage 3 - Testing and Iteration`. This will focus on playtesting, bug records, fixes, before/after improvement notes, and the final stability checklist.
