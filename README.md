@@ -17,18 +17,20 @@ Fox Dash is a 2D Unity platform runner. The player runs through generated platfo
 
 The project is being uploaded in stages to match the assessment criteria and to show steady development through GitHub.
 
-Current completed stages:
+Completed:
 
 ```text
 Stage 1 - Game Concept and Design
-Stage 2 - Core Playable Game evidence
+Stage 2 - Core Playable Game documentation
 ```
 
-Next stage:
+In progress:
 
 ```text
-Stage 3 - Testing and Iteration
+Stage 2 - staged source-code upload
 ```
+
+Stage 3 testing should begin after the Stage 2 source-code upload is complete.
 
 Stage 1 documents are in:
 
@@ -36,7 +38,7 @@ Stage 1 documents are in:
 final-project/01-concept-design/
 ```
 
-Stage 2 development evidence is in:
+Stage 2 development evidence and source-code staging plan are in:
 
 ```text
 final-project/02-game-development/
@@ -66,7 +68,8 @@ final-project/
 |   |-- SOURCE_MANIFEST.md
 |   |-- RUN_INSTRUCTIONS.md
 |   |-- IMPLEMENTATION_NOTES.md
-|   `-- UPLOAD_NOTES.md
+|   |-- UPLOAD_NOTES.md
+|   `-- CODE_STAGING_PLAN.md
 |-- 03-testing/
 |   `-- README.md
 |-- 04-report/
@@ -102,6 +105,12 @@ Run instructions:
 
 ```text
 final-project/02-game-development/RUN_INSTRUCTIONS.md
+```
+
+Source-code staging plan:
+
+```text
+final-project/02-game-development/CODE_STAGING_PLAN.md
 ```
 
 ## Credits And Licences
