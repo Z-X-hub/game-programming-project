@@ -8,13 +8,14 @@ The project is uploaded in stages so the repository clearly shows planning, deve
 
 ```text
 Stage 1 - Game Concept and Design: complete
-Stage 2 - Core Playable Game: complete as development evidence
-Stage 3 - Testing and Iteration: next
+Stage 2 - Core Playable Game documentation: complete
+Stage 2 - Source-code upload: in progress, staged commits required
+Stage 3 - Testing and Iteration: waiting for Stage 2 source upload
 ```
 
 Stage 1 focuses on the idea, design reasoning, realistic scope, tools, assets, legal considerations, accessibility, and development planning.
 
-Stage 2 records the playable Unity vertical slice: project structure, main scene, character-selection implementation, gameplay systems, and run instructions.
+Stage 2 records the playable Unity vertical slice: project structure, main scene, character-selection implementation, gameplay systems, run instructions, and staged source-code upload plan.
 
 ## Folder Structure
 
@@ -34,7 +35,8 @@ final-project/
 |   |-- SOURCE_MANIFEST.md
 |   |-- RUN_INSTRUCTIONS.md
 |   |-- IMPLEMENTATION_NOTES.md
-|   `-- UPLOAD_NOTES.md
+|   |-- UPLOAD_NOTES.md
+|   `-- CODE_STAGING_PLAN.md
 |-- 03-testing/
 |   `-- README.md
 |-- 04-report/
@@ -92,6 +94,12 @@ Run instructions are in:
 final-project/02-game-development/RUN_INSTRUCTIONS.md
 ```
 
-## Next Stage
+Source-code staging plan:
 
-The next stage is `Stage 3 - Testing and Iteration`. This will focus on playtesting, bug records, fixes, before/after improvement notes, and the final stability checklist.
+```text
+final-project/02-game-development/CODE_STAGING_PLAN.md
+```
+
+## Next Action
+
+Complete the Stage 2 source-code upload in staged commits before moving to Stage 3 testing evidence.
