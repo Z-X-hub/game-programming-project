@@ -17,19 +17,19 @@ This board tracks the staged submission plan. Only completed evidence is marked 
 - [x] Document build/run instructions for the main Unity scene.
 - [x] Document main gameplay systems, character selection, and character ability implementation.
 - [x] Create staged source-code upload plan.
+- [x] Stage 2 source upload: Code Stage 2A - base Unity runtime source.
+- [x] Stage 2 source upload: Code Stage 2B - runner world gameplay systems.
+- [x] Stage 2 source upload: Code Stage 2C - character selection source.
+- [x] Stage 2 source upload: Code Stage 2D - character ability implementation.
+- [x] Stage 2 source upload: Code Stage 2E - character visual and UI polish source.
 
 ## In Progress
 
-- [ ] Stage 2 source upload: Code Stage 2A - base Unity runtime source.
-- [ ] Stage 2 source upload: Code Stage 2B - runner world gameplay systems.
-- [ ] Stage 2 source upload: Code Stage 2C - character selection source.
-- [ ] Stage 2 source upload: Code Stage 2D - character ability implementation.
-- [ ] Stage 2 source upload: Code Stage 2E - character visual and UI polish source.
+- [ ] Stage 3: create testing log after actual playtesting sessions.
+- [ ] Stage 3: record bugs, fixes, and gameplay improvements.
 
 ## To Do
 
-- [ ] Stage 3: create testing log after actual playtesting sessions.
-- [ ] Stage 3: record bugs, fixes, and gameplay improvements.
 - [ ] Stage 3: complete final stability checklist.
 - [ ] Stage 4: write final report from completed game and testing evidence.
 - [ ] Stage 5: prepare demo and presentation notes.
@@ -37,14 +37,13 @@ This board tracks the staged submission plan. Only completed evidence is marked 
 
 ## Blocked / Risks
 
-- [ ] Local `gh` authentication is invalid, so full staged source upload through normal Git requires re-authentication.
-- [ ] Large Unity assets should be reviewed before any full push to avoid GitHub file-size warnings.
+- [ ] Large Unity assets should be reviewed before any future full asset-level push to avoid GitHub file-size warnings.
 - [ ] Unity generated folders must remain excluded: `Library`, `Temp`, `Logs`, `UserSettings`, `.vscode`, IDE project files, and build caches.
 
 ## GitHub Issue Tracking
 
 - [x] Stage 1: https://github.com/Z-X-hub/game-programming-project/issues/13
-- [ ] Stage 2 source upload: https://github.com/Z-X-hub/game-programming-project/issues/14
+- [x] Stage 2 source upload: https://github.com/Z-X-hub/game-programming-project/issues/14
 - [ ] Stage 3: https://github.com/Z-X-hub/game-programming-project/issues/15
 - [ ] Stage 4: https://github.com/Z-X-hub/game-programming-project/issues/16
 - [ ] Stage 5: https://github.com/Z-X-hub/game-programming-project/issues/17
