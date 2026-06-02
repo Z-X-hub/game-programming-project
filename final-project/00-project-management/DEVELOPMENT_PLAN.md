@@ -23,11 +23,19 @@ Evidence:
 
 Status: complete.
 
-## Stage 2 - Core Playable Game (Next)
+## Stage 2 - Core Playable Game (Complete As Development Evidence)
 
-Goal: upload and organise the Unity project source, then record visible progress on a playable Fox Dash vertical slice.
+Goal: organise the Unity project source evidence and record visible progress on a playable Fox Dash vertical slice.
 
-Planned evidence:
+Evidence:
+
+- `02-game-development/README.md`
+- `02-game-development/SOURCE_MANIFEST.md`
+- `02-game-development/RUN_INSTRUCTIONS.md`
+- `02-game-development/IMPLEMENTATION_NOTES.md`
+- `02-game-development/UPLOAD_NOTES.md`
+
+Implemented and documented:
 
 - Unity project source structure
 - Main playable scene
@@ -35,11 +43,12 @@ Planned evidence:
 - Three character abilities
 - Platform generation and obstacle flow
 - Score, coins, UI feedback, audio, and animation notes
-- Build or run instructions
+- Build/run instructions
+- Unity generated-folder exclusions
 
-Status: next stage.
+Status: complete as Stage 2 development evidence.
 
-## Stage 3 - Testing and Iteration
+## Stage 3 - Testing and Iteration (Next)
 
 Goal: prove that the game was tested, debugged, and improved over time.
 
@@ -51,7 +60,7 @@ Planned evidence:
 - Stability checklist
 - Known limitations
 
-Status: not started.
+Status: next stage.
 
 ## Stage 4 - Report
 
