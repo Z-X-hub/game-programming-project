@@ -17,16 +17,29 @@ Fox Dash is a 2D Unity platform runner. The player runs through generated platfo
 
 The project is being uploaded in stages to match the assessment criteria and to show steady development through GitHub.
 
-Current completed stage:
+Current completed stages:
 
 ```text
 Stage 1 - Game Concept and Design
+Stage 2 - Core Playable Game evidence
+```
+
+Next stage:
+
+```text
+Stage 3 - Testing and Iteration
 ```
 
 Stage 1 documents are in:
 
 ```text
 final-project/01-concept-design/
+```
+
+Stage 2 development evidence is in:
+
+```text
+final-project/02-game-development/
 ```
 
 Project management and Kanban tracking are in:
@@ -49,7 +62,11 @@ final-project/
 |   |-- SCOPE_TOOLS_ASSETS.md
 |   `-- LEGAL_ACCESSIBILITY_SECURITY.md
 |-- 02-game-development/
-|   `-- README.md
+|   |-- README.md
+|   |-- SOURCE_MANIFEST.md
+|   |-- RUN_INSTRUCTIONS.md
+|   |-- IMPLEMENTATION_NOTES.md
+|   `-- UPLOAD_NOTES.md
 |-- 03-testing/
 |   `-- README.md
 |-- 04-report/
@@ -58,13 +75,13 @@ final-project/
     `-- README.md
 ```
 
-## Planned Character Roles
+## Character Roles
 
 - `PLAYER` - faster movement and running-style animation
 - `SOLDIER` - one automatic revive after falling or landing in water
 - `ADVENTURER` - double jump
 
-## Controls Planned For The Final Game
+## Controls
 
 - Move: `A / D` or left/right arrow keys
 - Jump: `Space`, `W`, or up arrow
@@ -81,9 +98,15 @@ Main scene:
 Assets/Scenes/Play.unity
 ```
 
+Run instructions:
+
+```text
+final-project/02-game-development/RUN_INSTRUCTIONS.md
+```
+
 ## Credits And Licences
 
-Fox Dash is based on RedRunner-derived open-source code and assets, with additional character assets from Kenney Platformer Characters. Stage 1 legal and asset planning notes are in:
+Fox Dash uses RedRunner as an open-source reference and retains or adapts selected MIT-licensed material where appropriate. It also uses Kenney Platformer Characters for character-art reference/source material. Stage 1 legal and asset planning notes are in:
 
 ```text
 final-project/01-concept-design/LEGAL_ACCESSIBILITY_SECURITY.md
