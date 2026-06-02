@@ -5,77 +5,68 @@ This repository records my work for the Game Programming module. It is used to s
 ## Repository Structure
 
 - `class-exercises/` - classroom exercises and practice Unity projects
-- `final-project/` - final course project planning, documentation, development evidence, and final game material
+- `final-project/` - final course project planning, documentation, development evidence, testing evidence, report evidence, and final game material
 
 ## Final Course Project: Fox Dash
 
-The final project is now **Fox Dash**, replacing the earlier working title **旋转世界 / Rotating World**.
+The final project is now **Fox Dash**, replacing the earlier working title **Rotating World**.
 
 Fox Dash is a 2D Unity platform runner. The player runs through generated platform sections, collects coins and chests, avoids hazards, and chooses between three playable characters with different strengths.
 
 ## Current Submission Stage
 
-The project is being uploaded in stages to match the assessment criteria and to show steady development through GitHub.
+The project is being uploaded and managed in smaller stages that match the assessment criteria.
 
 Completed:
 
 ```text
 Stage 1 - Game Concept and Design
-Stage 2 - Core Playable Game documentation
-Stage 2 - staged source-code upload
+Stage 2 - Core Playable Game source evidence
 ```
 
-Next stage:
+Current:
 
 ```text
-Stage 3 - Testing and Iteration
+Stage 3A - Playable stability and controls testing
+Professionalism - repository organisation and evidence audit
 ```
 
-Stage 1 documents are in:
+Next:
 
 ```text
-final-project/01-concept-design/
+Stage 3B - Character ability and balance testing
+Stage 3C - Level flow, difficulty, and feedback iteration
+Stage 3D - Bug fixing and regression record
+Stage 4A-4C - Report evidence
 ```
 
-Stage 2 development evidence and source code are in:
+Deferred:
 
 ```text
-final-project/02-game-development/
+Demo / Presentation
 ```
 
-Project management and Kanban tracking are in:
+## Assessment Evidence Map
+
+| Assessment Area | Repository Evidence |
+| --- | --- |
+| Game Concept and Design | `final-project/01-concept-design/` |
+| Final Game / Playable Build | `final-project/02-game-development/` |
+| Testing and Improvement | `final-project/03-testing/` |
+| Report | `final-project/04-report/` |
+| Professionalism | `final-project/00-project-management/`, Issues, README files, commit history |
+| Presentation | `final-project/05-presentation/`, deferred for now |
+
+Detailed process breakdown:
+
+```text
+final-project/00-project-management/ASSESSMENT_PROCESS_BREAKDOWN.md
+```
+
+Project management and Kanban tracking:
 
 ```text
 final-project/00-project-management/
-```
-
-## Final Project Folder Layout
-
-```text
-final-project/
-|-- README.md
-|-- 00-project-management/
-|   |-- DEVELOPMENT_PLAN.md
-|   `-- KANBAN.md
-|-- 01-concept-design/
-|   |-- GAME_CONCEPT.md
-|   |-- CHARACTER_DESIGN.md
-|   |-- SCOPE_TOOLS_ASSETS.md
-|   `-- LEGAL_ACCESSIBILITY_SECURITY.md
-|-- 02-game-development/
-|   |-- README.md
-|   |-- SOURCE_MANIFEST.md
-|   |-- RUN_INSTRUCTIONS.md
-|   |-- IMPLEMENTATION_NOTES.md
-|   |-- UPLOAD_NOTES.md
-|   |-- CODE_STAGING_PLAN.md
-|   `-- source/FoxDash/
-|-- 03-testing/
-|   `-- README.md
-|-- 04-report/
-|   `-- README.md
-`-- 05-presentation/
-    `-- README.md
 ```
 
 ## Character Roles

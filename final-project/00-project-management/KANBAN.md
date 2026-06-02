@@ -2,38 +2,45 @@
 
 Updated: 2026-06-02
 
-This board tracks the staged submission plan. Only completed evidence is marked as done.
+This board tracks the staged submission plan against the module assessment criteria. Only completed evidence is marked as done.
+
+Presentation/demo preparation is deferred for now, so the current board focuses on the game, testing, report evidence, and professionalism.
 
 ## Done
 
-- [x] Replace previous working title `旋转世界 / Rotating World` with `Fox Dash`.
+- [x] Replace previous working title `Rotating World` with `Fox Dash`.
 - [x] Create a clear staged `final-project` folder structure.
-- [x] Complete Stage 1 concept and design upload.
-- [x] Document the core game idea and vertical slice scope.
-- [x] Document character roles: `PLAYER`, `SOLDIER`, and `ADVENTURER`.
-- [x] Document tools, assets, legal, accessibility, ethics, and security considerations.
-- [x] Complete Stage 2 documentation upload.
+- [x] Stage 1A: document clear game idea and intended player experience.
+- [x] Stage 1B: document design principles, character roles, originality, and realistic scope.
+- [x] Stage 1C: document tools, assets, legal, accessibility, ethics, and security considerations.
+- [x] Stage 2A: upload base Unity runtime source.
+- [x] Stage 2B: upload runner world gameplay systems.
+- [x] Stage 2C: upload character selection source.
+- [x] Stage 2D: upload character ability implementation.
+- [x] Stage 2E: upload character visual and UI polish source.
 - [x] Document Unity source structure and generated-folder exclusions.
 - [x] Document build/run instructions for the main Unity scene.
 - [x] Document main gameplay systems, character selection, and character ability implementation.
-- [x] Create staged source-code upload plan.
-- [x] Stage 2 source upload: Code Stage 2A - base Unity runtime source.
-- [x] Stage 2 source upload: Code Stage 2B - runner world gameplay systems.
-- [x] Stage 2 source upload: Code Stage 2C - character selection source.
-- [x] Stage 2 source upload: Code Stage 2D - character ability implementation.
-- [x] Stage 2 source upload: Code Stage 2E - character visual and UI polish source.
+- [x] Create assessment process breakdown.
 
 ## In Progress
 
-- [ ] Stage 3: create testing log after actual playtesting sessions.
-- [ ] Stage 3: record bugs, fixes, and gameplay improvements.
+- [ ] Stage 3A: playable stability and controls testing. Issue #15.
+- [ ] Professionalism: repository organisation and evidence audit. Issue #23.
 
 ## To Do
 
-- [ ] Stage 3: complete final stability checklist.
-- [ ] Stage 4: write final report from completed game and testing evidence.
-- [ ] Stage 5: prepare demo and presentation notes.
+- [ ] Stage 3B: character ability and balance testing. Issue #18.
+- [ ] Stage 3C: level flow, difficulty, and feedback iteration. Issue #19.
+- [ ] Stage 3D: bug fixing and regression record. Issue #20.
+- [ ] Stage 4A: report design and technical decisions. Issue #16.
+- [ ] Stage 4B: report testing, limitations, and reflection. Issue #21.
+- [ ] Stage 4C: report legal, accessibility, and final completeness check. Issue #22.
 - [ ] Final check: clean repository structure and verify submission instructions.
+
+## Deferred
+
+- [ ] Demo and presentation. Issue #17.
 
 ## Blocked / Risks
 
@@ -44,6 +51,12 @@ This board tracks the staged submission plan. Only completed evidence is marked 
 
 - [x] Stage 1: https://github.com/Z-X-hub/game-programming-project/issues/13
 - [x] Stage 2 source upload: https://github.com/Z-X-hub/game-programming-project/issues/14
-- [ ] Stage 3: https://github.com/Z-X-hub/game-programming-project/issues/15
-- [ ] Stage 4: https://github.com/Z-X-hub/game-programming-project/issues/16
-- [ ] Stage 5: https://github.com/Z-X-hub/game-programming-project/issues/17
+- [ ] Stage 3A: https://github.com/Z-X-hub/game-programming-project/issues/15
+- [ ] Stage 3B: https://github.com/Z-X-hub/game-programming-project/issues/18
+- [ ] Stage 3C: https://github.com/Z-X-hub/game-programming-project/issues/19
+- [ ] Stage 3D: https://github.com/Z-X-hub/game-programming-project/issues/20
+- [ ] Stage 4A: https://github.com/Z-X-hub/game-programming-project/issues/16
+- [ ] Stage 4B: https://github.com/Z-X-hub/game-programming-project/issues/21
+- [ ] Stage 4C: https://github.com/Z-X-hub/game-programming-project/issues/22
+- [ ] Professionalism: https://github.com/Z-X-hub/game-programming-project/issues/23
+- [ ] Deferred presentation: https://github.com/Z-X-hub/game-programming-project/issues/17

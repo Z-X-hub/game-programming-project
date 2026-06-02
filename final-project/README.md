@@ -1,21 +1,22 @@
 # Final Project: Fox Dash
 
-**Fox Dash** is my final Game Programming module project. It replaces the earlier working title **旋转世界 / Rotating World**.
+**Fox Dash** is my final Game Programming module project. It replaces the earlier working title **Rotating World**.
 
-The project is uploaded in stages so the repository clearly shows planning, development, testing, reflection, and presentation preparation over time.
+The project is uploaded in stages so the repository clearly shows planning, development, testing, reflection, and professional working practice over time.
+
+Presentation/demo preparation is deferred for now. The current focus is game testing, report evidence, and repository professionalism.
 
 ## Current Stage
 
 ```text
 Stage 1 - Game Concept and Design: complete
-Stage 2 - Core Playable Game documentation: complete
-Stage 2 - Source-code upload: complete in staged commits
-Stage 3 - Testing and Iteration: next
+Stage 2 - Core Playable Game source evidence: complete
+Stage 3A - Playable stability and controls testing: active
+Stage 3B-3D - Testing, balance, iteration, and bug evidence: next
+Stage 4A-4C - Report evidence: planned after testing
+Professionalism - ongoing
+Presentation - deferred
 ```
-
-Stage 1 focuses on the idea, design reasoning, realistic scope, tools, assets, legal considerations, accessibility, and development planning.
-
-Stage 2 records the playable Unity vertical slice: project structure, main scene, character-selection implementation, gameplay systems, run instructions, and staged source-code commits.
 
 ## Folder Structure
 
@@ -23,6 +24,7 @@ Stage 2 records the playable Unity vertical slice: project structure, main scene
 final-project/
 |-- README.md
 |-- 00-project-management/
+|   |-- ASSESSMENT_PROCESS_BREAKDOWN.md
 |   |-- DEVELOPMENT_PLAN.md
 |   `-- KANBAN.md
 |-- 01-concept-design/
@@ -50,12 +52,12 @@ final-project/
 
 | Assessment Area | Repository Evidence |
 | --- | --- |
-| Game Concept and Design | `01-concept-design/` |
-| Final Game / Core Playable Build | `02-game-development/` |
-| Testing and Improvement | `03-testing/` |
-| Report | `04-report/` |
-| Demo / Presentation | `05-presentation/` |
-| Professionalism | `00-project-management/`, commit history, Kanban updates |
+| Game Concept and Design | `01-concept-design/`, Issue #13 |
+| Final Game / Playable Build | `02-game-development/`, Issue #14 |
+| Testing and Improvement | `03-testing/`, Issues #15 and #18-#20 |
+| Report | `04-report/`, Issues #16 and #21-#22 |
+| Professionalism | `00-project-management/`, commit history, README files, Issue #23 |
+| Demo / Presentation | `05-presentation/`, Issue #17, deferred for now |
 
 ## Game Summary
 
@@ -103,4 +105,4 @@ final-project/02-game-development/source/FoxDash/
 
 ## Next Stage
 
-The next stage is `Stage 3 - Testing and Iteration`. This will focus on playtesting, bug records, fixes, before/after improvement notes, and the final stability checklist.
+The next active stage is `Stage 3A - Playable stability and controls testing`. This will produce actual playtesting notes, bug records, and stability evidence before the report is written.
