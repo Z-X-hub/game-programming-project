@@ -4,6 +4,14 @@ Updated: 2026-06-02
 
 This manifest records the Fox Dash Unity source structure used for the Stage 2 playable vertical slice.
 
+## Repository Source Location
+
+The staged source code is uploaded under:
+
+```text
+final-project/02-game-development/source/FoxDash/
+```
+
 ## Local Unity Project
 
 ```text
@@ -22,6 +30,16 @@ Main scene:
 Assets/Scenes/Play.unity
 ```
 
+## Completed Source Commit Stages
+
+```text
+53a5ec3a7f7a2e1ca02e7b72ae67b15fc808e541 - Stage 2A: base Unity runtime source
+c3cb0eb899199b7de32f77aae2308d0989ff86e6 - Stage 2B: runner world gameplay systems
+b02bac92951d8e5a3fdf5975e92d5baeb65d4324 - Stage 2C: character selection source
+c18155784c1e8cfeb90e1205452aedb75e957410 - Stage 2D: character ability implementation
+aaca69d84b36bc3ad70a3ef0e57d8f58c5d8025a - Stage 2E: character visual and UI polish source
+```
+
 ## Clean Source Check
 
 A clean source package was prepared locally with generated folders excluded.
@@ -33,9 +51,17 @@ Source files after exclusions: 1527
 Key text/source files counted: 221
 ```
 
-The clean package excludes Unity cache folders and generated IDE files. This repository records the Stage 2 evidence through readable manifests, implementation notes, and run instructions.
+## Uploaded Source Areas
 
-## Included Source Areas
+```text
+source/FoxDash/Assets/Scripts/
+source/FoxDash/Packages/
+source/FoxDash/ProjectSettings/
+```
+
+The staged upload focuses on readable source code and text source metadata. It does not include every large runtime asset.
+
+## Included Local Source Areas
 
 ```text
 Assets/Animations/
@@ -129,4 +155,4 @@ The local project contains a large water sound asset:
 Assets/Sounds/Enemies/Water.wav - about 85 MB
 ```
 
-This explains why the clean source package is close to GitHub's normal single-file warning threshold. The file is treated as an asset/source dependency for the Unity project, but generated archives are not committed as repository evidence.
+This explains why the clean source package is close to GitHub's normal single-file warning threshold. The staged source upload focuses on code and text source metadata, while large runtime assets can be handled separately if required.
