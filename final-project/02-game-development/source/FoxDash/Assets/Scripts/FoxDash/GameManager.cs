@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +13,17 @@ using FoxDash.TerrainGeneration;
 
 namespace FoxDash
 {
+    public enum GameDeathReason
+    {
+        Unknown,
+        Fall,
+        Water,
+        Spike,
+        Saw,
+        Mace,
+        Obstacle
+    }
+
     public sealed class GameManager : MonoBehaviour
     {
         public delegate void AudioEnabledHandler(bool active);
@@ -55,6 +66,10 @@ namespace FoxDash
         private float m_HighScore = 0f;
         private float m_LastScore = 0f;
         private float m_Score = 0f;
+        private int m_RoundStartCoinCount = 0;
+        private int m_LastRoundCoinCount = 0;
+        private bool m_LastRunWasHighScore = false;
+        private GameDeathReason m_DeathReason = GameDeathReason.Unknown;
 
         private bool m_GameStarted = false;
         private bool m_GameRunning = false;
@@ -90,6 +105,70 @@ namespace FoxDash
                 return m_AudioEnabled;
             }
         }
+
+        public float currentScore
+        {
+            get
+            {
+                return m_Score;
+            }
+        }
+
+        public float lastScore
+        {
+            get
+            {
+                return m_LastScore;
+            }
+        }
+
+        public float highScore
+        {
+            get
+            {
+                return m_HighScore;
+            }
+        }
+
+        public int totalCoins
+        {
+            get
+            {
+                return m_Coin.Value;
+            }
+        }
+
+        public int currentRoundCoins
+        {
+            get
+            {
+                return Mathf.Max(0, m_Coin.Value - m_RoundStartCoinCount);
+            }
+        }
+
+        public int lastRoundCoins
+        {
+            get
+            {
+                return m_LastRoundCoinCount;
+            }
+        }
+
+        public bool lastRunWasHighScore
+        {
+            get
+            {
+                return m_LastRunWasHighScore;
+            }
+        }
+
+        public GameDeathReason deathReason
+        {
+            get
+            {
+                return m_DeathReason;
+            }
+        }
         #endregion
 
         void Awake()
@@ -103,6 +182,7 @@ namespace FoxDash
             m_Score = 0f;
 
             m_Coin.Value = PlayerPrefs.GetInt(CoinPrefsKey, 0);
+            m_RoundStartCoinCount = m_Coin.Value;
             SetAudioEnabled(PlayerPrefs.GetInt(AudioEnabledPrefsKey, 1) == 1);
             m_LastScore = PlayerPrefs.GetFloat(LastScorePrefsKey, 0f);
             m_HighScore = PlayerPrefs.GetFloat(HighScorePrefsKey, 0f);
@@ -130,10 +210,13 @@ namespace FoxDash
         IEnumerator DeathCrt()
         {
             m_LastScore = m_Score;
+            m_LastRoundCoinCount = currentRoundCoins;
+            m_LastRunWasHighScore = m_Score > m_HighScore;
             if (m_Score > m_HighScore)
             {
                 m_HighScore = m_Score;
             }
+            SaveProgress();
             if (OnScoreChanged != null)
             {
                 OnScoreChanged(m_Score, m_HighScore, m_LastScore);
@@ -238,11 +321,11 @@ namespace FoxDash
             {
                 m_HighScore = m_Score;
             }
-            PlayerPrefs.SetInt(CoinPrefsKey, m_Coin.Value);
-            PlayerPrefs.SetInt(AudioEnabledPrefsKey, m_AudioEnabled ? 1 : 0);
-            PlayerPrefs.SetFloat(LastScorePrefsKey, m_Score);
-            PlayerPrefs.SetFloat(HighScorePrefsKey, m_HighScore);
-            PlayerPrefs.Save();
+            if (m_GameStarted && m_Score > 0f)
+            {
+                m_LastScore = m_Score;
+            }
+            SaveProgress();
         }
 
         public void ExitGame()
@@ -273,6 +356,14 @@ namespace FoxDash
         /// </summary>
         public void StartGame()
         {
+            if (!m_GameStarted)
+            {
+                m_Score = 0f;
+                m_RoundStartCoinCount = m_Coin.Value;
+                m_LastRoundCoinCount = 0;
+                m_LastRunWasHighScore = false;
+                m_DeathReason = GameDeathReason.Unknown;
+            }
             m_GameStarted = true;
             ResumeGame();
         }
@@ -304,6 +395,12 @@ namespace FoxDash
             StopGame();
         }
 
+        public void ReturnHome()
+        {
+            Reset();
+            Init();
+        }
+
         public void RespawnMainCharacter()
         {
             RespawnCharacter(m_MainCharacter);
@@ -331,10 +428,54 @@ namespace FoxDash
         public void Reset()
         {
             m_Score = 0f;
+            m_RoundStartCoinCount = m_Coin.Value;
+            m_LastRoundCoinCount = 0;
+            m_LastRunWasHighScore = false;
+            m_DeathReason = GameDeathReason.Unknown;
             if (OnReset != null)
             {
                 OnReset();
             }
+        }
+
+        public void SetDeathReason(GameDeathReason reason)
+        {
+            if (reason == GameDeathReason.Unknown)
+            {
+                return;
+            }
+
+            m_DeathReason = reason;
+        }
+
+        public string GetDeathReasonText()
+        {
+            switch (m_DeathReason)
+            {
+                case GameDeathReason.Fall:
+                    return "You fell off the platforms.";
+                case GameDeathReason.Water:
+                    return "You landed in the water.";
+                case GameDeathReason.Spike:
+                    return "You hit the spikes.";
+                case GameDeathReason.Saw:
+                    return "You touched a saw blade.";
+                case GameDeathReason.Mace:
+                    return "You were crushed by a mace.";
+                case GameDeathReason.Obstacle:
+                    return "You hit an obstacle.";
+                default:
+                    return "The run ended.";
+            }
+        }
+
+        private void SaveProgress()
+        {
+            PlayerPrefs.SetInt(CoinPrefsKey, m_Coin.Value);
+            PlayerPrefs.SetInt(AudioEnabledPrefsKey, m_AudioEnabled ? 1 : 0);
+            PlayerPrefs.SetFloat(LastScorePrefsKey, m_LastScore);
+            PlayerPrefs.SetFloat(HighScorePrefsKey, m_HighScore);
+            PlayerPrefs.Save();
         }
 
         public void ShareOnTwitter()

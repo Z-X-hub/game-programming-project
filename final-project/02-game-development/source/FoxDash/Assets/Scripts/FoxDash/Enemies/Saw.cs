@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -81,6 +81,9 @@ namespace FoxDash.Enemies
 		public override void Kill (Character target)
 		{
 			target.Die (true);
+			if (target.IsDead.Value && GameManager.Singleton != null) {
+				GameManager.Singleton.SetDeathReason ( GameDeathReason.Saw );
+			}
 		}
 
 	}

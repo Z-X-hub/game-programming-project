@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +24,7 @@ namespace FoxDash.UI
 		private const string CoverResourcePath = "FoxDash/HomeCover/fox_dash_cover";
 		private Font m_SelectorFont;
 		private Transform m_SelectorRoot;
+		private Transform m_TutorialRoot;
 		private Transform m_HomePolishRoot;
 		private bool m_ButtonActionsReady = false;
 
@@ -33,6 +34,7 @@ namespace FoxDash.UI
 			HideLegacyHomeObjects ();
 			CreateHomePolish ();
 			CreateCharacterSelector ();
+			CreateTutorialPanel ();
 			LayoutHomeButtons ();
 			ApplySelectedRoleToCharacter ();
         }
@@ -97,14 +99,19 @@ namespace FoxDash.UI
 
 		private void CreateCharacterSelector ()
 		{
+			if ( m_SelectorRoot == null )
+			{
+				m_SelectorRoot = FindGeneratedRoot ( "Character Selector" );
+			}
 			if ( m_SelectorRoot != null )
 			{
+				m_SelectorRoot.gameObject.SetActive ( true );
 				return;
 			}
 
 			m_SelectorFont = ResolveSelectorFont ();
 			GameObject root = new GameObject ( "Character Selector", typeof ( RectTransform ), typeof ( Image ) );
-			root.transform.SetParent ( transform, false );
+			root.transform.SetParent ( ScreenContentParent, false );
 			m_SelectorRoot = root.transform;
 
 			RectTransform rootRect = root.GetComponent<RectTransform> ();
@@ -127,6 +134,102 @@ namespace FoxDash.UI
 			CreateRoleButton ( root.transform, PlayerCharacterRole.Knight, 0f, -12f );
 			CreateRoleButton ( root.transform, PlayerCharacterRole.Monkey, 0f, -67f );
 			RefreshCharacterButtons ();
+		}
+
+		private void CreateTutorialPanel ()
+		{
+			if ( m_TutorialRoot == null )
+			{
+				m_TutorialRoot = FindGeneratedRoot ( "Quick Tutorial Panel" );
+			}
+			if ( m_TutorialRoot != null )
+			{
+				m_TutorialRoot.gameObject.SetActive ( true );
+				return;
+			}
+
+			if ( m_SelectorFont == null )
+			{
+				m_SelectorFont = ResolveSelectorFont ();
+			}
+
+			GameObject root = new GameObject ( "Quick Tutorial Panel", typeof ( RectTransform ), typeof ( Image ) );
+			root.transform.SetParent ( ScreenContentParent, false );
+			m_TutorialRoot = root.transform;
+
+			RectTransform rootRect = root.GetComponent<RectTransform> ();
+			rootRect.anchorMin = new Vector2 ( 0f, 0f );
+			rootRect.anchorMax = new Vector2 ( 0f, 0f );
+			rootRect.pivot = new Vector2 ( 0f, 0f );
+			rootRect.sizeDelta = new Vector2 ( 420f, 104f );
+			rootRect.anchoredPosition = new Vector2 ( 22f, 18f );
+
+			Image panel = root.GetComponent<Image> ();
+			panel.color = new Color ( 0.02f, 0.08f, 0.1f, 0.58f );
+			panel.raycastTarget = false;
+
+			Shadow panelShadow = root.AddComponent<Shadow> ();
+			panelShadow.effectColor = new Color ( 0f, 0f, 0f, 0.28f );
+			panelShadow.effectDistance = new Vector2 ( 0f, -4f );
+
+			CreateTutorialTitle ( root.transform );
+			CreateTutorialText ( root.transform );
+		}
+
+		private void CreateTutorialTitle ( Transform parent )
+		{
+			GameObject titleObject = new GameObject ( "Tutorial Title", typeof ( RectTransform ), typeof ( Text ) );
+			titleObject.transform.SetParent ( parent, false );
+
+			RectTransform rectTransform = titleObject.GetComponent<RectTransform> ();
+			rectTransform.anchorMin = new Vector2 ( 0f, 1f );
+			rectTransform.anchorMax = new Vector2 ( 1f, 1f );
+			rectTransform.pivot = new Vector2 ( 0.5f, 1f );
+			rectTransform.offsetMin = new Vector2 ( 14f, -26f );
+			rectTransform.offsetMax = new Vector2 ( -14f, -6f );
+
+			Text title = titleObject.GetComponent<Text> ();
+			title.font = m_SelectorFont;
+			title.text = "QUICK GUIDE";
+			title.fontSize = 15;
+			title.fontStyle = FontStyle.Bold;
+			title.alignment = TextAnchor.MiddleLeft;
+			title.color = new Color ( 1f, 0.95f, 0.62f, 1f );
+			title.raycastTarget = false;
+
+			Shadow shadow = titleObject.AddComponent<Shadow> ();
+			shadow.effectColor = new Color ( 0f, 0f, 0f, 0.45f );
+			shadow.effectDistance = new Vector2 ( 1f, -1f );
+		}
+
+		private void CreateTutorialText ( Transform parent )
+		{
+			GameObject textObject = new GameObject ( "Tutorial Text", typeof ( RectTransform ), typeof ( Text ) );
+			textObject.transform.SetParent ( parent, false );
+
+			RectTransform rectTransform = textObject.GetComponent<RectTransform> ();
+			rectTransform.anchorMin = Vector2.zero;
+			rectTransform.anchorMax = Vector2.one;
+			rectTransform.offsetMin = new Vector2 ( 14f, 10f );
+			rectTransform.offsetMax = new Vector2 ( -14f, -30f );
+
+			Text text = textObject.GetComponent<Text> ();
+			text.font = m_SelectorFont;
+			text.text = "Run forward, jump gaps, collect coins, avoid traps.\nPLAYER: faster run  |  SOLDIER: 1 revive  |  ADVENTURER: double jump\nMove A/D or arrows  |  Jump Space/W/up  |  Roll Shift/S  |  Pause Esc";
+			text.fontSize = 12;
+			text.fontStyle = FontStyle.Bold;
+			text.alignment = TextAnchor.UpperLeft;
+			text.horizontalOverflow = HorizontalWrapMode.Wrap;
+			text.verticalOverflow = VerticalWrapMode.Overflow;
+			text.resizeTextForBestFit = true;
+			text.resizeTextMinSize = 9;
+			text.resizeTextMaxSize = 12;
+			text.color = Color.white;
+			text.raycastTarget = false;
+
+			Shadow shadow = textObject.AddComponent<Shadow> ();
+			shadow.effectColor = new Color ( 0f, 0f, 0f, 0.35f );
+			shadow.effectDistance = new Vector2 ( 1f, -1f );
 		}
 
 		private void LayoutHomeButtons ()
@@ -354,8 +457,13 @@ namespace FoxDash.UI
 
 		private void CreateHomePolish ()
 		{
+			if ( m_HomePolishRoot == null )
+			{
+				m_HomePolishRoot = FindGeneratedRoot ( "Fox Dash Home Polish" );
+			}
 			if ( m_HomePolishRoot != null )
 			{
+				m_HomePolishRoot.gameObject.SetActive ( true );
 				return;
 			}
 
@@ -365,7 +473,7 @@ namespace FoxDash.UI
 			}
 
 			GameObject root = new GameObject ( "Fox Dash Home Polish", typeof ( RectTransform ) );
-			root.transform.SetParent ( transform, false );
+			root.transform.SetParent ( ScreenContentParent, false );
 			m_HomePolishRoot = root.transform;
 
 			RectTransform rectTransform = root.GetComponent<RectTransform> ();
@@ -611,6 +719,20 @@ namespace FoxDash.UI
 			return false;
 		}
 
+		private Transform FindGeneratedRoot ( string rootName )
+		{
+			Transform[] children = GetComponentsInChildren<Transform> ( true );
+			for ( int i = 0; i < children.Length; i++ )
+			{
+				if ( children [ i ] != null && children [ i ].name == rootName )
+				{
+					return children [ i ];
+				}
+			}
+
+			return null;
+		}
+
 		private void ApplySelectedRoleToCharacter ()
 		{
 			RedCharacter character = FindObjectOfType<RedCharacter> ( true );
@@ -624,13 +746,23 @@ namespace FoxDash.UI
         {
 			if ( open )
 			{
+				SetGeneratedChildActive ( "Fox Dash Home Polish", true );
+				SetGeneratedChildActive ( "Character Selector", true );
+				SetGeneratedChildActive ( "Quick Tutorial Panel", true );
 				SetupButtonActions ();
 				HideLegacyHomeObjects ();
 				CreateHomePolish ();
 				CreateCharacterSelector ();
+				CreateTutorialPanel ();
 				LayoutHomeButtons ();
 				RefreshCharacterButtons ();
 				ApplySelectedRoleToCharacter ();
+			}
+			else
+			{
+				SetGeneratedChildActive ( "Fox Dash Home Polish", false );
+				SetGeneratedChildActive ( "Character Selector", false );
+				SetGeneratedChildActive ( "Quick Tutorial Panel", false );
 			}
 
             base.UpdateScreenStatus(open);

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,6 +17,27 @@ namespace FoxDash.UI
 		protected CanvasGroup m_CanvasGroup;
 
         public bool IsOpen { get; set; }
+
+		protected Transform ScreenContentParent
+		{
+			get
+			{
+				return m_CanvasGroup != null ? m_CanvasGroup.transform : transform;
+			}
+		}
+
+		protected void SetGeneratedChildActive ( string childName, bool active )
+		{
+			Transform[] children = GetComponentsInChildren<Transform> ( true );
+			for ( int i = 0; i < children.Length; i++ )
+			{
+				Transform child = children [ i ];
+				if ( child != null && child.name == childName )
+				{
+					child.gameObject.SetActive ( active );
+				}
+			}
+		}
 
         public virtual void UpdateScreenStatus(bool open)
         {

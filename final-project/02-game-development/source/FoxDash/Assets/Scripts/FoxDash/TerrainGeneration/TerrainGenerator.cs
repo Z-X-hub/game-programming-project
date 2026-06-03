@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -222,29 +222,37 @@ namespace FoxDash.TerrainGeneration
 		/// </summary>
 		public virtual void Remove ()
 		{
-			List<Block> blocksToRemove = new List<Block> ();
+			List<Vector3> blockKeysToRemove = new List<Vector3> ();
 			foreach ( KeyValuePair<Vector3, Block> block in m_Blocks )
 			{
-				if ( block.Value.transform.position.x - m_CurrentX > m_DestroyRange )
+				if ( block.Value == null )
 				{
-					blocksToRemove.Add ( block.Value );
+					blockKeysToRemove.Add ( block.Key );
+				}
+				else if ( block.Value.transform.position.x - m_CurrentX > m_DestroyRange )
+				{
+					blockKeysToRemove.Add ( block.Key );
 				}
 			}
-			List<BackgroundBlock> backgroundBlocksToRemove = new List<BackgroundBlock> ();
+			List<Vector3> backgroundBlockKeysToRemove = new List<Vector3> ();
 			foreach ( KeyValuePair<Vector3, BackgroundBlock> block in m_BackgroundBlocks )
 			{
-				if ( block.Value.transform.position.x - m_FathestBackgroundX > m_DestroyRange )
+				if ( block.Value == null )
 				{
-					backgroundBlocksToRemove.Add ( block.Value );
+					backgroundBlockKeysToRemove.Add ( block.Key );
+				}
+				else if ( block.Value.transform.position.x - m_FathestBackgroundX > m_DestroyRange )
+				{
+					backgroundBlockKeysToRemove.Add ( block.Key );
 				}
 			}
-			for ( int i = 0; i < blocksToRemove.Count; i++ )
+			for ( int i = 0; i < blockKeysToRemove.Count; i++ )
 			{
-				RemoveBlock ( blocksToRemove [ i ] );
+				RemoveBlockAtKey ( blockKeysToRemove [ i ] );
 			}
-			for ( int i = 0; i < backgroundBlocksToRemove.Count; i++ )
+			for ( int i = 0; i < backgroundBlockKeysToRemove.Count; i++ )
 			{
-				RemoveBackgroundBlock ( backgroundBlocksToRemove [ i ] );
+				RemoveBackgroundBlockAtKey ( backgroundBlockKeysToRemove [ i ] );
 			}
 		}
 
@@ -253,43 +261,109 @@ namespace FoxDash.TerrainGeneration
 		/// </summary>
 		public virtual void RemoveAll ()
 		{
-			List<Block> blocksToRemove = new List<Block> ();
+			List<Vector3> blockKeysToRemove = new List<Vector3> ();
 			foreach ( KeyValuePair<Vector3, Block> block in m_Blocks )
 			{
-				blocksToRemove.Add ( block.Value );
+				blockKeysToRemove.Add ( block.Key );
 			}
-			List<BackgroundBlock> backgroundBlocksToRemove = new List<BackgroundBlock> ();
+			List<Vector3> backgroundBlockKeysToRemove = new List<Vector3> ();
 			foreach ( KeyValuePair<Vector3, BackgroundBlock> block in m_BackgroundBlocks )
 			{
-				backgroundBlocksToRemove.Add ( block.Value );
+				backgroundBlockKeysToRemove.Add ( block.Key );
 			}
-			for ( int i = 0; i < blocksToRemove.Count; i++ )
+			for ( int i = 0; i < blockKeysToRemove.Count; i++ )
 			{
-				RemoveBlock ( blocksToRemove [ i ] );
+				RemoveBlockAtKey ( blockKeysToRemove [ i ] );
 			}
-			for ( int i = 0; i < backgroundBlocksToRemove.Count; i++ )
+			for ( int i = 0; i < backgroundBlockKeysToRemove.Count; i++ )
 			{
-				RemoveBackgroundBlock ( backgroundBlocksToRemove [ i ] );
+				RemoveBackgroundBlockAtKey ( backgroundBlockKeysToRemove [ i ] );
 			}
 		}
 
 		public virtual void RemoveBlockAt ( Vector3 position )
 		{
-			RemoveBlock ( m_Blocks [ position ] );
+			RemoveBlockAtKey ( position );
 		}
 
 		public virtual void RemoveBlock ( Block block )
 		{
-			block.OnRemove ( this );
-			Destroy ( m_Blocks [ block.transform.position ].gameObject );
-			m_Blocks.Remove ( block.transform.position );
+			Vector3 key;
+			if ( TryFindBlockKey ( block, out key ) )
+			{
+				RemoveBlockAtKey ( key );
+			}
 		}
 
 		public virtual void RemoveBackgroundBlock ( BackgroundBlock block )
 		{
-			block.OnRemove ( this );
-			Destroy ( m_BackgroundBlocks [ block.transform.position ].gameObject );
-			m_BackgroundBlocks.Remove ( block.transform.position );
+			Vector3 key;
+			if ( TryFindBackgroundBlockKey ( block, out key ) )
+			{
+				RemoveBackgroundBlockAtKey ( key );
+			}
+		}
+
+		private void RemoveBlockAtKey ( Vector3 key )
+		{
+			Block block;
+			if ( !m_Blocks.TryGetValue ( key, out block ) )
+			{
+				return;
+			}
+
+			if ( block != null )
+			{
+				block.OnRemove ( this );
+				Destroy ( block.gameObject );
+			}
+			m_Blocks.Remove ( key );
+		}
+
+		private void RemoveBackgroundBlockAtKey ( Vector3 key )
+		{
+			BackgroundBlock block;
+			if ( !m_BackgroundBlocks.TryGetValue ( key, out block ) )
+			{
+				return;
+			}
+
+			if ( block != null )
+			{
+				block.OnRemove ( this );
+				Destroy ( block.gameObject );
+			}
+			m_BackgroundBlocks.Remove ( key );
+		}
+
+		private bool TryFindBlockKey ( Block block, out Vector3 key )
+		{
+			foreach ( KeyValuePair<Vector3, Block> pair in m_Blocks )
+			{
+				if ( pair.Value == block )
+				{
+					key = pair.Key;
+					return true;
+				}
+			}
+
+			key = Vector3.zero;
+			return false;
+		}
+
+		private bool TryFindBackgroundBlockKey ( BackgroundBlock block, out Vector3 key )
+		{
+			foreach ( KeyValuePair<Vector3, BackgroundBlock> pair in m_BackgroundBlocks )
+			{
+				if ( pair.Value == block )
+				{
+					key = pair.Key;
+					return true;
+				}
+			}
+
+			key = Vector3.zero;
+			return false;
 		}
 
 		/// <summary>

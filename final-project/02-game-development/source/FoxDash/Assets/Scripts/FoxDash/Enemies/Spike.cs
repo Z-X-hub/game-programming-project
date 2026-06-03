@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,6 +44,10 @@ namespace FoxDash.Enemies
 			target.Die (true);
 			if (!target.IsDead.Value) {
 				return;
+			}
+
+			if ( GameManager.Singleton != null ) {
+				GameManager.Singleton.SetDeathReason ( GameDeathReason.Spike );
 			}
 
 			m_FixedJoint2D.connectedBody = target.GetComponent<Skeleton> ().Body;

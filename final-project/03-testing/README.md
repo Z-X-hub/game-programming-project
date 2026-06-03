@@ -13,12 +13,15 @@ Testing evidence must come from actual playtesting and bug fixing, not from pred
 | Stage 3C | #19 | Level flow, difficulty, and feedback iteration |
 | Stage 3D | #20 | Bug fixing and regression record |
 
+## Current Evidence
+
+- `PLAYTEST_LOG.md` - first UI flow and stability check.
+- `BUG_LOG.md` - early Stage 3A issues and fixes.
+- `BEFORE_AFTER_CHANGES.md` - small improvement record.
+
 ## Planned Evidence
 
-- `PLAYTEST_LOG.md` - dated playtest sessions and observations.
-- `BUG_LOG.md` - bugs found, severity, cause, fix status, and retest result.
 - `BALANCE_NOTES.md` - notes on character feel, speed, revive usefulness, double jump, and difficulty.
-- `BEFORE_AFTER_CHANGES.md` - what changed after testing and why.
 - `STABILITY_CHECKLIST.md` - final checks for controls, collisions, UI, audio, scene flow, and restart behaviour.
 - `KNOWN_LIMITATIONS.md` - honest notes on anything still limited or unfinished.
 

@@ -1,6 +1,6 @@
 # Fox Dash Kanban
 
-Updated: 2026-06-02
+Updated: 2026-06-03
 
 This board tracks the staged submission plan against the module assessment criteria. Only completed evidence is marked as done.
 
@@ -22,6 +22,7 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [x] Document build/run instructions for the main Unity scene.
 - [x] Document main gameplay systems, character selection, and character ability implementation.
 - [x] Create assessment process breakdown.
+- [x] Stage 3A progress upload: UI guidance, pause/end feedback, live coin HUD, and terrain cleanup fix.
 
 ## In Progress
 

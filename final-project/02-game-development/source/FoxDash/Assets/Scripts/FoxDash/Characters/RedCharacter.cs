@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -1253,6 +1253,11 @@ namespace FoxDash.Characters
 				if ( !blood && TryUseKnightRevive ( transform.position ) )
 				{
 					return;
+				}
+
+				if ( GameManager.Singleton != null )
+				{
+					GameManager.Singleton.SetDeathReason ( blood ? GameDeathReason.Obstacle : GameDeathReason.Fall );
 				}
 
                 IsDead.Value = true;
