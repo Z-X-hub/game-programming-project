@@ -17,8 +17,9 @@ Presentation/demo preparation is intentionally deferred for now. The current foc
 ```text
 Stage 1 - Game Concept and Design: complete
 Stage 2 - Core Playable Game source evidence: complete
-Stage 3A - Playable stability and controls testing: active
-Stage 3B-3D - Testing, balance, iteration, and bug evidence: next
+Stage 3A - Playable stability and controls testing: testing
+Stage 3B - Character ability and balance testing: active
+Stage 3C-3D - Level iteration and bug evidence: next
 Stage 4A-4C - Final report evidence: planned after testing
 Professionalism - ongoing
 Presentation - deferred
@@ -80,16 +81,19 @@ Sub-stages:
 - Stage 3C: level flow, difficulty, and feedback iteration. Issue #19.
 - Stage 3D: bug fixing and regression record. Issue #20.
 
-Planned evidence:
+Current evidence:
 
 - `03-testing/PLAYTEST_LOG.md`
 - `03-testing/BUG_LOG.md`
-- `03-testing/BALANCE_NOTES.md`
 - `03-testing/BEFORE_AFTER_CHANGES.md`
+- `03-testing/BALANCE_NOTES.md`
+
+Planned evidence:
+
 - `03-testing/STABILITY_CHECKLIST.md`
 - `03-testing/KNOWN_LIMITATIONS.md`
 
-Status: Stage 3A active.
+Status: Stage 3A testing; Stage 3B active.
 
 ## Stage 4 - Report Evidence (Planned)
 

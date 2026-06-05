@@ -11,8 +11,9 @@ Presentation/demo preparation is deferred for now. The current focus is game tes
 ```text
 Stage 1 - Game Concept and Design: complete
 Stage 2 - Core Playable Game source evidence: complete
-Stage 3A - Playable stability and controls testing: active
-Stage 3B-3D - Testing, balance, iteration, and bug evidence: next
+Stage 3A - Playable stability and controls testing: testing
+Stage 3B - Character ability and balance testing: active
+Stage 3C-3D - Level iteration and bug evidence: next
 Stage 4A-4C - Report evidence: planned after testing
 Professionalism - ongoing
 Presentation - deferred
@@ -41,7 +42,11 @@ final-project/
 |   |-- CODE_STAGING_PLAN.md
 |   `-- source/FoxDash/
 |-- 03-testing/
-|   `-- README.md
+|   |-- README.md
+|   |-- PLAYTEST_LOG.md
+|   |-- BUG_LOG.md
+|   |-- BEFORE_AFTER_CHANGES.md
+|   `-- BALANCE_NOTES.md
 |-- 04-report/
 |   `-- README.md
 `-- 05-presentation/
@@ -103,6 +108,6 @@ Source code is uploaded under:
 final-project/02-game-development/source/FoxDash/
 ```
 
-## Next Stage
+## Current Testing Focus
 
-The next active stage is `Stage 3A - Playable stability and controls testing`. This will produce actual playtesting notes, bug records, and stability evidence before the report is written.
+The current active testing focus is `Stage 3B - Character ability and balance testing`. Stage 3A remains in testing while character role evidence is added through `final-project/03-testing/BALANCE_NOTES.md`.

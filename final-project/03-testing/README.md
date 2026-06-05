@@ -1,6 +1,6 @@
 # Stage 3 - Testing and Iteration
 
-Status: Stage 3A active.
+Status: Stage 3A testing and Stage 3B active.
 
 Testing evidence must come from actual playtesting and bug fixing, not from predicted results.
 
@@ -18,10 +18,10 @@ Testing evidence must come from actual playtesting and bug fixing, not from pred
 - `PLAYTEST_LOG.md` - first UI flow and stability check.
 - `BUG_LOG.md` - early Stage 3A issues and fixes.
 - `BEFORE_AFTER_CHANGES.md` - small improvement record.
+- `BALANCE_NOTES.md` - first Stage 3B character ability and balance check.
 
 ## Planned Evidence
 
-- `BALANCE_NOTES.md` - notes on character feel, speed, revive usefulness, double jump, and difficulty.
 - `STABILITY_CHECKLIST.md` - final checks for controls, collisions, UI, audio, scene flow, and restart behaviour.
 - `KNOWN_LIMITATIONS.md` - honest notes on anything still limited or unfinished.
 
