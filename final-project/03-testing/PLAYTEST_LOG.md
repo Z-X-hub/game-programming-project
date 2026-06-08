@@ -1,6 +1,6 @@
-# Stage 3A Playtest Log
+# Stage 3 Playtest Log
 
-Updated: 2026-06-03
+Updated: 2026-06-08
 
 This log records small testing and stability progress for the playable Fox Dash slice.
 
@@ -45,3 +45,41 @@ Result:
 Status:
 
 - Stage 3A remains in progress because more hands-on playtesting is still needed.
+
+## Session 2 - PLAYER Run Animation Visual Consistency Check
+
+Date: 2026-06-08
+
+Focus:
+
+- fast `PLAYER` run animation
+- visual scale consistency between idle and running
+- evidence that visual polish changes were checked instead of only added
+
+Observed issues:
+
+- The first imported run sequence had too few frames and looked choppy.
+- The higher-frame reference video gave a better running motion, but early exported sprites used a larger `96x128` canvas.
+- During Play Mode observation, the character looked noticeably larger while running than while standing still.
+
+Changes made:
+
+- Extracted the full 85-frame run sequence from the reference video.
+- Re-exported the run frames to `80x110`, matching the existing `player_idle.png` and `player_stand.png` canvas size.
+- Compared transparent sprite bounds: idle/stand height is about `96px`; the corrected run frames now stay around `88-96px`.
+- Updated `KenneyCharacterVisual.cs` so the run sequence uses fixed `BaseVisualScale` instead of extra squash/stretch scaling.
+
+Validation:
+
+- Counted the exported run frames: `player_run_01.png` to `player_run_85.png`.
+- Checked sample sprite bounds for idle, stand, and run frames.
+- Ran `dotnet build Assembly-CSharp.csproj --no-restore`.
+
+Result:
+
+- Build completed with `0 warnings` and `0 errors` locally on 2026-06-08.
+- The sprite-size mismatch is recorded as `BUG-3D-001` in `BUG_LOG.md`.
+
+Status:
+
+- Animation polish has improved, but final confirmation should still be done inside Unity after asset reimport.

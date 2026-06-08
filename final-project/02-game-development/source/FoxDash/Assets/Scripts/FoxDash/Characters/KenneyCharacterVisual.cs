@@ -8,6 +8,7 @@ namespace FoxDash.Characters
 		private const string ResourceRoot = "FoxDash/KenneyCharacters";
 		private const float SpritePixelsPerUnit = 100f;
 		private const float BaseVisualScale = 2f;
+		private const int MaxOptionalRunFrames = 128;
 		private const int RunnerTrailCount = 3;
 		private static readonly Dictionary<string, Sprite> s_SpriteCache = new Dictionary<string, Sprite> ();
 		private static Sprite s_TrailSprite = null;
@@ -128,6 +129,12 @@ namespace FoxDash.Characters
 
 			if ( speedX > 0.35f )
 			{
+				Sprite runnerRunSprite = GetRunnerRunSprite ( speedX );
+				if ( runnerRunSprite != null )
+				{
+					return runnerRunSprite;
+				}
+
 				int walkFrame = Mathf.FloorToInt ( Time.time * GetGroundMoveFrameRate ( speedX ) ) % 2;
 				return walkFrame == 0 ?
 					FirstAvailable ( m_Sprites.walk1, m_Sprites.walk2, m_Sprites.stand, m_Sprites.idle ) :
@@ -199,6 +206,15 @@ namespace FoxDash.Characters
 					scale.y = BaseVisualScale * ( 0.99f - lift * 0.028f );
 					break;
 				default:
+					if ( m_Sprites.HasRunFrames )
+					{
+						position.x += 0.055f + speedAmount * 0.03f;
+						position.y += 0.006f;
+						rotationZ = 0f;
+						scale = new Vector3 ( BaseVisualScale, BaseVisualScale, 1f );
+						break;
+					}
+
 					position.x += 0.07f + speedAmount * 0.04f + stride * 0.055f;
 					position.y += 0.012f + lift * 0.05f;
 					rotationZ = 0f;
@@ -206,6 +222,33 @@ namespace FoxDash.Characters
 					scale.y = BaseVisualScale * ( 0.97f - lift * 0.03f );
 					break;
 			}
+		}
+
+		private Sprite GetRunnerRunSprite ( float speedX )
+		{
+			if ( m_CurrentRole != PlayerCharacterRole.Runner || !m_Sprites.HasRunFrames )
+			{
+				return null;
+			}
+
+			int frameIndex = Mathf.FloorToInt ( Time.time * GetRunnerRunFrameRate ( speedX ) ) % m_Sprites.runFrames.Length;
+			return m_Sprites.runFrames [ frameIndex ];
+		}
+
+		private float GetRunnerRunFrameRate ( float speedX )
+		{
+			float speedAmount = Mathf.Clamp01 ( speedX / 12f );
+			if ( m_Sprites.runFrames.Length >= 80 )
+			{
+				return 24f;
+			}
+
+			if ( m_Sprites.runFrames.Length >= 30 )
+			{
+				return Mathf.Lerp ( 24f, 30f, speedAmount );
+			}
+
+			return Mathf.Lerp ( 8.5f, 10.5f, speedAmount );
 		}
 
 		private float GetGroundMoveFrameRate ( float speedX )
@@ -690,6 +733,17 @@ namespace FoxDash.Characters
 		private static Sprite LoadSprite ( string folder, string prefix, string pose )
 		{
 			string path = ResourceRoot + "/" + folder + "/" + prefix + "_" + pose;
+			return LoadSpriteAtPath ( path, prefix + "_" + pose, true );
+		}
+
+		private static Sprite LoadOptionalSprite ( string folder, string prefix, string subfolder, string pose )
+		{
+			string path = ResourceRoot + "/" + folder + "/" + subfolder + "/" + prefix + "_" + pose;
+			return LoadSpriteAtPath ( path, prefix + "_" + pose, false );
+		}
+
+		private static Sprite LoadSpriteAtPath ( string path, string spriteName, bool warnIfMissing )
+		{
 			Sprite cachedSprite;
 			if ( s_SpriteCache.TryGetValue ( path, out cachedSprite ) )
 			{
@@ -699,7 +753,10 @@ namespace FoxDash.Characters
 			Texture2D texture = Resources.Load<Texture2D> ( path );
 			if ( texture == null )
 			{
-				Debug.LogWarning ( "Missing Kenney character sprite: " + path );
+				if ( warnIfMissing )
+				{
+					Debug.LogWarning ( "Missing Kenney character sprite: " + path );
+				}
 				s_SpriteCache [ path ] = null;
 				return null;
 			}
@@ -709,9 +766,31 @@ namespace FoxDash.Characters
 				new Rect ( 0f, 0f, texture.width, texture.height ),
 				new Vector2 ( 0.5f, 0.5f ),
 				SpritePixelsPerUnit );
-			sprite.name = prefix + "_" + pose;
+			sprite.name = spriteName;
 			s_SpriteCache [ path ] = sprite;
 			return sprite;
+		}
+
+		private static Sprite[] LoadRunFrames ( string folder, string prefix )
+		{
+			List<Sprite> frames = new List<Sprite> ();
+			for ( int i = 1; i <= MaxOptionalRunFrames; i++ )
+			{
+				Sprite sprite = LoadOptionalSprite ( folder, prefix, "Run", "run_" + i.ToString ( "00" ) );
+				if ( sprite == null )
+				{
+					if ( frames.Count > 0 )
+					{
+						break;
+					}
+
+					continue;
+				}
+
+				frames.Add ( sprite );
+			}
+
+			return frames.ToArray ();
 		}
 
 		private struct KenneyCharacterInfo
@@ -738,6 +817,12 @@ namespace FoxDash.Characters
 			public Sprite duck;
 			public Sprite hurt;
 			public Sprite skid;
+			public Sprite[] runFrames = new Sprite[ 0 ];
+
+			public bool HasRunFrames
+			{
+				get { return runFrames != null && runFrames.Length > 0; }
+			}
 
 			public void Load ( string folder, string prefix )
 			{
@@ -751,6 +836,7 @@ namespace FoxDash.Characters
 				duck = LoadSprite ( folder, prefix, "duck" );
 				hurt = LoadSprite ( folder, prefix, "hurt" );
 				skid = LoadSprite ( folder, prefix, "skid" );
+				runFrames = LoadRunFrames ( folder, prefix );
 			}
 		}
 	}

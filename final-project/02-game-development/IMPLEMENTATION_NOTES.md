@@ -1,6 +1,6 @@
-# Stage 2 Implementation Notes
+# Fox Dash Implementation Notes
 
-Updated: 2026-06-02
+Updated: 2026-06-08
 
 This document records the main playable systems implemented for the Fox Dash vertical slice.
 
@@ -113,6 +113,13 @@ Implemented behaviour:
 - adds running/speed-trail effect for the fast role
 - tunes ground movement pose so PLAYER feels faster without making the step rate unnaturally high
 - uses jump/fall/roll/hurt sprite fallbacks where needed
+
+Stage 3 animation polish:
+
+- `PLAYER` now has an optional high-frame run sequence under `Resources/FoxDash/KenneyCharacters/Player/Run`.
+- `KenneyCharacterVisual.cs` loads sequential `player_run_XX` frames when available.
+- Long run sequences are played at the original video-like frame rate so the fast role feels smoother.
+- The run frames were regenerated to match the idle/stand sprite canvas size, fixing a visual bug where the character appeared larger while running.
 
 ## Menu And UI Updates
 

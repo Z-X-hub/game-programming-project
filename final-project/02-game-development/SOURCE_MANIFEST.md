@@ -1,6 +1,6 @@
 # Stage 2 Source Manifest
 
-Updated: 2026-06-02
+Updated: 2026-06-08
 
 This manifest records the Fox Dash Unity source structure used for the Stage 2 playable vertical slice.
 
@@ -55,11 +55,12 @@ Key text/source files counted: 221
 
 ```text
 source/FoxDash/Assets/Scripts/
+source/FoxDash/Assets/Resources/FoxDash/KenneyCharacters/
 source/FoxDash/Packages/
 source/FoxDash/ProjectSettings/
 ```
 
-The staged upload focuses on readable source code and text source metadata. It does not include every large runtime asset.
+The staged upload focuses on readable source code, lightweight character visual resources, and text source metadata. It does not include every large runtime asset.
 
 ## Included Local Source Areas
 
@@ -156,3 +157,18 @@ Assets/Sounds/Enemies/Water.wav - about 85 MB
 ```
 
 This explains why the clean source package is close to GitHub's normal single-file warning threshold. The staged source upload focuses on code and text source metadata, while large runtime assets can be handled separately if required.
+
+## Stage 3C/3D Animation Resource Update
+
+Updated source/resource evidence:
+
+```text
+source/FoxDash/Assets/Scripts/FoxDash/Characters/KenneyCharacterVisual.cs
+source/FoxDash/Assets/Resources/FoxDash/KenneyCharacters/
+```
+
+Reason:
+
+- The `PLAYER` fast-run role now uses an 85-frame run animation sequence.
+- The run sprites were corrected to match the existing `80x110` character canvas size.
+- The lightweight Kenney character resource folder is included so the animation fix is visible in repository evidence, not only described in documentation.

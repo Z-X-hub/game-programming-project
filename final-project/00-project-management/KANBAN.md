@@ -1,6 +1,6 @@
 # Fox Dash Kanban
 
-Updated: 2026-06-05
+Updated: 2026-06-08
 
 This board tracks the staged submission plan against the module assessment criteria. Only completed evidence is marked as done.
 
@@ -23,10 +23,13 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [x] Document main gameplay systems, character selection, and character ability implementation.
 - [x] Create assessment process breakdown.
 - [x] Stage 3A progress upload: UI guidance, pause/end feedback, live coin HUD, and terrain cleanup fix.
+- [x] Stage 3C/3D progress upload: PLAYER run animation polish and sprite-size bug fix.
 
 ## In Progress
 
 - [ ] Stage 3B: character ability and balance testing. Issue #18.
+- [ ] Stage 3C: level flow, difficulty, and feedback iteration. Issue #19.
+- [ ] Stage 3D: bug fixing and regression record. Issue #20.
 - [ ] Professionalism: repository organisation and evidence audit. Issue #23.
 
 ## Testing
@@ -35,8 +38,6 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 
 ## To Do
 
-- [ ] Stage 3C: level flow, difficulty, and feedback iteration. Issue #19.
-- [ ] Stage 3D: bug fixing and regression record. Issue #20.
 - [ ] Stage 4A: report design and technical decisions. Issue #16.
 - [ ] Stage 4B: report testing, limitations, and reflection. Issue #21.
 - [ ] Stage 4C: report legal, accessibility, and final completeness check. Issue #22.
