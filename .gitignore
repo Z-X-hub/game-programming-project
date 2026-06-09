@@ -39,6 +39,9 @@ Icon?
 .vscode/
 .idea/
 
+# Local assistant/project-maintenance notes
+AGENTS.md
+
 # Archives/submission packages
 *.zip
 *.rar

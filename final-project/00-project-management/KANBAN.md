@@ -25,6 +25,9 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [x] Stage 3A progress upload: UI guidance, pause/end feedback, live coin HUD, and terrain cleanup fix.
 - [x] Stage 3C progress upload: PLAYER run animation polish and smoother high-frame run sequence.
 - [x] Stage 3D progress upload: PLAYER sprite-size bug fix, regression notes, and local build check.
+- [x] Professionalism cleanup: remove old `ShiftTheWorld` folder from the current final-project tree.
+- [x] Professionalism cleanup: upload the current Fox Dash Unity project source under `final-project/FoxDash/`.
+- [x] Add `AGENTS.md` to `.gitignore` so local assistant notes are not uploaded.
 
 ## In Progress
 

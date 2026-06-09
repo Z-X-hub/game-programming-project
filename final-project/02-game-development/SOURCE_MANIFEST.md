@@ -1,16 +1,29 @@
 # Stage 2 Source Manifest
 
-Updated: 2026-06-08
+Updated: 2026-06-09
 
 This manifest records the Fox Dash Unity source structure used for the Stage 2 playable vertical slice.
 
-## Repository Source Location
+## Current Repository Source Location
+
+The current complete Unity source project is uploaded under:
+
+```text
+final-project/FoxDash/
+```
+
+This is the folder to open in Unity for the final Fox Dash project.
+
+## Earlier Staged Source Evidence
 
 The staged source code is uploaded under:
 
 ```text
 final-project/02-game-development/source/FoxDash/
 ```
+
+This older nested folder is kept as development-process evidence from the staged
+source upload. The current final project source is `final-project/FoxDash/`.
 
 ## Local Unity Project
 
@@ -101,6 +114,7 @@ UserSettings/
 *.csproj
 *.sln
 *.slnx
+AGENTS.md
 obj/
 Build/
 Builds/

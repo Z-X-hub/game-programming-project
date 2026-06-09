@@ -22,22 +22,23 @@ Completed:
 ```text
 Stage 1 - Game Concept and Design
 Stage 2 - Core Playable Game source evidence
+Stage 3D - Bug fixing and regression record
+Professionalism - remove old ShiftTheWorld folder and upload current FoxDash project source
 ```
 
 Current:
 
 ```text
 Stage 3A - Playable stability and controls testing
-Professionalism - repository organisation and evidence audit
+Stage 3B - Character ability and balance testing
+Stage 3C - Level flow, difficulty, and feedback iteration
 ```
 
 Next:
 
 ```text
-Stage 3B - Character ability and balance testing
-Stage 3C - Level flow, difficulty, and feedback iteration
-Stage 3D - Bug fixing and regression record
 Stage 4A-4C - Report evidence
+Professionalism - final repository evidence audit
 ```
 
 Deferred:
@@ -98,11 +99,15 @@ Run instructions:
 final-project/02-game-development/RUN_INSTRUCTIONS.md
 ```
 
-Source code:
+Current Unity source project:
 
 ```text
-final-project/02-game-development/source/FoxDash/
+final-project/FoxDash/
 ```
+
+The older `ShiftTheWorld` prototype folder has been removed from the current
+final-project tree so the repository clearly points to Fox Dash as the final
+submission game.
 
 ## Credits And Licences
 

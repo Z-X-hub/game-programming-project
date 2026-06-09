@@ -2,7 +2,7 @@
 
 Status: complete.
 
-Updated: 2026-06-02
+Updated: 2026-06-09
 
 This folder records the current Fox Dash Unity vertical slice. Stage 2 focuses on the playable game implementation: source structure, main scene, character selection, gameplay systems, run instructions, and staged source-code upload.
 
@@ -13,7 +13,8 @@ This folder records the current Fox Dash Unity vertical slice. Stage 2 focuses o
 - `IMPLEMENTATION_NOTES.md` - implemented gameplay systems and key script responsibilities.
 - `UPLOAD_NOTES.md` - upload approach, generated-folder exclusions, and large-file notes.
 - `CODE_STAGING_PLAN.md` - completed staged source-code upload order.
-- `source/FoxDash/` - staged source-code files uploaded in development-order commits.
+- `../FoxDash/` - current complete Fox Dash Unity source project.
+- `source/FoxDash/` - earlier staged source-code evidence uploaded in development-order commits.
 
 ## Completed Source Upload Stages
 
@@ -40,7 +41,13 @@ The current Fox Dash build includes:
 
 ## Unity Project
 
-Local project folder used for Stage 2:
+Current repository project folder:
+
+```text
+final-project/FoxDash/
+```
+
+Local project folder used for development:
 
 ```text
 /Users/zhuxuan/Downloads/FoxDash
@@ -71,6 +78,7 @@ UserSettings/
 *.csproj
 *.sln
 *.slnx
+AGENTS.md
 ```
 
 ## Next Stage

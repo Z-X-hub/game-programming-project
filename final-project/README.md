@@ -13,7 +13,8 @@ Stage 1 - Game Concept and Design: complete
 Stage 2 - Core Playable Game source evidence: complete
 Stage 3A - Playable stability and controls testing: testing
 Stage 3B - Character ability and balance testing: active
-Stage 3C-3D - Level iteration and bug evidence: next
+Stage 3C - Level iteration and feedback evidence: active
+Stage 3D - Bug fixing and regression record: complete
 Stage 4A-4C - Report evidence: planned after testing
 Professionalism - ongoing
 Presentation - deferred
@@ -24,6 +25,14 @@ Presentation - deferred
 ```text
 final-project/
 |-- README.md
+|-- FoxDash/
+|   |-- Assets/
+|   |-- Packages/
+|   |-- ProjectSettings/
+|   |-- README.md
+|   |-- PROJECT_STRUCTURE.md
+|   |-- THIRD_PARTY_NOTICES.md
+|   `-- AI_DECLARATION.md
 |-- 00-project-management/
 |   |-- ASSESSMENT_PROCESS_BREAKDOWN.md
 |   |-- DEVELOPMENT_PLAN.md
@@ -105,8 +114,12 @@ final-project/02-game-development/RUN_INSTRUCTIONS.md
 Source code is uploaded under:
 
 ```text
-final-project/02-game-development/source/FoxDash/
+final-project/FoxDash/
 ```
+
+The earlier `ShiftTheWorld` prototype folder has been removed from the current
+final-project tree. Historical commits still show the previous prototype work,
+but the active final game source is now Fox Dash.
 
 ## Current Testing Focus
 

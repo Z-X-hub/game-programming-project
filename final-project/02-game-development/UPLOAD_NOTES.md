@@ -1,6 +1,6 @@
 # Stage 2 Upload Notes
 
-Updated: 2026-06-02
+Updated: 2026-06-09
 
 ## Upload Goal
 
@@ -87,6 +87,23 @@ final-project/02-game-development/UPLOAD_NOTES.md
 final-project/02-game-development/CODE_STAGING_PLAN.md
 final-project/02-game-development/source/FoxDash/
 ```
+
+## Current Complete Project Source
+
+After repository cleanup, the current complete Fox Dash Unity project source is
+also uploaded at:
+
+```text
+final-project/FoxDash/
+```
+
+The old `final-project/ShiftTheWorld/` prototype folder has been removed from
+the current tree because it is not the final project. Historical commits still
+show the earlier prototype process, while the current visible final project is
+Fox Dash.
+
+`AGENTS.md` is intentionally excluded because it is a local assistant
+maintenance note, not a submission file.
 
 ## Large Asset Note
 

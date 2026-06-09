@@ -1,10 +1,16 @@
 # Stage 2 Run Instructions
 
-Updated: 2026-06-02
+Updated: 2026-06-09
 
 ## Open The Project
 
-Open the Unity project folder:
+From this repository, open the Unity project folder:
+
+```text
+final-project/FoxDash/
+```
+
+The local development copy used during editing was:
 
 ```text
 /Users/zhuxuan/Downloads/FoxDash
