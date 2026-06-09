@@ -1,6 +1,6 @@
 # Stage 3 Before / After Changes
 
-Updated: 2026-06-08
+Updated: 2026-06-09
 
 ## Stage 3A UI And Feedback Pass
 
@@ -34,6 +34,12 @@ Updated: 2026-06-08
 - The exported run sprites now use the same `80x110` canvas size as the existing idle/stand sprites.
 - The visible run-sprite height was checked against the idle sprite: idle height is about `96px`, and run frames now sit around `88-96px`.
 - `KenneyCharacterVisual.cs` keeps the runner scale fixed while the run sequence is playing, so the sprite animation carries the movement instead of code-driven stretching.
+
+### Stage 3D Upload Note
+
+- The Stage 3D upload records the bug-fix evidence rather than pushing a noisy full-project sync.
+- A dry-run source comparison showed that the remaining local script differences were encoding or Unity folder metadata noise, not gameplay logic.
+- The local Unity C# build was checked again on 2026-06-09 and completed with `0` warnings and `0` errors.
 
 ## Assessment Link
 

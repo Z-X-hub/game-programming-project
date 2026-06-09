@@ -1,6 +1,6 @@
 # Fox Dash Kanban
 
-Updated: 2026-06-08
+Updated: 2026-06-09
 
 This board tracks the staged submission plan against the module assessment criteria. Only completed evidence is marked as done.
 
@@ -23,13 +23,13 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [x] Document main gameplay systems, character selection, and character ability implementation.
 - [x] Create assessment process breakdown.
 - [x] Stage 3A progress upload: UI guidance, pause/end feedback, live coin HUD, and terrain cleanup fix.
-- [x] Stage 3C/3D progress upload: PLAYER run animation polish and sprite-size bug fix.
+- [x] Stage 3C progress upload: PLAYER run animation polish and smoother high-frame run sequence.
+- [x] Stage 3D progress upload: PLAYER sprite-size bug fix, regression notes, and local build check.
 
 ## In Progress
 
 - [ ] Stage 3B: character ability and balance testing. Issue #18.
 - [ ] Stage 3C: level flow, difficulty, and feedback iteration. Issue #19.
-- [ ] Stage 3D: bug fixing and regression record. Issue #20.
 - [ ] Professionalism: repository organisation and evidence audit. Issue #23.
 
 ## Testing
@@ -59,7 +59,7 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [ ] Stage 3A: https://github.com/Z-X-hub/game-programming-project/issues/15
 - [ ] Stage 3B: https://github.com/Z-X-hub/game-programming-project/issues/18
 - [ ] Stage 3C: https://github.com/Z-X-hub/game-programming-project/issues/19
-- [ ] Stage 3D: https://github.com/Z-X-hub/game-programming-project/issues/20
+- [x] Stage 3D: https://github.com/Z-X-hub/game-programming-project/issues/20
 - [ ] Stage 4A: https://github.com/Z-X-hub/game-programming-project/issues/16
 - [ ] Stage 4B: https://github.com/Z-X-hub/game-programming-project/issues/21
 - [ ] Stage 4C: https://github.com/Z-X-hub/game-programming-project/issues/22

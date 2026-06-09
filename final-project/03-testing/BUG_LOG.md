@@ -1,6 +1,6 @@
 # Stage 3 Bug Log
 
-Updated: 2026-06-08
+Updated: 2026-06-09
 
 | ID | Area | Problem | Fix / Status |
 | --- | --- | --- | --- |
@@ -10,7 +10,19 @@ Updated: 2026-06-08
 | BUG-3A-004 | Terrain cleanup | `TerrainGenerator.Remove()` could hit a null reference when a generated block reference was already destroyed. | Fixed by removing blocks by dictionary key and safely cleaning null entries. |
 | BUG-3D-001 | Character animation | The fast `PLAYER` became visibly larger when switching from idle to the new run animation. | Fixed by regenerating the run frames at the same `80x110` canvas size as the idle/stand sprites, limiting the run-frame transparent height to about `88-96px`, and keeping runner scale fixed in `KenneyCharacterVisual.cs`. |
 
-## Still To Test
+## Stage 3D Regression Checks
+
+| Check | Result |
+| --- | --- |
+| Confirmed staged source contains the high-frame PLAYER run sequence. | Passed: `85` run PNG frames and `85` matching `.meta` files are present under `Assets/Resources/FoxDash/KenneyCharacters/Player/Run`. |
+| Confirmed the runtime visual script matches the local project. | Passed: `KenneyCharacterVisual.cs` matches the local Fox Dash source used for the latest Unity test. |
+| Confirmed no new gameplay code was required after the sprite-size fix. | Passed: local script differences are only encoding/Unity folder metadata noise, so no unnecessary code churn was uploaded for Stage 3D. |
+| Confirmed the Unity C# project still compiles. | Passed: `dotnet build Assembly-CSharp.csproj --no-restore` completed with `0` warnings and `0` errors on 2026-06-09. |
+
+## Final Manual Checks Before Submission
+
+These checks remain useful before the final hand-in, but they are not blocking
+the specific `BUG-3D-001` sprite-size fix.
 
 - Confirm restart and home buttons after several play/death cycles.
 - Confirm the in-game coin HUD updates during longer runs and after restart.

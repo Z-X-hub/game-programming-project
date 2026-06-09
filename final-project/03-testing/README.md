@@ -1,6 +1,6 @@
 # Stage 3 - Testing and Iteration
 
-Status: Stage 3A testing and Stage 3B active.
+Status: Stage 3D bug-fix evidence added. Stage 3 testing evidence is being built through small, traceable updates.
 
 Testing evidence must come from actual playtesting and bug fixing, not from predicted results.
 
@@ -19,6 +19,7 @@ Testing evidence must come from actual playtesting and bug fixing, not from pred
 - `BUG_LOG.md` - early Stage 3A issues and fixes.
 - `BEFORE_AFTER_CHANGES.md` - small improvement record.
 - `BALANCE_NOTES.md` - first Stage 3B character ability and balance check.
+- Stage 3D regression evidence for the PLAYER run-animation sprite-size fix.
 
 ## Planned Evidence
 
