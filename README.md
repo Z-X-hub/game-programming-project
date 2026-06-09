@@ -30,18 +30,19 @@ Stage 4A - Report design and technical decisions evidence
 Stage 4B - Report testing, limitations, and reflection evidence
 Stage 4C - Report final completeness checklist
 Professionalism - remove old ShiftTheWorld folder and upload current FoxDash project source
+Professionalism - final repository evidence audit
 ```
 
 Current:
 
 ```text
-Professionalism - final repository evidence audit
+Only the deferred demo / presentation stage remains.
 ```
 
 Next:
 
 ```text
-Demo / Presentation
+Prepare the demo / presentation when requested.
 ```
 
 Deferred:

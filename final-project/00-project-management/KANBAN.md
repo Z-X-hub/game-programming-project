@@ -34,10 +34,11 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [x] Professionalism cleanup: remove old `ShiftTheWorld` folder from the current final-project tree.
 - [x] Professionalism cleanup: upload the current Fox Dash Unity project source under `final-project/FoxDash/`.
 - [x] Add `AGENTS.md` to `.gitignore` so local assistant notes are not uploaded.
+- [x] Professionalism final audit: verify repository structure, evidence map, issue status, and generated-file exclusions.
 
 ## In Progress
 
-- [ ] Professionalism: repository organisation and evidence audit. Issue #23.
+- None. Non-presentation repository evidence is complete.
 
 ## Testing
 
@@ -45,7 +46,7 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 
 ## To Do
 
-- [ ] Final check: clean repository structure and verify submission instructions.
+- None for the non-presentation repository evidence.
 
 ## Deferred
 
@@ -67,5 +68,5 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [x] Stage 4A: https://github.com/Z-X-hub/game-programming-project/issues/16
 - [x] Stage 4B: https://github.com/Z-X-hub/game-programming-project/issues/21
 - [x] Stage 4C: https://github.com/Z-X-hub/game-programming-project/issues/22
-- [ ] Professionalism: https://github.com/Z-X-hub/game-programming-project/issues/23
+- [x] Professionalism: https://github.com/Z-X-hub/game-programming-project/issues/23
 - [ ] Deferred presentation: https://github.com/Z-X-hub/game-programming-project/issues/17

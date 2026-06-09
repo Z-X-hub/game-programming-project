@@ -4,7 +4,7 @@
 
 The project is uploaded in stages so the repository clearly shows planning, development, testing, reflection, and professional working practice over time.
 
-Presentation/demo preparation is deferred for now. The current focus is game testing, report evidence, and repository professionalism.
+All non-presentation repository evidence is complete. Presentation/demo preparation remains deferred for now.
 
 ## Current Stage
 
@@ -16,7 +16,7 @@ Stage 3B - Character ability and balance testing: complete
 Stage 3C - Level iteration and feedback evidence: complete
 Stage 3D - Bug fixing and regression record: complete
 Stage 4A-4C - Report evidence: complete
-Professionalism - final repository evidence audit
+Professionalism - final repository evidence audit: complete
 Presentation - deferred
 ```
 
@@ -36,6 +36,7 @@ final-project/
 |-- 00-project-management/
 |   |-- ASSESSMENT_PROCESS_BREAKDOWN.md
 |   |-- DEVELOPMENT_PLAN.md
+|   |-- FINAL_REPOSITORY_AUDIT.md
 |   `-- KANBAN.md
 |-- 01-concept-design/
 |   |-- GAME_CONCEPT.md
@@ -129,7 +130,6 @@ but the active final game source is now Fox Dash.
 
 ## Current Focus
 
-Stage 4 report evidence is complete. The current focus is the final
-professionalism audit: checking that the repository structure, README files,
-issues, credits, testing evidence, and final project source are clear and
-consistent before the deferred demo/presentation stage.
+All non-presentation evidence is complete. The remaining deferred stage is the
+demo/presentation, which should use the completed planning, source, testing,
+report, and professionalism evidence as supporting material.

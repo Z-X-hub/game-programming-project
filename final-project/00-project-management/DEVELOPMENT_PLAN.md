@@ -21,7 +21,7 @@ Stage 3A - Playable stability and controls testing: complete
 Stage 3B - Character ability and balance testing: complete
 Stage 3C-3D - Level iteration and bug evidence: complete
 Stage 4A-4C - Final report evidence: complete
-Professionalism - final repository evidence audit
+Professionalism - complete
 Presentation - deferred
 ```
 
@@ -110,7 +110,7 @@ Evidence:
 
 Status: complete.
 
-## Professionalism (Ongoing)
+## Professionalism (Complete)
 
 Goal: show consistent, organised, responsible development through GitHub.
 
@@ -118,6 +118,7 @@ Evidence:
 
 - `00-project-management/KANBAN.md`
 - `00-project-management/ASSESSMENT_PROCESS_BREAKDOWN.md`
+- `00-project-management/FINAL_REPOSITORY_AUDIT.md`
 - README files
 - staged commits
 - GitHub Issues
@@ -125,7 +126,7 @@ Evidence:
 - AI declaration
 - Issue #23
 
-Status: ongoing.
+Status: complete.
 
 ## Deferred - Demo / Presentation
 
