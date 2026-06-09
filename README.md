@@ -22,6 +22,9 @@ Completed:
 ```text
 Stage 1 - Game Concept and Design
 Stage 2 - Core Playable Game source evidence
+Stage 3A - Playable stability and controls testing
+Stage 3B - Character ability and balance testing
+Stage 3C - Level flow, difficulty, and feedback iteration
 Stage 3D - Bug fixing and regression record
 Professionalism - remove old ShiftTheWorld folder and upload current FoxDash project source
 ```
@@ -29,16 +32,14 @@ Professionalism - remove old ShiftTheWorld folder and upload current FoxDash pro
 Current:
 
 ```text
-Stage 3A - Playable stability and controls testing
-Stage 3B - Character ability and balance testing
-Stage 3C - Level flow, difficulty, and feedback iteration
+Stage 4A-4C - Report evidence
+Professionalism - final repository evidence audit
 ```
 
 Next:
 
 ```text
-Stage 4A-4C - Report evidence
-Professionalism - final repository evidence audit
+Demo / Presentation
 ```
 
 Deferred:

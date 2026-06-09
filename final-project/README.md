@@ -11,11 +11,11 @@ Presentation/demo preparation is deferred for now. The current focus is game tes
 ```text
 Stage 1 - Game Concept and Design: complete
 Stage 2 - Core Playable Game source evidence: complete
-Stage 3A - Playable stability and controls testing: testing
-Stage 3B - Character ability and balance testing: active
-Stage 3C - Level iteration and feedback evidence: active
+Stage 3A - Playable stability and controls testing: complete
+Stage 3B - Character ability and balance testing: complete
+Stage 3C - Level iteration and feedback evidence: complete
 Stage 3D - Bug fixing and regression record: complete
-Stage 4A-4C - Report evidence: planned after testing
+Stage 4A-4C - Report evidence: current
 Professionalism - ongoing
 Presentation - deferred
 ```
@@ -55,7 +55,10 @@ final-project/
 |   |-- PLAYTEST_LOG.md
 |   |-- BUG_LOG.md
 |   |-- BEFORE_AFTER_CHANGES.md
-|   `-- BALANCE_NOTES.md
+|   |-- BALANCE_NOTES.md
+|   |-- STABILITY_CHECKLIST.md
+|   |-- LEVEL_FLOW_NOTES.md
+|   `-- KNOWN_LIMITATIONS.md
 |-- 04-report/
 |   `-- README.md
 `-- 05-presentation/
@@ -121,6 +124,8 @@ The earlier `ShiftTheWorld` prototype folder has been removed from the current
 final-project tree. Historical commits still show the previous prototype work,
 but the active final game source is now Fox Dash.
 
-## Current Testing Focus
+## Current Focus
 
-The current active testing focus is `Stage 3B - Character ability and balance testing`. Stage 3A remains in testing while character role evidence is added through `final-project/03-testing/BALANCE_NOTES.md`.
+Stage 3 testing evidence is complete. The current focus is Stage 4 report
+evidence: design/technical decisions, testing reflection, limitations, legal
+notes, accessibility notes, and final completeness.

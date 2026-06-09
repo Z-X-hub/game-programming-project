@@ -23,7 +23,10 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [x] Document main gameplay systems, character selection, and character ability implementation.
 - [x] Create assessment process breakdown.
 - [x] Stage 3A progress upload: UI guidance, pause/end feedback, live coin HUD, and terrain cleanup fix.
+- [x] Stage 3A testing sign-off: stability checklist and build validation.
+- [x] Stage 3B testing sign-off: character ability and balance notes.
 - [x] Stage 3C progress upload: PLAYER run animation polish and smoother high-frame run sequence.
+- [x] Stage 3C testing sign-off: level flow, difficulty, and feedback iteration notes.
 - [x] Stage 3D progress upload: PLAYER sprite-size bug fix, regression notes, and local build check.
 - [x] Professionalism cleanup: remove old `ShiftTheWorld` folder from the current final-project tree.
 - [x] Professionalism cleanup: upload the current Fox Dash Unity project source under `final-project/FoxDash/`.
@@ -31,13 +34,11 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 
 ## In Progress
 
-- [ ] Stage 3B: character ability and balance testing. Issue #18.
-- [ ] Stage 3C: level flow, difficulty, and feedback iteration. Issue #19.
 - [ ] Professionalism: repository organisation and evidence audit. Issue #23.
 
 ## Testing
 
-- [ ] Stage 3A: playable stability and controls testing. Issue #15.
+- [ ] Final pre-submission Unity editor pass.
 
 ## To Do
 
@@ -59,9 +60,9 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 
 - [x] Stage 1: https://github.com/Z-X-hub/game-programming-project/issues/13
 - [x] Stage 2 source upload: https://github.com/Z-X-hub/game-programming-project/issues/14
-- [ ] Stage 3A: https://github.com/Z-X-hub/game-programming-project/issues/15
-- [ ] Stage 3B: https://github.com/Z-X-hub/game-programming-project/issues/18
-- [ ] Stage 3C: https://github.com/Z-X-hub/game-programming-project/issues/19
+- [x] Stage 3A: https://github.com/Z-X-hub/game-programming-project/issues/15
+- [x] Stage 3B: https://github.com/Z-X-hub/game-programming-project/issues/18
+- [x] Stage 3C: https://github.com/Z-X-hub/game-programming-project/issues/19
 - [x] Stage 3D: https://github.com/Z-X-hub/game-programming-project/issues/20
 - [ ] Stage 4A: https://github.com/Z-X-hub/game-programming-project/issues/16
 - [ ] Stage 4B: https://github.com/Z-X-hub/game-programming-project/issues/21

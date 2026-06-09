@@ -1,6 +1,6 @@
 # Stage 3 Playtest Log
 
-Updated: 2026-06-08
+Updated: 2026-06-09
 
 This log records small testing and stability progress for the playable Fox Dash slice.
 
@@ -40,11 +40,11 @@ Validation:
 Result:
 
 - Build completed with `0 errors`.
-- Remaining warnings are Unity/package serialized-field warnings already present in the project style.
+- A later build check on 2026-06-09 completed with `0 warnings` and `0 errors`.
 
 Status:
 
-- Stage 3A remains in progress because more hands-on playtesting is still needed.
+- Stage 3A is complete for repository evidence. A final quick Unity editor run is still recommended before hand-in as part of the overall final check.
 
 ## Session 2 - PLAYER Run Animation Visual Consistency Check
 
@@ -83,3 +83,32 @@ Result:
 Status:
 
 - Animation polish has improved, but final confirmation should still be done inside Unity after asset reimport.
+
+## Session 3 - Stage 3A Stability And Controls Sign-Off
+
+Date: 2026-06-09
+
+Focus:
+
+- confirm the project has enough evidence for playable stability and control flow
+- check that documented controls match the menu guidance
+- check that the game source still compiles after repository cleanup and full Fox Dash source upload
+
+Checks recorded:
+
+- Main project source is now present in `final-project/FoxDash/`.
+- Main scene remains `Assets/Scenes/Play.unity`.
+- Menu guidance explains the runner goal, character differences, jump, roll, movement, and pause input.
+- Pause and end screens include restart/home flow so the player is not trapped after a failed run.
+- In-game HUD and end-screen feedback now include coin/score result information.
+- Local build command completed successfully:
+
+```bash
+dotnet build Assembly-CSharp.csproj --no-restore
+```
+
+Result:
+
+- Build completed with `0 warnings` and `0 errors` on 2026-06-09.
+- Stage 3A is considered complete as testing documentation evidence.
+- Any remaining Unity-editor-only confirmation is moved to the final completeness check rather than blocking Stage 3A.

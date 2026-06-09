@@ -20,6 +20,34 @@ Updated: 2026-06-09
 - The in-game HUD now shows current-run coins and total coins.
 - Terrain cleanup now handles missing generated block references safely.
 
+## Stage 3B Character Ability Balance Pass
+
+### Before
+
+- Character choice existed, but the testing notes did not clearly prove that each role had a different purpose.
+- `SOLDIER` previously had an active shield idea that added control complexity.
+- `PLAYER` speed, `SOLDIER` revive, and `ADVENTURER` double jump needed to be described as balanced design choices, not just features.
+
+### After
+
+- `PLAYER` is documented as the fast high-risk/high-reward role.
+- `SOLDIER` is documented as the forgiving role with one automatic revive.
+- `ADVENTURER` is documented as the movement-flexibility role with double jump.
+- The balance notes now explain why the three-role design fits a small runner vertical slice.
+
+## Stage 3C Level Flow And Feedback Pass
+
+### Before
+
+- The runner level flow existed, but the repository did not clearly explain how platforms, collectables, hazards, and UI feedback worked together.
+- Testing evidence for difficulty and feedback was spread across separate notes.
+
+### After
+
+- `LEVEL_FLOW_NOTES.md` records how generated blocks, collectables, hazards, score, death reason, and restart/home flow support the player experience.
+- Stage 3C is treated as a documentation and evidence pass rather than a major new feature pass.
+- Remaining tuning work is recorded as a limitation/future improvement instead of being left unclear.
+
 ## Stage 3C/3D Animation Polish And Bug Fix
 
 ### Before
