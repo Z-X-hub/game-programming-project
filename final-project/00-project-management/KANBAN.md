@@ -28,6 +28,9 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [x] Stage 3C progress upload: PLAYER run animation polish and smoother high-frame run sequence.
 - [x] Stage 3C testing sign-off: level flow, difficulty, and feedback iteration notes.
 - [x] Stage 3D progress upload: PLAYER sprite-size bug fix, regression notes, and local build check.
+- [x] Stage 4A report evidence: design and technical decisions draft.
+- [x] Stage 4B report evidence: testing difficulties, limitations, and reflection.
+- [x] Stage 4C report evidence: legal, accessibility, and final completeness checklist.
 - [x] Professionalism cleanup: remove old `ShiftTheWorld` folder from the current final-project tree.
 - [x] Professionalism cleanup: upload the current Fox Dash Unity project source under `final-project/FoxDash/`.
 - [x] Add `AGENTS.md` to `.gitignore` so local assistant notes are not uploaded.
@@ -42,9 +45,6 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 
 ## To Do
 
-- [ ] Stage 4A: report design and technical decisions. Issue #16.
-- [ ] Stage 4B: report testing, limitations, and reflection. Issue #21.
-- [ ] Stage 4C: report legal, accessibility, and final completeness check. Issue #22.
 - [ ] Final check: clean repository structure and verify submission instructions.
 
 ## Deferred
@@ -64,8 +64,8 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [x] Stage 3B: https://github.com/Z-X-hub/game-programming-project/issues/18
 - [x] Stage 3C: https://github.com/Z-X-hub/game-programming-project/issues/19
 - [x] Stage 3D: https://github.com/Z-X-hub/game-programming-project/issues/20
-- [ ] Stage 4A: https://github.com/Z-X-hub/game-programming-project/issues/16
-- [ ] Stage 4B: https://github.com/Z-X-hub/game-programming-project/issues/21
-- [ ] Stage 4C: https://github.com/Z-X-hub/game-programming-project/issues/22
+- [x] Stage 4A: https://github.com/Z-X-hub/game-programming-project/issues/16
+- [x] Stage 4B: https://github.com/Z-X-hub/game-programming-project/issues/21
+- [x] Stage 4C: https://github.com/Z-X-hub/game-programming-project/issues/22
 - [ ] Professionalism: https://github.com/Z-X-hub/game-programming-project/issues/23
 - [ ] Deferred presentation: https://github.com/Z-X-hub/game-programming-project/issues/17

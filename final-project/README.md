@@ -15,8 +15,8 @@ Stage 3A - Playable stability and controls testing: complete
 Stage 3B - Character ability and balance testing: complete
 Stage 3C - Level iteration and feedback evidence: complete
 Stage 3D - Bug fixing and regression record: complete
-Stage 4A-4C - Report evidence: current
-Professionalism - ongoing
+Stage 4A-4C - Report evidence: complete
+Professionalism - final repository evidence audit
 Presentation - deferred
 ```
 
@@ -60,7 +60,10 @@ final-project/
 |   |-- LEVEL_FLOW_NOTES.md
 |   `-- KNOWN_LIMITATIONS.md
 |-- 04-report/
-|   `-- README.md
+|   |-- README.md
+|   |-- REPORT_DRAFT.md
+|   |-- REPORT_TESTING_REFLECTION.md
+|   `-- FINAL_REPORT_CHECKLIST.md
 `-- 05-presentation/
     `-- README.md
 ```
@@ -126,6 +129,7 @@ but the active final game source is now Fox Dash.
 
 ## Current Focus
 
-Stage 3 testing evidence is complete. The current focus is Stage 4 report
-evidence: design/technical decisions, testing reflection, limitations, legal
-notes, accessibility notes, and final completeness.
+Stage 4 report evidence is complete. The current focus is the final
+professionalism audit: checking that the repository structure, README files,
+issues, credits, testing evidence, and final project source are clear and
+consistent before the deferred demo/presentation stage.

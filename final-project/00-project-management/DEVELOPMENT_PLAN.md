@@ -17,11 +17,11 @@ Presentation/demo preparation is intentionally deferred for now. The current foc
 ```text
 Stage 1 - Game Concept and Design: complete
 Stage 2 - Core Playable Game source evidence: complete
-Stage 3A - Playable stability and controls testing: testing
-Stage 3B - Character ability and balance testing: active
-Stage 3C-3D - Level iteration and bug evidence: next
-Stage 4A-4C - Final report evidence: planned after testing
-Professionalism - ongoing
+Stage 3A - Playable stability and controls testing: complete
+Stage 3B - Character ability and balance testing: complete
+Stage 3C-3D - Level iteration and bug evidence: complete
+Stage 4A-4C - Final report evidence: complete
+Professionalism - final repository evidence audit
 Presentation - deferred
 ```
 
@@ -70,7 +70,7 @@ Evidence:
 
 Status: complete.
 
-## Stage 3 - Testing And Iteration (Active)
+## Stage 3 - Testing And Iteration (Complete)
 
 Goal: prove that the game is playable, tested, debugged, and improved over time.
 
@@ -81,21 +81,18 @@ Sub-stages:
 - Stage 3C: level flow, difficulty, and feedback iteration. Issue #19.
 - Stage 3D: bug fixing and regression record. Issue #20.
 
-Current evidence:
+Evidence:
 
 - `03-testing/PLAYTEST_LOG.md`
 - `03-testing/BUG_LOG.md`
 - `03-testing/BEFORE_AFTER_CHANGES.md`
 - `03-testing/BALANCE_NOTES.md`
-
-Planned evidence:
-
 - `03-testing/STABILITY_CHECKLIST.md`
 - `03-testing/KNOWN_LIMITATIONS.md`
 
-Status: Stage 3A testing; Stage 3B active.
+Status: complete.
 
-## Stage 4 - Report Evidence (Planned)
+## Stage 4 - Report Evidence (Complete)
 
 Goal: write the final report from actual game and testing evidence, not from planned features only.
 
@@ -105,13 +102,13 @@ Sub-stages:
 - Stage 4B: testing, limitations, and reflection. Issue #21.
 - Stage 4C: legal, accessibility, and final completeness check. Issue #22.
 
-Planned evidence:
+Evidence:
 
 - `04-report/REPORT_DRAFT.md`
 - `04-report/REPORT_TESTING_REFLECTION.md`
 - `04-report/FINAL_REPORT_CHECKLIST.md`
 
-Status: planned after Stage 3 evidence.
+Status: complete.
 
 ## Professionalism (Ongoing)
 

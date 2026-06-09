@@ -26,13 +26,15 @@ Stage 3A - Playable stability and controls testing
 Stage 3B - Character ability and balance testing
 Stage 3C - Level flow, difficulty, and feedback iteration
 Stage 3D - Bug fixing and regression record
+Stage 4A - Report design and technical decisions evidence
+Stage 4B - Report testing, limitations, and reflection evidence
+Stage 4C - Report final completeness checklist
 Professionalism - remove old ShiftTheWorld folder and upload current FoxDash project source
 ```
 
 Current:
 
 ```text
-Stage 4A-4C - Report evidence
 Professionalism - final repository evidence audit
 ```
 
