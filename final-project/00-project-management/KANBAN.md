@@ -37,6 +37,9 @@ Live presentation/demo rehearsal is deferred for now, but the demo script is pre
 - [x] Professionalism final audit: verify repository structure, evidence map, issue status, and generated-file exclusions.
 - [x] Compress `Assets/Sounds/Enemies/Water.wav` from about `85 MB` to about `9.8 MB`.
 - [x] Add build/export evidence note and manual standalone build checklist.
+- [x] Export macOS standalone build ZIP and link it in `BUILD_EVIDENCE.md`.
+- [x] Complete final pre-submission Unity editor pass.
+- [x] Record external playtest entries from David, Zane, and Ken.
 - [x] Prepare demo script for the presentation stage.
 
 ## In Progress
@@ -45,13 +48,12 @@ Live presentation/demo rehearsal is deferred for now, but the demo script is pre
 
 ## Testing
 
-- [ ] Final pre-submission Unity editor pass.
-- [ ] Real external playtest entries from classmates.
+- [x] Final pre-submission Unity editor pass.
+- [x] External playtest entries from classmates.
 
 ## To Do
 
-- [ ] Export final standalone build ZIP from an activated Unity Editor.
-- [ ] Update `BUILD_EVIDENCE.md` with final ZIP or release link after export.
+- [ ] Optional Windows standalone build if Unity Windows Build Support is installed later.
 
 ## Deferred
 
@@ -60,7 +62,7 @@ Live presentation/demo rehearsal is deferred for now, but the demo script is pre
 ## Blocked / Risks
 
 - [x] Previous `Water.wav` large-file warning addressed by audio compression.
-- [ ] Unity license activation is required before automated or manual final build export can be completed.
+- [ ] Windows Build Support is not installed in the current local Unity installation.
 - [ ] Unity generated folders must remain excluded: `Library`, `Temp`, `Logs`, `UserSettings`, `.vscode`, IDE project files, and build caches.
 
 ## GitHub Issue Tracking

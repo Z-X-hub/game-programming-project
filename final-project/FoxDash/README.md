@@ -48,11 +48,26 @@ Use Unity `2022.3.62f3c1` or a compatible 2022 LTS editor. The main scene is:
 Assets/Scenes/Play.unity
 ```
 
-Build/export evidence and the final manual export checklist are documented in:
+## Final Build Export
+
+The app icon and Unity PlayerSettings branding use the Fox Dash assets under:
 
 ```text
-../02-game-development/BUILD_EVIDENCE.md
+Assets/Sprites/FoxDash/Icons/
 ```
+
+After opening the project in Unity, run:
+
+```text
+Tools > Fox Dash > Apply Project Branding
+```
+
+Then export the final builds:
+
+- macOS: `Tools > Fox Dash > Build > macOS Standalone`
+- Windows: `Tools > Fox Dash > Build > Windows Standalone`
+
+If the teacher may mark the project on Windows, submit a Windows zip as well as the macOS zip. A macOS `.app` is not directly runnable on Windows.
 
 ## Ownership And Reference
 

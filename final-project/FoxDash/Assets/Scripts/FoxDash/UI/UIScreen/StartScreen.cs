@@ -85,15 +85,15 @@ namespace FoxDash.UI
 
 			if ( Input.GetKeyDown ( KeyCode.Alpha1 ) || Input.GetKeyDown ( KeyCode.Keypad1 ) )
 			{
-				SelectRole ( PlayerCharacterRole.Runner );
+				SelectRole ( PlayerCharacterRole.Player );
 			}
 			else if ( Input.GetKeyDown ( KeyCode.Alpha2 ) || Input.GetKeyDown ( KeyCode.Keypad2 ) )
 			{
-				SelectRole ( PlayerCharacterRole.Knight );
+				SelectRole ( PlayerCharacterRole.Soldier );
 			}
 			else if ( Input.GetKeyDown ( KeyCode.Alpha3 ) || Input.GetKeyDown ( KeyCode.Keypad3 ) )
 			{
-				SelectRole ( PlayerCharacterRole.Monkey );
+				SelectRole ( PlayerCharacterRole.Adventurer );
 			}
 		}
 
@@ -130,9 +130,9 @@ namespace FoxDash.UI
 			panelShadow.effectDistance = new Vector2 ( 0f, -5f );
 
 			CreateLabel ( root.transform );
-			CreateRoleButton ( root.transform, PlayerCharacterRole.Runner, 0f, 43f );
-			CreateRoleButton ( root.transform, PlayerCharacterRole.Knight, 0f, -12f );
-			CreateRoleButton ( root.transform, PlayerCharacterRole.Monkey, 0f, -67f );
+			CreateRoleButton ( root.transform, PlayerCharacterRole.Player, 0f, 43f );
+			CreateRoleButton ( root.transform, PlayerCharacterRole.Soldier, 0f, -12f );
+			CreateRoleButton ( root.transform, PlayerCharacterRole.Adventurer, 0f, -67f );
 			RefreshCharacterButtons ();
 		}
 
@@ -435,10 +435,10 @@ namespace FoxDash.UI
 			Color color;
 			switch ( role )
 			{
-				case PlayerCharacterRole.Knight:
+				case PlayerCharacterRole.Soldier:
 					color = new Color ( 0.33f, 0.6f, 1f, 0.9f );
 					break;
-				case PlayerCharacterRole.Monkey:
+				case PlayerCharacterRole.Adventurer:
 					color = new Color ( 0.92f, 0.58f, 0.24f, 0.9f );
 					break;
 				default:
@@ -631,10 +631,10 @@ namespace FoxDash.UI
 			string resourcePath;
 			switch ( role )
 			{
-				case PlayerCharacterRole.Knight:
+				case PlayerCharacterRole.Soldier:
 					resourcePath = "FoxDash/KenneyCharacters/Soldier/soldier_idle";
 					break;
-				case PlayerCharacterRole.Monkey:
+				case PlayerCharacterRole.Adventurer:
 					resourcePath = "FoxDash/KenneyCharacters/Adventurer/adventurer_idle";
 					break;
 				default:
@@ -735,7 +735,7 @@ namespace FoxDash.UI
 
 		private void ApplySelectedRoleToCharacter ()
 		{
-			RedCharacter character = FindObjectOfType<RedCharacter> ( true );
+			FoxDashCharacter character = FindObjectOfType<FoxDashCharacter> ( true );
 			if ( character != null )
 			{
 				character.ApplySelectedRole ();

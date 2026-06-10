@@ -92,7 +92,7 @@ c18155784c1e8cfeb90e1205452aedb75e957410
 Committed file:
 
 ```text
-Assets/Scripts/FoxDash/Characters/RedCharacter.cs
+Assets/Scripts/FoxDash/Characters/FoxDashCharacter.cs
 ```
 
 ### Code Stage 2E - Character Visuals And UI Polish

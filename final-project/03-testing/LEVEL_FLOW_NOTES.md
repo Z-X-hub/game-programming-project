@@ -13,7 +13,8 @@ The current game loop is:
 1. Player starts at the Fox Dash home screen.
 2. Player chooses one of three roles.
 3. Player enters the runner scene.
-4. Terrain generator builds a side-scrolling platform route.
+4. Terrain generator builds a side-scrolling platform route from reusable block
+   prefabs.
 5. Player jumps gaps, rolls when needed, collects coins/chests, and avoids
    hazards.
 6. Game records score, coins, and death reason.
@@ -29,6 +30,29 @@ The current game loop is:
 | Collectables | `Coin.cs`, `Chest.cs`, coin/chest prefabs. | Gives the player short-term reward goals beyond distance score. |
 | Hazards | `Water.cs`, `Spike.cs`, `Saw.cs`, `Mace.cs`. | Creates failure states and difficulty variety. |
 | Feedback | `GameManager.cs`, `InGameScreen.cs`, `EndScreen.cs`. | Reports score, coins, death reason, and restart/home choices. |
+
+## Obstacle Combination Design
+
+Fox Dash is not structured as a traditional stage-clear game. The player is
+trying to last longer and beat a personal record. The terrain generator chooses
+from start, middle, and end block pools, and the middle blocks provide the main
+repeatable challenge. Each block can contain different layouts of platforms,
+coins, gaps, and hazards. This means the challenge comes from changing
+combinations rather than one memorised level path.
+
+The main obstacle types are:
+
+| Obstacle | Mechanic | Intended Challenge |
+| --- | --- | --- |
+| Water / fall gaps | Falling or touching water ends the run unless `SOLDIER` still has a revive. | Tests jump timing and recovery. |
+| Spikes | Dangerous collision hazard, especially when landing into them. | Tests platform reading and safe landing. |
+| Saw | Rotating contact hazard. | Tests spacing, jump/roll timing, and reaction. |
+| Mace | Moving/striking hazard that can slam and stop after killing the player. | Tests timing against moving danger. |
+| Coins / chests near hazards | Reward objects placed along the route. | Creates risk-reward decisions: safer survival path or harder coin path. |
+
+This structure supports single-player competition because the player is not
+only trying to "finish" the game, but trying to improve distance, coins, and
+execution on the next run.
 
 ## Difficulty And Character Interaction
 
@@ -62,6 +86,5 @@ feedback, restart or return home.
 
 - Longer play sessions could tune exact platform spacing and hazard density.
 - Coins and chest placement could be adjusted after more player score data.
-- A final built executable would help confirm that the Unity editor behaviour
-  matches a submitted build.
-
+- A Windows build would make cross-platform marking easier if the assessor is
+  not using macOS.

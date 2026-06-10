@@ -4,9 +4,9 @@ namespace FoxDash.Characters
 {
 	public enum PlayerCharacterRole
 	{
-		Runner,
-		Knight,
-		Monkey
+		Player,
+		Soldier,
+		Adventurer
 	}
 
 	public static class PlayerCharacterSelection
@@ -32,9 +32,9 @@ namespace FoxDash.Characters
 		{
 			switch ( role )
 			{
-				case PlayerCharacterRole.Knight:
+				case PlayerCharacterRole.Soldier:
 					return "SOLDIER";
-				case PlayerCharacterRole.Monkey:
+				case PlayerCharacterRole.Adventurer:
 					return "ADVENTURER";
 				default:
 					return "PLAYER";
@@ -45,9 +45,9 @@ namespace FoxDash.Characters
 		{
 			switch ( role )
 			{
-				case PlayerCharacterRole.Knight:
+				case PlayerCharacterRole.Soldier:
 					return "1X REVIVE";
-				case PlayerCharacterRole.Monkey:
+				case PlayerCharacterRole.Adventurer:
 					return "2X JUMP";
 				default:
 					return "RUN FAST";
@@ -56,10 +56,10 @@ namespace FoxDash.Characters
 
 		private static PlayerCharacterRole LoadSelectedRole ()
 		{
-			int savedValue = PlayerPrefs.GetInt ( PlayerPrefsKey, ( int )PlayerCharacterRole.Runner );
-			if ( savedValue < ( int )PlayerCharacterRole.Runner || savedValue > ( int )PlayerCharacterRole.Monkey )
+			int savedValue = PlayerPrefs.GetInt ( PlayerPrefsKey, ( int )PlayerCharacterRole.Player );
+			if ( savedValue < ( int )PlayerCharacterRole.Player || savedValue > ( int )PlayerCharacterRole.Adventurer )
 			{
-				savedValue = ( int )PlayerCharacterRole.Runner;
+				savedValue = ( int )PlayerCharacterRole.Player;
 			}
 
 			return ( PlayerCharacterRole )savedValue;

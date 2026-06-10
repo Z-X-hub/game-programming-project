@@ -88,8 +88,9 @@ Result: no tracked matches were found.
 
 - The demo/presentation evidence is intentionally deferred and should be prepared under `05-presentation/`.
 - The previous large-file warning for `Assets/Sounds/Enemies/Water.wav` has been addressed by compressing the asset from about `85 MB` to about `9.8 MB`.
-- A final standalone ZIP still needs to be exported from an activated Unity Editor; command-line export was attempted but blocked by local license activation.
-- A final Unity editor pass should still be done before the live demo or final packaged submission to make sure the local scene opens and plays correctly on the presentation machine.
+- The macOS standalone ZIP has been exported from the Unity GUI and linked in `BUILD_EVIDENCE.md`.
+- A Windows standalone ZIP is not included because the current local Unity installation only has macOS standalone support installed.
+- The final live demo should still be rehearsed on the presentation machine.
 
 ## Final Professionalism Conclusion
 

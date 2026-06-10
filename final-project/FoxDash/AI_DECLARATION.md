@@ -18,12 +18,12 @@ AI assistance was used only for selected complex or error-prone areas of the cod
 | Area | Files | Nature of AI Assistance |
 | --- | --- | --- |
 | Character selection state | `Assets/Scripts/FoxDash/Characters/PlayerCharacterSelection.cs`, `Assets/Scripts/FoxDash/UI/UIScreen/StartScreen.cs` | Helped structure a simple role-selection system, persist the chosen role with `PlayerPrefs`, and connect the menu selection to the playable character. |
-| Three-character ability logic | `Assets/Scripts/FoxDash/Characters/RedCharacter.cs` | Helped reason through the tricky parts of separating the fast runner, one-time SOLDIER revive, and ADVENTURER double jump without breaking the original RedRunner movement loop. |
-| SOLDIER one-time revive | `Assets/Scripts/FoxDash/Characters/RedCharacter.cs` | Helped debug edge cases around fall/water death, revive height, revive grace time, Rigidbody2D reset, and making the revive continue close to the death position instead of restarting the whole run. |
-| ADVENTURER double jump | `Assets/Scripts/FoxDash/Characters/RedCharacter.cs` | Helped refine the jump-count checks so the character can jump twice but other characters remain limited to one jump. |
-| Kenney character visual adaptation | `Assets/Scripts/FoxDash/Characters/KenneyCharacterVisual.cs`, `Assets/Scripts/FoxDash/Characters/RedCharacter.cs` | Helped tune sprite fallback, character scaling, movement poses, speed trails, and arm-swing animation so imported character assets fit the runner game better. |
+| Three-character ability logic | `Assets/Scripts/FoxDash/Characters/FoxDashCharacter.cs` | Helped reason through the tricky parts of separating the fast runner, one-time SOLDIER revive, and ADVENTURER double jump without breaking the original RedRunner movement loop. |
+| SOLDIER one-time revive | `Assets/Scripts/FoxDash/Characters/FoxDashCharacter.cs` | Helped debug edge cases around fall/water death, revive height, revive grace time, Rigidbody2D reset, and making the revive continue close to the death position instead of restarting the whole run. |
+| ADVENTURER double jump | `Assets/Scripts/FoxDash/Characters/FoxDashCharacter.cs` | Helped refine the jump-count checks so the character can jump twice but other characters remain limited to one jump. |
+| Kenney character visual adaptation | `Assets/Scripts/FoxDash/Characters/KenneyCharacterVisual.cs`, `Assets/Scripts/FoxDash/Characters/FoxDashCharacter.cs` | Helped tune sprite fallback, character scaling, movement poses, speed trails, and arm-swing animation so imported character assets fit the runner game better. |
 | Main menu layout and cleanup | `Assets/Scripts/FoxDash/UI/UIScreen/StartScreen.cs` | Helped reorganise the character cards and remove unused social/share-style buttons so the home screen supports the new character-selection feature. |
-| Runtime stability debugging | `Assets/Scripts/FoxDash/GameManager.cs`, `Assets/Scripts/FoxDash/UIManager.cs`, `Assets/Scripts/FoxDash/Characters/RedCharacter.cs` | Helped identify likely causes of null-reference and Unity-version compatibility issues, then add defensive checks where appropriate. |
+| Runtime stability debugging | `Assets/Scripts/FoxDash/GameManager.cs`, `Assets/Scripts/FoxDash/UIManager.cs`, `Assets/Scripts/FoxDash/Characters/FoxDashCharacter.cs` | Helped identify likely causes of null-reference and Unity-version compatibility issues, then add defensive checks where appropriate. |
 
 ## Non-AI / External Sources
 

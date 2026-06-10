@@ -73,8 +73,9 @@ Evidence:
 
 Status: complete.
 
-Remaining packaging task: export the final standalone ZIP from an activated
-Unity Editor and update `BUILD_EVIDENCE.md` with the final link.
+Build packaging status: the macOS standalone ZIP has been exported from the
+Unity GUI and linked in `BUILD_EVIDENCE.md`. A Windows build remains optional
+and depends on installing Unity Windows Build Support.
 
 ## Stage 3 - Testing And Iteration (Complete)
 

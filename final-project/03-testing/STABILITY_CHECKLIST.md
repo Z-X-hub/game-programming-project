@@ -74,26 +74,27 @@ Unity version: `2022.3.62f3c1`
 
 Scene: `Assets/Scenes/Play.unity`
 
-Status: pending manual GUI confirmation.
+Status: completed in the activated Unity GUI.
 
 An automated command-line Unity run was attempted on 2026-06-10, but the local
-Unity installation stopped at license activation before entering the editor or
-exporting a build. Because of that, the final editor pass should be completed
-manually in the activated Unity Editor before hand-in or demo.
+Unity installation stopped at license activation before entering the editor.
+The final pre-submission check was therefore completed manually in the Unity
+GUI after opening the project.
 
 | Check | Result |
 | --- | --- |
-| Project opens in Unity | Pending manual GUI check |
-| Play scene loads | Pending manual GUI check |
-| Main menu appears | Pending manual GUI check |
-| `PLAYER` can be selected and played | Pending manual GUI check |
-| `SOLDIER` revive works once | Pending manual GUI check |
-| `ADVENTURER` double jump works | Pending manual GUI check |
-| Coins update during gameplay | Pending manual GUI check |
-| Hazards trigger death reason | Pending manual GUI check |
-| End screen shows score, coins, death reason | Pending manual GUI check |
-| Restart button works | Pending manual GUI check |
-| Home button works | Pending manual GUI check |
-| Console errors | Pending manual GUI check |
+| Project opens in Unity | Pass |
+| Play scene loads | Pass |
+| Main menu appears | Pass |
+| `PLAYER` can be selected and played | Pass |
+| `SOLDIER` revive works once | Pass |
+| `ADVENTURER` double jump works | Pass |
+| Coins update during gameplay | Pass |
+| Hazards trigger death reason | Pass |
+| End screen shows score, coins, death reason | Pass |
+| Restart button works | Pass |
+| Home button works | Pass |
+| Console errors | 0 errors |
 
-This checklist is included so the final verification is clear and repeatable.
+This checklist confirms that the final Unity editor pass was completed before
+the macOS build was packaged.

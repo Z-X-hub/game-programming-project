@@ -10,9 +10,9 @@ of what could be improved with more time.
 
 | Area | Limitation | Impact | Possible Future Improvement |
 | --- | --- | --- | --- |
-| Playtest sample size | Testing evidence is based on short development checks and user-observed Unity editor runs. An external playtest template has been added, but real classmates still need to fill it in. | Balance conclusions are suitable for a student vertical slice, but not statistically strong. | Ask two or three players to try the game and record score/coin/death results in Session 4 of `PLAYTEST_LOG.md`. |
+| Playtest sample size | External feedback was gathered from David, Zane, and Ken, but each tester only played a short session. | Balance conclusions are suitable for a student vertical slice, but not statistically strong. | Run longer sessions and record score/coin/death results for each role. |
 | Level balance | Platform spacing, hazard density, and coin placement have not been tuned from a large set of player results. | Some sections may feel easier or harder depending on selected character. | Record repeated runs for each role and adjust block/hazard frequency. |
-| Build evidence | Local C# compilation passes and a Unity build attempt is documented, but final standalone export was blocked by local Unity license activation. | The project is source-complete, but packaged build evidence still needs final confirmation. | Export a final build from an activated Unity Editor and update `BUILD_EVIDENCE.md` with the ZIP/release link. |
+| Windows build evidence | The macOS standalone build has been exported and uploaded, but a Windows build is not included because the local Unity install only has macOS standalone support. | Assessors on macOS can run the submitted app directly; assessors on Windows may need to run from Unity source unless a Windows build is produced later. | Install Unity Windows Build Support and export `FoxDash_Final_Build_Windows.zip` if cross-platform marking is required. |
 | Presentation evidence | A demo script is prepared, but the live presentation rehearsal is still deferred. | The speaking structure is ready, but the final live demonstration still needs rehearsal. | Use `05-presentation/DEMO_SCRIPT.md` for the final presentation. |
 | Accessibility | Controls and character differences are documented, but there are no advanced accessibility settings. | Basic clarity is present; deeper accessibility is limited. | Add remappable controls, larger text mode, or audio/visual feedback options. |
 
@@ -21,6 +21,7 @@ of what could be improved with more time.
 | Area | Improvement Made | Result |
 | --- | --- | --- |
 | Audio file size | `Assets/Sounds/Enemies/Water.wav` was compressed in place from about `85 MB` to about `9.8 MB`, while keeping the same file path and Unity `.meta` GUID. | The repository is smaller and the previous GitHub large-file warning is no longer expected for this asset. |
+| macOS build evidence | `FoxDash_Final_Build_Mac.zip` was exported from the Unity GUI and uploaded as GitHub Release evidence. | The repository now has a downloadable packaged build for final marking/demo evidence. |
 
 ## Report Use
 

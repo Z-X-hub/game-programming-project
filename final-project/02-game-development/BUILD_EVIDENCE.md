@@ -9,20 +9,25 @@ Build evidence date: 2026-06-10
 
 ## Build Result
 
-The final standalone build export was attempted from the local Unity project,
-but it could not be completed by command line in this environment because the
-Unity Editor license was not available for automated execution.
-
-Observed Unity log result:
+The final macOS standalone build was exported successfully from an activated
+Unity Editor and packaged as:
 
 ```text
-No valid Unity Editor license found. Please activate your license.
+FoxDash_Final_Build_Mac.zip
 ```
 
-This means the repository currently contains source, run instructions, testing
-evidence, and a documented build attempt, but the final exported ZIP still
-needs to be produced manually from an activated Unity Editor before final
-submission.
+The exported app metadata was checked after packaging:
+
+```text
+Product name: Fox Dash
+Bundle identifier: com.zhuxuan.foxdash
+App icon: Fox Dash icon, not the earlier RedRunner icon
+```
+
+The Windows standalone build is not included in this evidence because the
+available local Unity installation only has `MacStandaloneSupport` installed.
+The project source and build settings still support exporting Windows if the
+Unity `Windows Build Support` module is installed later.
 
 ## Build Attempt
 
@@ -43,8 +48,9 @@ Attempted command:
   -logFile /Users/zhuxuan/Downloads/FoxDash/BuildLogs/FoxDash_Final_Build_Mac.log
 ```
 
-A second non-batch attempt was also tried, but it stopped at the same Unity
-license check.
+A second non-batch attempt was also tried and stopped at the same Unity license
+check. The final macOS build was therefore exported manually through the Unity
+GUI after the editor was opened and activated.
 
 ## Compilation Validation
 
@@ -64,19 +70,19 @@ Result:
 0 errors
 ```
 
-## Manual Export Steps
+## Manual Export Steps Used
 
-To complete this evidence before hand-in:
+The submitted macOS build was produced with these steps:
 
 1. Open `/Users/zhuxuan/Downloads/FoxDash` in Unity `2022.3.62f3c1`.
 2. Open `Assets/Scenes/Play.unity`.
 3. Go to `File > Build Settings`.
-4. Select macOS or Windows as the target platform.
+4. Select macOS as the target platform.
 5. Add `Assets/Scenes/Play.unity` to Scenes In Build if it is not already listed.
-6. Export the standalone build.
-7. Compress the result as `FoxDash_Final_Build_Mac.zip` or `FoxDash_Final_Build_Windows.zip`.
-8. Add the final ZIP to the submission package or GitHub Release.
-9. Update the Build Link section below.
+6. Apply Fox Dash project branding and icon settings.
+7. Export the standalone build.
+8. Compress the result as `FoxDash_Final_Build_Mac.zip`.
+9. Upload the ZIP as GitHub Release evidence.
 
 ## Final Run Test Checklist
 
@@ -84,15 +90,15 @@ This checklist should be completed after the exported app is opened:
 
 | Check | Result |
 | --- | --- |
-| Game opened successfully | Pending exported build |
-| Main menu displayed correctly | Pending exported build |
-| Character selection worked for `PLAYER` | Pending exported build |
-| Character selection worked for `SOLDIER` | Pending exported build |
-| Character selection worked for `ADVENTURER` | Pending exported build |
-| Player could enter gameplay scene | Pending exported build |
-| Jump, roll, movement, coins, hazards, restart, and home button worked | Pending exported build |
-| No console errors appeared during final test | Pending exported build |
+| Game opened successfully | Pass |
+| Main menu displayed correctly | Pass |
+| Character selection worked for `PLAYER` | Pass |
+| Character selection worked for `SOLDIER` | Pass |
+| Character selection worked for `ADVENTURER` | Pass |
+| Player could enter gameplay scene | Pass |
+| Jump, roll, movement, coins, hazards, restart, and home button worked | Pass |
+| No console errors appeared during final test | Pass |
 
 ## Build Link
 
-GitHub Release / submitted ZIP: pending after manual Unity export.
+GitHub Release / submitted ZIP: [FoxDash_Final_Build_Mac.zip](https://github.com/Z-X-hub/game-programming-project/releases/tag/foxdash-final-macos-build)

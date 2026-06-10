@@ -30,6 +30,7 @@ final-project/04-report/FINAL_REPORT.md
 - [x] Character selection and ability implementation documented.
 - [x] Build/run instructions documented.
 - [x] Build/export evidence file added.
+- [x] macOS standalone build exported and linked through GitHub Release.
 - [x] Generated Unity folders excluded from source upload.
 
 Evidence:
@@ -44,6 +45,8 @@ final-project/02-game-development/BUILD_EVIDENCE.md
 
 - [x] Playtest log included.
 - [x] Stability checklist included.
+- [x] Final Unity editor pre-submission check completed.
+- [x] External playtest entries from David, Zane, and Ken recorded.
 - [x] Character balance notes included.
 - [x] Level flow notes included.
 - [x] Bug log included.
@@ -98,7 +101,5 @@ final-project/05-presentation/DEMO_SCRIPT.md
 
 ## Still To Finish
 
-- [ ] Final Unity editor pre-submission check in activated Unity GUI.
-- [ ] Real external playtest entries from classmates.
-- [ ] Final standalone build export and ZIP/release link.
 - [ ] Live demo / presentation rehearsal.
+- [ ] Optional Windows standalone build if Windows Build Support is installed later.

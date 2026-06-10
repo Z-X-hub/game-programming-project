@@ -130,7 +130,7 @@ Assets/Scripts/FoxDash/GameManager.cs
 Assets/Scripts/FoxDash/UIManager.cs
 Assets/Scripts/FoxDash/AudioManager.cs
 Assets/Scripts/FoxDash/Characters/Character.cs
-Assets/Scripts/FoxDash/Characters/RedCharacter.cs
+Assets/Scripts/FoxDash/Characters/FoxDashCharacter.cs
 Assets/Scripts/FoxDash/Characters/PlayerCharacterSelection.cs
 Assets/Scripts/FoxDash/Characters/KenneyCharacterVisual.cs
 Assets/Scripts/FoxDash/UI/UIScreen/StartScreen.cs
@@ -156,10 +156,10 @@ Assets/Scripts/FoxDash/Utilities/GroundCheck.cs
 | Feature | Main Source Files |
 | --- | --- |
 | Character selection | `PlayerCharacterSelection.cs`, `StartScreen.cs` |
-| Fast PLAYER role | `RedCharacter.cs`, `KenneyCharacterVisual.cs` |
-| SOLDIER one-time revive | `RedCharacter.cs` |
-| ADVENTURER double jump | `RedCharacter.cs` |
-| Kenney character visuals | `KenneyCharacterVisual.cs`, `RedCharacter.cs` |
+| Fast PLAYER role | `FoxDashCharacter.cs`, `KenneyCharacterVisual.cs` |
+| SOLDIER one-time revive | `FoxDashCharacter.cs` |
+| ADVENTURER double jump | `FoxDashCharacter.cs` |
+| Kenney character visuals | `KenneyCharacterVisual.cs`, `FoxDashCharacter.cs` |
 | Main menu layout | `StartScreen.cs` |
 | Game flow and scoring | `GameManager.cs`, `UIManager.cs` |
 | Generated platform runner | `TerrainGenerator.cs`, `DefaultTerrainGenerator.cs`, `TerrainGenerationSettings.cs` |

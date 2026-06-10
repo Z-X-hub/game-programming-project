@@ -32,14 +32,13 @@ Main files:
 ```text
 Assets/Scripts/FoxDash/Characters/PlayerCharacterSelection.cs
 Assets/Scripts/FoxDash/UI/UIScreen/StartScreen.cs
-Assets/Scripts/FoxDash/Characters/RedCharacter.cs
+Assets/Scripts/FoxDash/Characters/FoxDashCharacter.cs
 ```
 
 Implemented behaviour:
 
 - stores selected role with `PlayerPrefs`
-- supports three roles: `Runner`, `Knight`, and `Monkey`
-- displays them to the player as `PLAYER`, `SOLDIER`, and `ADVENTURER`
+- supports three roles: `PLAYER`, `SOLDIER`, and `ADVENTURER`
 - applies the selected role to the playable character before gameplay starts
 
 ## Character Abilities
@@ -47,7 +46,7 @@ Implemented behaviour:
 Main file:
 
 ```text
-Assets/Scripts/FoxDash/Characters/RedCharacter.cs
+Assets/Scripts/FoxDash/Characters/FoxDashCharacter.cs
 ```
 
 Implemented abilities:
@@ -65,7 +64,7 @@ The older active shield idea was removed. The `SOLDIER` role now uses automatic 
 Relevant methods:
 
 ```text
-TryUseKnightRevive(...)
+TryUseSoldierRevive(...)
 ReviveFromFall(...)
 Die(...)
 Reset(...)
@@ -102,7 +101,7 @@ Main files:
 
 ```text
 Assets/Scripts/FoxDash/Characters/KenneyCharacterVisual.cs
-Assets/Scripts/FoxDash/Characters/RedCharacter.cs
+Assets/Scripts/FoxDash/Characters/FoxDashCharacter.cs
 ```
 
 Implemented behaviour:
@@ -152,6 +151,7 @@ Assets/Scripts/FoxDash/UI/UICoinText.cs
 Implemented behaviour:
 
 - generated platform-runner sections
+- probability-based selection of reusable platform blocks
 - coins and chests as collectables
 - hazards including water, spikes, saws, and enemies
 - score based on forward progress

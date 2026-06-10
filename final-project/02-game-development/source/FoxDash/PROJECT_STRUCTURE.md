@@ -45,7 +45,7 @@
 1. `GameManager` 进入 `Play.unity` 后初始化 UI、读取存档、监听角色死亡状态。
 2. 玩家点击开始后，`GameManager.StartGame()` 恢复时间流动。
 3. 开始界面按 `1/2/3` 选择 `PLAYER`、`SOLDIER` 或 `ADVENTURER`，然后点击 Play 按钮进入游戏。
-4. `RedCharacter` 每帧读取输入，控制水平移动、跳跃、翻滚和死亡表现；`PLAYER` 速度更快，`SOLDIER` 掉落或落水后可自动复活一次，`ADVENTURER` 可连续两次按空格二段跳。
+4. `FoxDashCharacter` 每帧读取输入，控制水平移动、跳跃、翻滚和死亡表现；`PLAYER` 速度更快，`SOLDIER` 掉落或落水后可自动复活一次，`ADVENTURER` 可连续两次按空格二段跳。
 5. `TerrainGenerator` 根据角色位置持续生成前方地形和背景，清理已经远离视野的块。
 6. 角色死亡后，`GameManager` 记录本局分数、更新最高分，然后打开结算界面。
 7. 结算界面显示死亡原因、本局分数、最高分、新纪录状态、本局金币和总金币；暂停界面提供继续、重开本局和返回主页。

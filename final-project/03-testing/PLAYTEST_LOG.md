@@ -115,25 +115,18 @@ Result:
 
 ## Session 4 - External Playtest Record
 
-Date prepared: 2026-06-10
+Date: 2026-06-10
 
-Status: prepared for real external testers; results still need to be filled in
-after classmates play the game.
+Testers: David, Zane, Ken
 
-Recommended testers: 2-3 students
-
-Recommended duration: 5 minutes per tester
-
-Focus: controls, role clarity, difficulty, feedback, restart flow
-
-This section is intentionally not filled with fake player results. It should be
-completed after actual classmates try the exported build or Unity editor run.
+Focus: controls, role clarity, difficulty, feedback, restart flow, and whether
+the three roles feel meaningfully different.
 
 | Tester | Character Used | Observation | Change Made / Decision |
 | --- | --- | --- | --- |
-| Tester A | `PLAYER` | To be recorded after playtest. | To be recorded after playtest. |
-| Tester B | `SOLDIER` | To be recorded after playtest. | To be recorded after playtest. |
-| Tester C | `ADVENTURER` | To be recorded after playtest. | To be recorded after playtest. |
+| David | `PLAYER` | Felt the speed was suitable. The faster movement gives room for player skill, because maintaining speed and timing jumps can help clear harder obstacle combinations. | Kept `PLAYER` as the faster role. The role supports a higher-risk play style instead of simply making the game easier. |
+| Zane | `SOLDIER` | Felt this role is suitable for players who are less confident with movement timing. The one-time revive gives another chance to continue and overcome a mistake. | Kept the revive automatic rather than requiring an extra key, because it supports learning and recovery. |
+| Ken | `ADVENTURER` | Felt the double jump depends strongly on player control. To pass obstacles well, the player must use the second jump at the right time instead of pressing it randomly. | Kept `ADVENTURER` as the skill-based movement role and kept the menu explanation for `2X JUMP`. |
 
 ## Session 4 Questions
 
@@ -144,9 +137,14 @@ completed after actual classmates try the exported build or Unity editor run.
 - Did restart and home flow feel clear?
 - Which character felt easiest or hardest?
 
-## Session 4 Summary Template
+## Session 4 Summary
 
-External players should confirm whether the basic goal is clear, whether the
-three roles feel different, and whether feedback after death is enough. Any
-unclear point should be recorded here and either fixed before submission or
-moved to future work in `KNOWN_LIMITATIONS.md`.
+The external playtest supported the role design. David's feedback confirmed
+that the faster character can create skill expression through timing and speed
+control. Zane's feedback confirmed that the revive character gives a safer
+option for players who are still learning. Ken's feedback confirmed that the
+double-jump character is more demanding and rewards careful air control.
+
+No major ability redesign was needed after this session. The main decision was
+to keep the three-character structure because each tester described a different
+play style.

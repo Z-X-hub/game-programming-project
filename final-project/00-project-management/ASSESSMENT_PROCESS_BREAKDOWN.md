@@ -4,14 +4,14 @@ This document breaks the project process into smaller evidence tasks that match 
 
 Live presentation/demo rehearsal is intentionally deferred for now. The current
 repository evidence includes planning, development, testing, report,
-professionalism, build-attempt evidence, and a prepared demo script.
+professionalism, macOS build evidence, and a prepared demo script.
 
 ## Summary
 
 | Assessment Area | Weight | Current Repository Evidence | Status |
 | --- | ---: | --- | --- |
 | Game Concept and Design | 20% | `01-concept-design/`, Issue #13 | Complete |
-| Final Game / Game and Report | 40% | `02-game-development/`, `03-testing/`, `04-report/`, Issues #14-#22 | Complete for source/report evidence; final standalone ZIP pending |
+| Final Game / Game and Report | 40% | `02-game-development/`, `03-testing/`, `04-report/`, Issues #14-#22 | Complete, including macOS standalone build evidence |
 | Game Demo / Presentation | 20% | `05-presentation/`, Issue #17 | Demo script prepared; live demo deferred |
 | Professionalism | 20% | `00-project-management/`, README files, Issues, commits, Issue #23 | Complete |
 

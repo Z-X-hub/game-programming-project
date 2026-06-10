@@ -21,9 +21,9 @@ Assessment focus:
 
 | Character | Ability | Code / Design Evidence | Balance Intention |
 | --- | --- | --- | --- |
-| `PLAYER` | Faster movement | `RedCharacter.ApplyRoleStats()` applies the runner speed multiplier. Current role multipliers are `PLAYER 1.2`, `SOLDIER 0.9`, and `ADVENTURER 1.0`. | Higher score potential, but harder reaction timing. |
-| `SOLDIER` | One automatic revive | `TryUseKnightRevive()` and `ReviveFromFall()` consume the revive once and continue near the failure point. | More forgiving for falls/water without adding a separate ability button. |
-| `ADVENTURER` | Double jump | `RedCharacter.Jump()` allows two jumps only for the adventurer role. | Better recovery from gaps and awkward platform spacing. |
+| `PLAYER` | Faster movement | `FoxDashCharacter.ApplyRoleStats()` applies the runner speed multiplier. Current role multipliers are `PLAYER 1.2`, `SOLDIER 0.9`, and `ADVENTURER 1.0`. | Higher score potential, but harder reaction timing. |
+| `SOLDIER` | One automatic revive | `TryUseSoldierRevive()` and `ReviveFromFall()` consume the revive once and continue near the failure point. | More forgiving for falls/water without adding a separate ability button. |
+| `ADVENTURER` | Double jump | `FoxDashCharacter.Jump()` allows two jumps only for the adventurer role. | Better recovery from gaps and awkward platform spacing. |
 
 ## Initial Checks
 

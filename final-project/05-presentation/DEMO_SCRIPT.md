@@ -27,7 +27,7 @@ and death feedback.
 ## 4. Technical Points
 
 - `PlayerPrefs` saves the selected role through `PlayerCharacterSelection.cs`.
-- `RedCharacter.cs` handles role-specific movement, revive, and double-jump checks.
+- `FoxDashCharacter.cs` handles role-specific movement, revive, and double-jump checks.
 - `KenneyCharacterVisual.cs` handles the imported character visuals and fast-run animation.
 - `GameManager.cs` handles score, coins, death reason, and game flow.
 - `TerrainGenerator.cs` manages generated runner sections and cleanup.

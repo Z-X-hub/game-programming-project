@@ -25,7 +25,7 @@ namespace FoxDash.Characters
 		private Transform m_VisualTransform;
 		private Transform m_RunnerTrailRoot;
 		private Transform m_ArmSwingRoot;
-		private PlayerCharacterRole m_CurrentRole = PlayerCharacterRole.Runner;
+		private PlayerCharacterRole m_CurrentRole = PlayerCharacterRole.Player;
 		private bool m_ShieldActive = false;
 		private Sprite m_CurrentSprite;
 
@@ -78,7 +78,7 @@ namespace FoxDash.Characters
 				return;
 			}
 
-			if ( m_CurrentRole == PlayerCharacterRole.Knight && m_ShieldActive )
+			if ( m_CurrentRole == PlayerCharacterRole.Soldier && m_ShieldActive )
 			{
 				m_Renderer.color = new Color ( 1f, 0.92f, 0.35f, 1f );
 			}
@@ -191,14 +191,14 @@ namespace FoxDash.Characters
 
 			switch ( m_CurrentRole )
 			{
-				case PlayerCharacterRole.Knight:
+				case PlayerCharacterRole.Soldier:
 					position.x += 0.01f + stride * 0.022f;
 					position.y += lift * 0.02f;
 					rotationZ = 0f;
 					scale.x = BaseVisualScale * ( 1f + lift * 0.018f );
 					scale.y = BaseVisualScale * ( 1f - lift * 0.012f );
 					break;
-				case PlayerCharacterRole.Monkey:
+				case PlayerCharacterRole.Adventurer:
 					position.x += 0.025f + stride * 0.04f;
 					position.y += 0.006f + lift * 0.045f;
 					rotationZ = 0f;
@@ -226,7 +226,7 @@ namespace FoxDash.Characters
 
 		private Sprite GetRunnerRunSprite ( float speedX )
 		{
-			if ( m_CurrentRole != PlayerCharacterRole.Runner || !m_Sprites.HasRunFrames )
+			if ( m_CurrentRole != PlayerCharacterRole.Player || !m_Sprites.HasRunFrames )
 			{
 				return null;
 			}
@@ -256,9 +256,9 @@ namespace FoxDash.Characters
 			float speedAmount = Mathf.Clamp01 ( speedX / 12f );
 			switch ( m_CurrentRole )
 			{
-				case PlayerCharacterRole.Knight:
+				case PlayerCharacterRole.Soldier:
 					return Mathf.Lerp ( 2.2f, 2.9f, speedAmount );
-				case PlayerCharacterRole.Monkey:
+				case PlayerCharacterRole.Adventurer:
 					return Mathf.Lerp ( 2.8f, 3.8f, speedAmount );
 				default:
 					return Mathf.Lerp ( 3.4f, 4.6f, speedAmount );
@@ -327,7 +327,7 @@ namespace FoxDash.Characters
 
 			switch ( m_CurrentRole )
 			{
-				case PlayerCharacterRole.Knight:
+				case PlayerCharacterRole.Soldier:
 					baseAngle = -66f;
 					swingAmount = Mathf.Lerp ( 20f, 28f, speedAmount );
 					backSwingRatio = 0.7f;
@@ -336,7 +336,7 @@ namespace FoxDash.Characters
 					frontShoulderX = 0.18f;
 					backShoulderX = -0.1f;
 					break;
-				case PlayerCharacterRole.Monkey:
+				case PlayerCharacterRole.Adventurer:
 					baseAngle = -58f;
 					swingAmount = Mathf.Lerp ( 30f, 42f, speedAmount );
 					backSwingRatio = 0.85f;
@@ -400,11 +400,11 @@ namespace FoxDash.Characters
 			Color handColor;
 			switch ( m_CurrentRole )
 			{
-				case PlayerCharacterRole.Knight:
+				case PlayerCharacterRole.Soldier:
 					sleeveColor = new Color ( 0.36f, 0.32f, 0.24f, 0.96f );
 					handColor = new Color ( 0.42f, 0.27f, 0.15f, 0.98f );
 					break;
-				case PlayerCharacterRole.Monkey:
+				case PlayerCharacterRole.Adventurer:
 					sleeveColor = new Color ( 0.25f, 0.52f, 0.78f, 0.96f );
 					handColor = new Color ( 0.96f, 0.72f, 0.5f, 0.98f );
 					break;
@@ -518,7 +518,7 @@ namespace FoxDash.Characters
 
 		private bool IsFastRunnerMoving ( float speedX, bool grounded, bool dead, bool rolling )
 		{
-			return m_CurrentRole == PlayerCharacterRole.Runner &&
+			return m_CurrentRole == PlayerCharacterRole.Player &&
 				grounded &&
 				!dead &&
 				!rolling &&
@@ -721,9 +721,9 @@ namespace FoxDash.Characters
 		{
 			switch ( role )
 			{
-				case PlayerCharacterRole.Knight:
+				case PlayerCharacterRole.Soldier:
 					return new KenneyCharacterInfo ( "Soldier", "soldier" );
-				case PlayerCharacterRole.Monkey:
+				case PlayerCharacterRole.Adventurer:
 					return new KenneyCharacterInfo ( "Adventurer", "adventurer" );
 				default:
 					return new KenneyCharacterInfo ( "Player", "player" );

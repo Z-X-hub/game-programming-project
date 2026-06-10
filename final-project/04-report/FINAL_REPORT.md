@@ -6,14 +6,17 @@ Updated: 2026-06-10
 
 ## 1. Introduction
 
-Fox Dash is a 2D Unity platform runner vertical slice. The player chooses one of
-three characters, runs through generated platform sections, collects coins and
-chests, avoids hazards, and tries to survive for as long as possible.
+Fox Dash is a 2D Unity platform runner vertical slice inspired by RedRunner.
+The player chooses one of three characters, runs through generated platform
+sections, collects coins and chests, avoids hazards, and tries to survive for
+as long as possible.
 
 The project focuses on a small but complete player experience rather than a
 large unfinished game. The main design goal is to make the run easy to
 understand, visually clear, and meaningfully different depending on the selected
-character.
+character. It is not a fixed level-clear game. The main challenge is improving
+personal distance, coin collection, and route execution across changing
+obstacle combinations.
 
 ## 2. Game Concept And Player Experience
 
@@ -28,8 +31,12 @@ The core loop is:
 
 This loop was chosen because it is suitable for a vertical slice. It allows the
 game to demonstrate movement, collision, UI, animation, feedback, scoring,
-collectables, and restart flow without requiring a very large amount of level
-content.
+collectables, generated terrain, and restart flow without requiring a very large
+amount of hand-authored level content.
+
+Although Fox Dash is single-player, the high-score loop gives the player a
+competitive goal. The player is trying to beat their own record, choose better
+routes, and use the selected character more effectively.
 
 ## 3. Main Design Decisions
 
@@ -45,6 +52,18 @@ The three-character system is the main creative feature.
 
 This gives the player a meaningful choice before the run starts. The same level
 flow feels different depending on the selected role.
+
+### Generated Obstacles And Coin Risk
+
+The game uses reusable platform blocks selected by the terrain generator. This
+keeps the project within scope while still making the run replayable. The
+challenge comes from combinations of gaps, water, spikes, saws, maces, coins,
+and chests.
+
+Coins are not only decoration. They add a risk-reward decision: some routes can
+lead to more coins, but those routes may also require tighter jumps or better
+timing around hazards. This helps the runner feel less repetitive because the
+player can choose between safer survival and more rewarding but harder routes.
 
 ### SOLDIER Revive Instead Of Active Shield
 
@@ -104,18 +123,18 @@ This keeps the repository more readable and avoids uploading local cache files.
 | Area | Main Files | Purpose |
 | --- | --- | --- |
 | Game flow | `GameManager.cs`, `UIManager.cs` | Start, pause, death, restart, score, and run state. |
-| Player logic | `RedCharacter.cs`, `Character.cs` | Movement, jump, death, revive, role stats, and character behaviour. |
+| Player logic | `FoxDashCharacter.cs`, `Character.cs` | Movement, jump, death, revive, role stats, and character behaviour. |
 | Character selection | `PlayerCharacterSelection.cs`, `StartScreen.cs` | Stores selected role and applies it to the run. |
 | Character visuals | `KenneyCharacterVisual.cs` | Loads character sprites, role visuals, running frames, and speed feedback. |
 | UI screens | `StartScreen.cs`, `InGameScreen.cs`, `PauseScreen.cs`, `EndScreen.cs` | Home menu, HUD, pause controls, and end feedback. |
-| Level flow | `TerrainGenerator.cs`, `DefaultTerrainGenerator.cs` | Generated runner blocks and cleanup. |
+| Level flow | `TerrainGenerator.cs`, `DefaultTerrainGenerator.cs` | Generated runner blocks, random/probability-based block choice, and cleanup. |
 | Collectables/hazards | `Coin.cs`, `Chest.cs`, `Water.cs`, `Spike.cs`, `Saw.cs`, `Mace.cs` | Rewards, death triggers, and failure feedback. |
 
 ### Role Implementation
 
-`RedCharacter.cs` applies role behaviour. The speed role changes run and max run
-speed. SOLDIER receives a one-time revive flag and grace period. ADVENTURER uses
-jump-count logic so it can jump twice before landing.
+`FoxDashCharacter.cs` applies role behaviour. The speed role changes run and
+max run speed. SOLDIER receives a one-time revive flag and grace period.
+ADVENTURER uses jump-count logic so it can jump twice before landing.
 
 `PlayerCharacterSelection.cs` stores the chosen role with `PlayerPrefs`, which
 allows the menu choice to be used when gameplay begins.
@@ -186,6 +205,7 @@ Important changes after testing included:
 - fixing terrain cleanup null-reference risk
 - improving PLAYER running animation
 - fixing the issue where PLAYER appeared larger while running
+- recording external playtest feedback from David, Zane, and Ken
 - documenting limitations and remaining final checks
 
 The local build check completed successfully:
@@ -205,21 +225,19 @@ The final build/export evidence is recorded in:
 final-project/02-game-development/BUILD_EVIDENCE.md
 ```
 
-The build export command was prepared and attempted on 2026-06-10, but command
-line export was blocked by the local Unity license state. This is recorded
-honestly as a remaining packaging task rather than being presented as a
-successful exported build.
+The macOS standalone build was exported through the Unity GUI and uploaded as
+release evidence. A Windows build was not included because the available Unity
+installation only had macOS standalone support installed.
 
 ## 8. Technical Limitation
 
 The game is a vertical slice, so it has limitations:
 
 - platform and hazard balance could be improved with more player data
-- final standalone build export still needs to be completed from an activated
-  Unity editor before final distribution
+- Windows build export would still be useful if the assessor marks on Windows
 - accessibility is basic and could be improved with remappable controls or
   larger text options
-- `RedCharacter.cs` still contains several responsibilities inherited from the
+- `FoxDashCharacter.cs` still contains several responsibilities inherited from the
   original runner structure. With more time, I would separate movement, role
   abilities, and visual feedback into smaller components such as
   `PlayerMovement`, `CharacterAbilityController`, and `CharacterVisualController`.

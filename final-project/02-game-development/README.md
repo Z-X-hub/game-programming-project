@@ -10,7 +10,7 @@ This folder records the current Fox Dash Unity vertical slice. Stage 2 focuses o
 
 - `SOURCE_MANIFEST.md` - Unity project source structure, included folders, excluded generated folders, and key script index.
 - `RUN_INSTRUCTIONS.md` - how to open and run the game in Unity.
-- `BUILD_EVIDENCE.md` - final build/export attempt, license blocker, and manual export checklist.
+- `BUILD_EVIDENCE.md` - macOS build/export evidence, release link, and Windows build note.
 - `IMPLEMENTATION_NOTES.md` - implemented gameplay systems and key script responsibilities.
 - `UPLOAD_NOTES.md` - upload approach, generated-folder exclusions, and large-file notes.
 - `CODE_STAGING_PLAN.md` - completed staged source-code upload order.
@@ -84,8 +84,11 @@ AGENTS.md
 
 ## Build Evidence Status
 
-The source project is ready to open in Unity, but the final standalone export
-still needs to be produced from an activated Unity Editor. A command-line build
-attempt on 2026-06-10 was blocked by the local Unity license state, so this is
-recorded honestly in `BUILD_EVIDENCE.md` instead of being presented as a
-successful exported ZIP.
+The macOS standalone build has been exported from the Unity GUI and packaged as
+`FoxDash_Final_Build_Mac.zip`. The GitHub Release link and final run checklist
+are recorded in `BUILD_EVIDENCE.md`.
+
+A Windows standalone build is not included because the current local Unity
+installation only has macOS standalone support installed. If Windows marking is
+required, Unity Windows Build Support should be installed and a Windows ZIP can
+be exported later.

@@ -4,7 +4,9 @@
 
 The project is uploaded in stages so the repository clearly shows planning, development, testing, reflection, and professional working practice over time.
 
-All non-presentation repository evidence is complete. Presentation/demo preparation remains deferred for now.
+All non-presentation repository evidence is complete. The macOS standalone
+build is linked from `02-game-development/BUILD_EVIDENCE.md`. Presentation/demo
+preparation remains deferred for live rehearsal.
 
 ## Current Stage
 
@@ -138,7 +140,7 @@ but the active final game source is now Fox Dash.
 
 ## Current Focus
 
-The main non-presentation evidence is complete. A build export attempt has been
-recorded, but the final standalone ZIP still needs to be produced from an
-activated Unity Editor. The demo script is prepared; the live demo/presentation
-remains the final deferred stage.
+The main non-presentation evidence is complete. The macOS standalone ZIP has
+been exported and linked as release evidence. A Windows build can be added later
+if Unity Windows Build Support is installed. The demo script is prepared; the
+live demo/presentation remains the final deferred stage.

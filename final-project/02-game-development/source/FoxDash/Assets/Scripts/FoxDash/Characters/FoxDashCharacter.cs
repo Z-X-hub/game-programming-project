@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,7 +9,7 @@ using FoxDash.Utilities;
 namespace FoxDash.Characters
 {
 
-	public class RedCharacter : Character
+	public class FoxDashCharacter : Character
 	{
 		#region Fields
 
@@ -69,23 +69,23 @@ namespace FoxDash.Characters
 		[SerializeField]
 		protected float m_RunnerSpeedMultiplier = 1.2f;
 		[SerializeField]
-		protected float m_KnightSpeedMultiplier = 0.9f;
+		protected float m_SoldierSpeedMultiplier = 0.9f;
 		[SerializeField]
-		protected float m_MonkeySpeedMultiplier = 1f;
+		protected float m_AdventurerSpeedMultiplier = 1f;
 
-		protected PlayerCharacterRole m_CurrentRole = PlayerCharacterRole.Runner;
-		protected bool m_KnightReviveAvailable = false;
+		protected PlayerCharacterRole m_CurrentRole = PlayerCharacterRole.Player;
+		protected bool m_SoldierReviveAvailable = false;
 		[SerializeField]
-		protected float m_KnightReviveHeight = 2.6f;
+		protected float m_SoldierReviveHeight = 2.6f;
 		[SerializeField]
-		protected float m_KnightReviveGraceDuration = 0.75f;
+		protected float m_SoldierReviveGraceDuration = 0.75f;
 		protected int m_JumpsUsed = 0;
 		protected float m_BaseRunSpeed = 0f;
 		protected float m_BaseMaxRunSpeed = 0f;
 		protected SpriteRenderer[] m_SpriteRenderers = new SpriteRenderer[0];
 		protected Color[] m_InitialSpriteColors = new Color[0];
 		protected Transform m_RoleVisualRoot = null;
-		protected GameObject m_KnightShieldAuraObject = null;
+		protected GameObject m_SoldierShieldAuraObject = null;
 		protected KenneyCharacterVisual m_KenneyVisual = null;
 		[SerializeField]
 		protected float m_RollAnimationDuration = 0.38f;
@@ -605,13 +605,13 @@ namespace FoxDash.Characters
 		void ApplyRoleStats ()
 		{
 			float speedMultiplier = m_RunnerSpeedMultiplier;
-			if ( m_CurrentRole == PlayerCharacterRole.Knight )
+			if ( m_CurrentRole == PlayerCharacterRole.Soldier )
 			{
-				speedMultiplier = m_KnightSpeedMultiplier;
+				speedMultiplier = m_SoldierSpeedMultiplier;
 			}
-			else if ( m_CurrentRole == PlayerCharacterRole.Monkey )
+			else if ( m_CurrentRole == PlayerCharacterRole.Adventurer )
 			{
-				speedMultiplier = m_MonkeySpeedMultiplier;
+				speedMultiplier = m_AdventurerSpeedMultiplier;
 			}
 
 			m_RunSpeed = m_BaseRunSpeed * speedMultiplier;
@@ -626,11 +626,11 @@ namespace FoxDash.Characters
 			}
 
 			Color tint = Color.white;
-			if ( m_CurrentRole == PlayerCharacterRole.Knight )
+			if ( m_CurrentRole == PlayerCharacterRole.Soldier )
 			{
-				tint = m_KnightReviveAvailable ? new Color ( 0.72f, 0.86f, 1f, 1f ) : new Color ( 0.78f, 0.78f, 0.82f, 1f );
+				tint = m_SoldierReviveAvailable ? new Color ( 0.72f, 0.86f, 1f, 1f ) : new Color ( 0.78f, 0.78f, 0.82f, 1f );
 			}
-			else if ( m_CurrentRole == PlayerCharacterRole.Monkey )
+			else if ( m_CurrentRole == PlayerCharacterRole.Adventurer )
 			{
 				tint = new Color ( 0.82f, 0.55f, 0.28f, 1f );
 			}
@@ -681,51 +681,51 @@ namespace FoxDash.Characters
 			CreateRoleVisualPart ( "Runner Sparkle Right", RoleVisualShape.Star, new Vector2 ( 0.5f, -0.12f ), new Vector2 ( 0.12f, 0.12f ), new Color ( 1f, 0.98f, 0.55f, 0.9f ), 22, 14f );
 		}
 
-		void BuildKnightVisuals ()
+		void BuildSoldierVisuals ()
 		{
 			CreateSoftCharacterShadow ();
-			CreateOutlinedRoleVisualPart ( "Knight Soft Armor", RoleVisualShape.RoundedRectangle, new Vector2 ( 0f, -0.02f ), new Vector2 ( 0.86f, 0.85f ), new Color ( 0.8f, 0.9f, 1f, 0.96f ), new Color ( 0.18f, 0.32f, 0.58f, 0.48f ), 10, 0f, 1.08f );
-			CreateOutlinedRoleVisualPart ( "Knight Helmet Dome", RoleVisualShape.Circle, new Vector2 ( 0f, 0.47f ), new Vector2 ( 0.78f, 0.46f ), new Color ( 0.88f, 0.94f, 1f, 1f ), new Color ( 0.38f, 0.5f, 0.66f, 0.68f ), 18, 0f, 1.09f );
-			CreateRoleVisualPart ( "Knight Helmet Shine", RoleVisualShape.Crescent, new Vector2 ( -0.15f, 0.54f ), new Vector2 ( 0.36f, 0.28f ), new Color ( 1f, 1f, 1f, 0.55f ), 19, -18f );
-			CreateRoleVisualPart ( "Knight Visor Soft", RoleVisualShape.Capsule, new Vector2 ( 0.08f, 0.44f ), new Vector2 ( 0.52f, 0.12f ), new Color ( 0.14f, 0.2f, 0.32f, 1f ), 26, 0f );
-			CreateOutlinedRoleVisualPart ( "Knight Crown Crest", RoleVisualShape.Crown, new Vector2 ( 0f, 0.72f ), new Vector2 ( 0.34f, 0.27f ), new Color ( 1f, 0.36f, 0.32f, 1f ), new Color ( 0.85f, 0.16f, 0.12f, 0.72f ), 27, 0f, 1.1f );
+			CreateOutlinedRoleVisualPart ( "Soldier Soft Armor", RoleVisualShape.RoundedRectangle, new Vector2 ( 0f, -0.02f ), new Vector2 ( 0.86f, 0.85f ), new Color ( 0.8f, 0.9f, 1f, 0.96f ), new Color ( 0.18f, 0.32f, 0.58f, 0.48f ), 10, 0f, 1.08f );
+			CreateOutlinedRoleVisualPart ( "Soldier Helmet Dome", RoleVisualShape.Circle, new Vector2 ( 0f, 0.47f ), new Vector2 ( 0.78f, 0.46f ), new Color ( 0.88f, 0.94f, 1f, 1f ), new Color ( 0.38f, 0.5f, 0.66f, 0.68f ), 18, 0f, 1.09f );
+			CreateRoleVisualPart ( "Soldier Helmet Shine", RoleVisualShape.Crescent, new Vector2 ( -0.15f, 0.54f ), new Vector2 ( 0.36f, 0.28f ), new Color ( 1f, 1f, 1f, 0.55f ), 19, -18f );
+			CreateRoleVisualPart ( "Soldier Visor Soft", RoleVisualShape.Capsule, new Vector2 ( 0.08f, 0.44f ), new Vector2 ( 0.52f, 0.12f ), new Color ( 0.14f, 0.2f, 0.32f, 1f ), 26, 0f );
+			CreateOutlinedRoleVisualPart ( "Soldier Crown Crest", RoleVisualShape.Crown, new Vector2 ( 0f, 0.72f ), new Vector2 ( 0.34f, 0.27f ), new Color ( 1f, 0.36f, 0.32f, 1f ), new Color ( 0.85f, 0.16f, 0.12f, 0.72f ), 27, 0f, 1.1f );
 			CreateCuteFace ( new Color ( 1f, 0.88f, 0.76f, 0.96f ), new Color ( 1f, 0.56f, 0.62f, 0.72f ), 22 );
 
-			CreateOutlinedRoleVisualPart ( "Knight Shield Gem", RoleVisualShape.Shield, new Vector2 ( -0.56f, -0.12f ), new Vector2 ( 0.48f, 0.62f ), new Color ( 0.2f, 0.52f, 1f, 1f ), new Color ( 0.08f, 0.18f, 0.46f, 0.72f ), 24, 0f, 1.12f );
-			CreateRoleVisualPart ( "Knight Shield Shine", RoleVisualShape.Crescent, new Vector2 ( -0.63f, 0.04f ), new Vector2 ( 0.22f, 0.26f ), new Color ( 1f, 1f, 1f, 0.58f ), 25, -20f );
-			CreateRoleVisualPart ( "Knight Shield Heart", RoleVisualShape.Heart, new Vector2 ( -0.56f, -0.15f ), new Vector2 ( 0.18f, 0.18f ), new Color ( 1f, 0.93f, 0.35f, 1f ), 26, 0f );
+			CreateOutlinedRoleVisualPart ( "Soldier Shield Gem", RoleVisualShape.Shield, new Vector2 ( -0.56f, -0.12f ), new Vector2 ( 0.48f, 0.62f ), new Color ( 0.2f, 0.52f, 1f, 1f ), new Color ( 0.08f, 0.18f, 0.46f, 0.72f ), 24, 0f, 1.12f );
+			CreateRoleVisualPart ( "Soldier Shield Shine", RoleVisualShape.Crescent, new Vector2 ( -0.63f, 0.04f ), new Vector2 ( 0.22f, 0.26f ), new Color ( 1f, 1f, 1f, 0.58f ), 25, -20f );
+			CreateRoleVisualPart ( "Soldier Shield Heart", RoleVisualShape.Heart, new Vector2 ( -0.56f, -0.15f ), new Vector2 ( 0.18f, 0.18f ), new Color ( 1f, 0.93f, 0.35f, 1f ), 26, 0f );
 
-			CreateOutlinedRoleVisualPart ( "Knight Sword Blade", RoleVisualShape.Capsule, new Vector2 ( 0.56f, 0.1f ), new Vector2 ( 0.1f, 0.68f ), new Color ( 0.9f, 0.98f, 1f, 1f ), new Color ( 0.38f, 0.53f, 0.68f, 0.72f ), 18, -18f, 1.18f );
-			CreateRoleVisualPart ( "Knight Sword Guard", RoleVisualShape.Capsule, new Vector2 ( 0.43f, -0.19f ), new Vector2 ( 0.34f, 0.08f ), new Color ( 1f, 0.78f, 0.2f, 1f ), 21, -18f );
-			CreateRoleVisualPart ( "Knight Sword Grip", RoleVisualShape.Capsule, new Vector2 ( 0.38f, -0.31f ), new Vector2 ( 0.1f, 0.24f ), new Color ( 0.24f, 0.16f, 0.12f, 1f ), 21, -18f );
+			CreateOutlinedRoleVisualPart ( "Soldier Sword Blade", RoleVisualShape.Capsule, new Vector2 ( 0.56f, 0.1f ), new Vector2 ( 0.1f, 0.68f ), new Color ( 0.9f, 0.98f, 1f, 1f ), new Color ( 0.38f, 0.53f, 0.68f, 0.72f ), 18, -18f, 1.18f );
+			CreateRoleVisualPart ( "Soldier Sword Guard", RoleVisualShape.Capsule, new Vector2 ( 0.43f, -0.19f ), new Vector2 ( 0.34f, 0.08f ), new Color ( 1f, 0.78f, 0.2f, 1f ), 21, -18f );
+			CreateRoleVisualPart ( "Soldier Sword Grip", RoleVisualShape.Capsule, new Vector2 ( 0.38f, -0.31f ), new Vector2 ( 0.1f, 0.24f ), new Color ( 0.24f, 0.16f, 0.12f, 1f ), 21, -18f );
 
-			GameObject auraGroup = new GameObject ( "Knight Shield Aura Group" );
+			GameObject auraGroup = new GameObject ( "Soldier Shield Aura Group" );
 			auraGroup.transform.SetParent ( m_RoleVisualRoot, false );
 			auraGroup.transform.localPosition = Vector3.zero;
 			auraGroup.transform.localRotation = Quaternion.identity;
 			auraGroup.transform.localScale = Vector3.one;
-			m_KnightShieldAuraObject = auraGroup;
-			ReparentRoleVisualPart ( CreateRoleVisualPart ( "Knight Shield Aura", RoleVisualShape.Ring, new Vector2 ( 0f, 0.05f ), new Vector2 ( 1.55f, 1.55f ), new Color ( 1f, 0.86f, 0.16f, 0.58f ), 30, 0f ), auraGroup.transform );
-			ReparentRoleVisualPart ( CreateRoleVisualPart ( "Knight Aura Star Left", RoleVisualShape.Star, new Vector2 ( -0.52f, 0.48f ), new Vector2 ( 0.18f, 0.18f ), new Color ( 1f, 0.98f, 0.52f, 0.95f ), 31, 0f ), auraGroup.transform );
-			ReparentRoleVisualPart ( CreateRoleVisualPart ( "Knight Aura Star Right", RoleVisualShape.Sparkle, new Vector2 ( 0.54f, -0.36f ), new Vector2 ( 0.16f, 0.16f ), new Color ( 1f, 0.98f, 0.52f, 0.95f ), 31, 0f ), auraGroup.transform );
+			m_SoldierShieldAuraObject = auraGroup;
+			ReparentRoleVisualPart ( CreateRoleVisualPart ( "Soldier Shield Aura", RoleVisualShape.Ring, new Vector2 ( 0f, 0.05f ), new Vector2 ( 1.55f, 1.55f ), new Color ( 1f, 0.86f, 0.16f, 0.58f ), 30, 0f ), auraGroup.transform );
+			ReparentRoleVisualPart ( CreateRoleVisualPart ( "Soldier Aura Star Left", RoleVisualShape.Star, new Vector2 ( -0.52f, 0.48f ), new Vector2 ( 0.18f, 0.18f ), new Color ( 1f, 0.98f, 0.52f, 0.95f ), 31, 0f ), auraGroup.transform );
+			ReparentRoleVisualPart ( CreateRoleVisualPart ( "Soldier Aura Star Right", RoleVisualShape.Sparkle, new Vector2 ( 0.54f, -0.36f ), new Vector2 ( 0.16f, 0.16f ), new Color ( 1f, 0.98f, 0.52f, 0.95f ), 31, 0f ), auraGroup.transform );
 		}
 
-		void BuildMonkeyVisuals ()
+		void BuildAdventurerVisuals ()
 		{
 			CreateSoftCharacterShadow ();
-			CreateOutlinedRoleVisualPart ( "Monkey Rounded Fur", RoleVisualShape.RoundedRectangle, new Vector2 ( 0f, 0.02f ), new Vector2 ( 0.86f, 0.9f ), new Color ( 0.66f, 0.38f, 0.17f, 0.98f ), new Color ( 0.32f, 0.15f, 0.06f, 0.62f ), 10, 0f, 1.08f );
-			CreateOutlinedRoleVisualPart ( "Monkey Tail Curl Back", RoleVisualShape.Crescent, new Vector2 ( -0.62f, 0.08f ), new Vector2 ( 0.72f, 0.72f ), new Color ( 0.43f, 0.22f, 0.08f, 1f ), new Color ( 0.22f, 0.09f, 0.03f, 0.72f ), -7, -20f, 1.12f );
-			CreateOutlinedRoleVisualPart ( "Monkey Tail Tip", RoleVisualShape.Circle, new Vector2 ( -0.77f, 0.35f ), new Vector2 ( 0.24f, 0.24f ), new Color ( 0.43f, 0.22f, 0.08f, 1f ), new Color ( 0.22f, 0.09f, 0.03f, 0.72f ), -5, 0f, 1.1f );
+			CreateOutlinedRoleVisualPart ( "Adventurer Rounded Fur", RoleVisualShape.RoundedRectangle, new Vector2 ( 0f, 0.02f ), new Vector2 ( 0.86f, 0.9f ), new Color ( 0.66f, 0.38f, 0.17f, 0.98f ), new Color ( 0.32f, 0.15f, 0.06f, 0.62f ), 10, 0f, 1.08f );
+			CreateOutlinedRoleVisualPart ( "Adventurer Tail Curl Back", RoleVisualShape.Crescent, new Vector2 ( -0.62f, 0.08f ), new Vector2 ( 0.72f, 0.72f ), new Color ( 0.43f, 0.22f, 0.08f, 1f ), new Color ( 0.22f, 0.09f, 0.03f, 0.72f ), -7, -20f, 1.12f );
+			CreateOutlinedRoleVisualPart ( "Adventurer Tail Tip", RoleVisualShape.Circle, new Vector2 ( -0.77f, 0.35f ), new Vector2 ( 0.24f, 0.24f ), new Color ( 0.43f, 0.22f, 0.08f, 1f ), new Color ( 0.22f, 0.09f, 0.03f, 0.72f ), -5, 0f, 1.1f );
 
-			CreateOutlinedRoleVisualPart ( "Monkey Left Ear", RoleVisualShape.Circle, new Vector2 ( -0.39f, 0.44f ), new Vector2 ( 0.34f, 0.34f ), new Color ( 0.48f, 0.25f, 0.1f, 1f ), new Color ( 0.25f, 0.1f, 0.03f, 0.72f ), 16, 0f, 1.1f );
-			CreateOutlinedRoleVisualPart ( "Monkey Right Ear", RoleVisualShape.Circle, new Vector2 ( 0.39f, 0.44f ), new Vector2 ( 0.34f, 0.34f ), new Color ( 0.48f, 0.25f, 0.1f, 1f ), new Color ( 0.25f, 0.1f, 0.03f, 0.72f ), 16, 0f, 1.1f );
-			CreateRoleVisualPart ( "Monkey Left Inner Ear", RoleVisualShape.Heart, new Vector2 ( -0.39f, 0.43f ), new Vector2 ( 0.18f, 0.18f ), new Color ( 1f, 0.67f, 0.46f, 1f ), 18, 0f );
-			CreateRoleVisualPart ( "Monkey Right Inner Ear", RoleVisualShape.Heart, new Vector2 ( 0.39f, 0.43f ), new Vector2 ( 0.18f, 0.18f ), new Color ( 1f, 0.67f, 0.46f, 1f ), 18, 0f );
+			CreateOutlinedRoleVisualPart ( "Adventurer Left Ear", RoleVisualShape.Circle, new Vector2 ( -0.39f, 0.44f ), new Vector2 ( 0.34f, 0.34f ), new Color ( 0.48f, 0.25f, 0.1f, 1f ), new Color ( 0.25f, 0.1f, 0.03f, 0.72f ), 16, 0f, 1.1f );
+			CreateOutlinedRoleVisualPart ( "Adventurer Right Ear", RoleVisualShape.Circle, new Vector2 ( 0.39f, 0.44f ), new Vector2 ( 0.34f, 0.34f ), new Color ( 0.48f, 0.25f, 0.1f, 1f ), new Color ( 0.25f, 0.1f, 0.03f, 0.72f ), 16, 0f, 1.1f );
+			CreateRoleVisualPart ( "Adventurer Left Inner Ear", RoleVisualShape.Heart, new Vector2 ( -0.39f, 0.43f ), new Vector2 ( 0.18f, 0.18f ), new Color ( 1f, 0.67f, 0.46f, 1f ), 18, 0f );
+			CreateRoleVisualPart ( "Adventurer Right Inner Ear", RoleVisualShape.Heart, new Vector2 ( 0.39f, 0.43f ), new Vector2 ( 0.18f, 0.18f ), new Color ( 1f, 0.67f, 0.46f, 1f ), 18, 0f );
 			CreateCuteFace ( new Color ( 1f, 0.76f, 0.48f, 1f ), new Color ( 1f, 0.48f, 0.48f, 0.78f ), 19 );
-			CreateRoleVisualPart ( "Monkey Belly Patch", RoleVisualShape.Circle, new Vector2 ( 0.02f, -0.3f ), new Vector2 ( 0.5f, 0.38f ), new Color ( 1f, 0.74f, 0.46f, 0.9f ), 14, 0f );
-			CreateOutlinedRoleVisualPart ( "Monkey Banana Pin", RoleVisualShape.Crescent, new Vector2 ( 0.24f, 0.71f ), new Vector2 ( 0.25f, 0.18f ), new Color ( 1f, 0.86f, 0.18f, 1f ), new Color ( 0.8f, 0.48f, 0.05f, 0.68f ), 22, -28f, 1.12f );
-			CreateRoleVisualPart ( "Monkey Jump Spark Left", RoleVisualShape.Sparkle, new Vector2 ( -0.32f, -0.58f ), new Vector2 ( 0.12f, 0.12f ), new Color ( 0.7f, 0.94f, 1f, 0.9f ), 20, 0f );
-			CreateRoleVisualPart ( "Monkey Jump Spark Right", RoleVisualShape.Star, new Vector2 ( 0.38f, -0.54f ), new Vector2 ( 0.1f, 0.1f ), new Color ( 0.7f, 0.94f, 1f, 0.82f ), 20, 8f );
+			CreateRoleVisualPart ( "Adventurer Belly Patch", RoleVisualShape.Circle, new Vector2 ( 0.02f, -0.3f ), new Vector2 ( 0.5f, 0.38f ), new Color ( 1f, 0.74f, 0.46f, 0.9f ), 14, 0f );
+			CreateOutlinedRoleVisualPart ( "Adventurer Banana Pin", RoleVisualShape.Crescent, new Vector2 ( 0.24f, 0.71f ), new Vector2 ( 0.25f, 0.18f ), new Color ( 1f, 0.86f, 0.18f, 1f ), new Color ( 0.8f, 0.48f, 0.05f, 0.68f ), 22, -28f, 1.12f );
+			CreateRoleVisualPart ( "Adventurer Jump Spark Left", RoleVisualShape.Sparkle, new Vector2 ( -0.32f, -0.58f ), new Vector2 ( 0.12f, 0.12f ), new Color ( 0.7f, 0.94f, 1f, 0.9f ), 20, 0f );
+			CreateRoleVisualPart ( "Adventurer Jump Spark Right", RoleVisualShape.Star, new Vector2 ( 0.38f, -0.54f ), new Vector2 ( 0.1f, 0.1f ), new Color ( 0.7f, 0.94f, 1f, 0.82f ), 20, 8f );
 		}
 
 		void CreateSoftCharacterShadow ()
@@ -863,15 +863,15 @@ namespace FoxDash.Characters
 			{
 				m_KenneyVisual.SetShieldActive ( false );
 			}
-			if ( m_KnightShieldAuraObject != null )
+			if ( m_SoldierShieldAuraObject != null )
 			{
-				m_KnightShieldAuraObject.SetActive ( false );
+				m_SoldierShieldAuraObject.SetActive ( false );
 			}
 		}
 
 		void ClearRoleVisuals ()
 		{
-			m_KnightShieldAuraObject = null;
+			m_SoldierShieldAuraObject = null;
 			m_KenneyVisual = null;
 			if ( m_RoleVisualRoot == null )
 			{
@@ -1080,14 +1080,14 @@ namespace FoxDash.Characters
 			return inside;
 		}
 
-		bool TryUseKnightRevive ( Vector3 deathPosition )
+		bool TryUseSoldierRevive ( Vector3 deathPosition )
 		{
-			if ( m_CurrentRole != PlayerCharacterRole.Knight || !m_KnightReviveAvailable )
+			if ( m_CurrentRole != PlayerCharacterRole.Soldier || !m_SoldierReviveAvailable )
 			{
 				return false;
 			}
 
-			m_KnightReviveAvailable = false;
+			m_SoldierReviveAvailable = false;
 			m_Block = false;
 			ReviveFromFall ( deathPosition );
 			ApplyRoleTint ();
@@ -1098,9 +1098,9 @@ namespace FoxDash.Characters
 		{
 			Vector3 revivePosition = deathPosition;
 			float safeFloorY = Mathf.Max ( m_LastSafePosition.y, m_InitialPosition.y );
-			revivePosition.y = Mathf.Max ( deathPosition.y + m_KnightReviveHeight, safeFloorY + 0.9f, 1.2f );
+			revivePosition.y = Mathf.Max ( deathPosition.y + m_SoldierReviveHeight, safeFloorY + 0.9f, 1.2f );
 			m_LastSafePosition = revivePosition;
-			m_ReviveGraceTimer = m_KnightReviveGraceDuration;
+			m_ReviveGraceTimer = m_SoldierReviveGraceDuration;
 
 			transform.position = revivePosition;
 			if ( m_Rigidbody2D != null )
@@ -1159,7 +1159,7 @@ namespace FoxDash.Characters
 		public void ApplyRole ( PlayerCharacterRole role )
 		{
 			m_CurrentRole = role;
-			m_KnightReviveAvailable = role == PlayerCharacterRole.Knight;
+			m_SoldierReviveAvailable = role == PlayerCharacterRole.Soldier;
 			m_ReviveGraceTimer = 0f;
 			m_JumpsUsed = 0;
 			m_Block = false;
@@ -1219,8 +1219,8 @@ namespace FoxDash.Characters
 					m_JumpsUsed = 0;
 				}
 
-				int maximumJumps = m_CurrentRole == PlayerCharacterRole.Monkey ? 2 : 1;
-				if ( !grounded && m_CurrentRole != PlayerCharacterRole.Monkey )
+				int maximumJumps = m_CurrentRole == PlayerCharacterRole.Adventurer ? 2 : 1;
+				if ( !grounded && m_CurrentRole != PlayerCharacterRole.Adventurer )
 				{
 					return;
 				}
@@ -1250,7 +1250,7 @@ namespace FoxDash.Characters
 				{
 					return;
 				}
-				if ( !blood && TryUseKnightRevive ( transform.position ) )
+				if ( !blood && TryUseSoldierRevive ( transform.position ) )
 				{
 					return;
 				}

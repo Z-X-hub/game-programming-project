@@ -2,7 +2,14 @@
 
 ## Project Scope
 
-Fox Dash is planned as a focused 2D platform runner vertical slice. The goal is not to build a large commercial game, but to create a small, coherent, playable piece that shows strong design, programming, testing, and improvement.
+Fox Dash is planned as a focused 2D platform runner vertical slice. The goal is
+not to build a large commercial game or a fixed level-by-level campaign, but to
+create a small, coherent, replayable runner challenge that shows strong design,
+programming, testing, and improvement.
+
+The replay value comes from generated obstacle combinations, personal high
+score, coin collection, and three character roles that change how the same
+runner route is approached.
 
 ## Included In Scope
 
@@ -10,8 +17,10 @@ Fox Dash is planned as a focused 2D platform runner vertical slice. The goal is 
 - Character selection for three playable roles
 - One main runner gameplay scene
 - Platform generation or repeated platform sections
+- Random or probability-based combinations of reusable platform blocks
 - Jumping, rolling, collision, collectibles, and score feedback
 - Character-specific abilities
+- Coins and chests placed as rewards that can encourage riskier routes
 - Basic animation and audio feedback
 - Game over and restart flow
 - Testing notes and improvement record in later stages
@@ -21,7 +30,7 @@ Fox Dash is planned as a focused 2D platform runner vertical slice. The goal is 
 - Multiplayer
 - Online leaderboard or account system
 - Large story campaign
-- Multiple worlds with many levels
+- Multiple worlds with many fixed levels
 - Complex enemy AI systems
 - Advanced save-game systems
 - Large custom animation rigs
