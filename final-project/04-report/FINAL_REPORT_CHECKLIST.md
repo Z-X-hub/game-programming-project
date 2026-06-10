@@ -1,6 +1,6 @@
 # Stage 4C Final Report Checklist
 
-Updated: 2026-06-09
+Updated: 2026-06-10
 
 This checklist maps the report evidence against the module assessment
 requirements.
@@ -19,7 +19,7 @@ Evidence:
 
 ```text
 final-project/01-concept-design/
-final-project/04-report/REPORT_DRAFT.md
+final-project/04-report/FINAL_REPORT.md
 ```
 
 ## Final Game And Technical Evidence
@@ -29,6 +29,7 @@ final-project/04-report/REPORT_DRAFT.md
 - [x] Key systems documented: input, game flow, UI, character logic, animation, terrain, hazards, collectables.
 - [x] Character selection and ability implementation documented.
 - [x] Build/run instructions documented.
+- [x] Build/export evidence file added.
 - [x] Generated Unity folders excluded from source upload.
 
 Evidence:
@@ -36,6 +37,7 @@ Evidence:
 ```text
 final-project/FoxDash/
 final-project/02-game-development/
+final-project/02-game-development/BUILD_EVIDENCE.md
 ```
 
 ## Testing, Debugging, And Improvement
@@ -81,7 +83,9 @@ final-project/FoxDash/AI_DECLARATION.md
 - [x] GitHub issues and Kanban show staged development.
 - [x] README files explain project structure.
 - [x] `AGENTS.md` is excluded because it is a local assistant maintenance file, not submission evidence.
-- [x] Large asset warning recorded as a limitation.
+- [x] Large `Water.wav` asset compressed from about `85 MB` to about `9.8 MB`.
+- [x] Final professionalism audit issue completed.
+- [x] Demo script prepared.
 
 Evidence:
 
@@ -89,12 +93,12 @@ Evidence:
 final-project/00-project-management/
 final-project/README.md
 README.md
+final-project/05-presentation/DEMO_SCRIPT.md
 ```
 
 ## Still To Finish
 
-- [ ] Final professionalism audit issue.
-- [ ] Final Unity editor pre-submission check.
-- [ ] Demo / presentation preparation.
-- [ ] Optional final standalone build export.
-
+- [ ] Final Unity editor pre-submission check in activated Unity GUI.
+- [ ] Real external playtest entries from classmates.
+- [ ] Final standalone build export and ZIP/release link.
+- [ ] Live demo / presentation rehearsal.

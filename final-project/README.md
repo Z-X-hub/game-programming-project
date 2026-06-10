@@ -47,6 +47,7 @@ final-project/
 |   |-- README.md
 |   |-- SOURCE_MANIFEST.md
 |   |-- RUN_INSTRUCTIONS.md
+|   |-- BUILD_EVIDENCE.md
 |   |-- IMPLEMENTATION_NOTES.md
 |   |-- UPLOAD_NOTES.md
 |   |-- CODE_STAGING_PLAN.md
@@ -62,11 +63,12 @@ final-project/
 |   `-- KNOWN_LIMITATIONS.md
 |-- 04-report/
 |   |-- README.md
-|   |-- REPORT_DRAFT.md
+|   |-- FINAL_REPORT.md
 |   |-- REPORT_TESTING_REFLECTION.md
 |   `-- FINAL_REPORT_CHECKLIST.md
 `-- 05-presentation/
-    `-- README.md
+    |-- README.md
+    `-- DEMO_SCRIPT.md
 ```
 
 ## Assessment Mapping
@@ -78,7 +80,7 @@ final-project/
 | Testing and Improvement | `03-testing/`, Issues #15 and #18-#20 |
 | Report | `04-report/`, Issues #16 and #21-#22 |
 | Professionalism | `00-project-management/`, commit history, README files, Issue #23 |
-| Demo / Presentation | `05-presentation/`, Issue #17, deferred for now |
+| Demo / Presentation | `05-presentation/`, Issue #17, demo script prepared and live demo deferred |
 
 ## Game Summary
 
@@ -118,6 +120,12 @@ Run instructions are in:
 final-project/02-game-development/RUN_INSTRUCTIONS.md
 ```
 
+Build/export evidence is in:
+
+```text
+final-project/02-game-development/BUILD_EVIDENCE.md
+```
+
 Source code is uploaded under:
 
 ```text
@@ -130,6 +138,7 @@ but the active final game source is now Fox Dash.
 
 ## Current Focus
 
-All non-presentation evidence is complete. The remaining deferred stage is the
-demo/presentation, which should use the completed planning, source, testing,
-report, and professionalism evidence as supporting material.
+The main non-presentation evidence is complete. A build export attempt has been
+recorded, but the final standalone ZIP still needs to be produced from an
+activated Unity Editor. The demo script is prepared; the live demo/presentation
+remains the final deferred stage.

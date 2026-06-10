@@ -1,10 +1,10 @@
 # Fox Dash Kanban
 
-Updated: 2026-06-09
+Updated: 2026-06-10
 
 This board tracks the staged submission plan against the module assessment criteria. Only completed evidence is marked as done.
 
-Presentation/demo preparation is deferred for now, so the current board focuses on the game, testing, report evidence, and professionalism.
+Live presentation/demo rehearsal is deferred for now, but the demo script is prepared.
 
 ## Done
 
@@ -35,18 +35,23 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 - [x] Professionalism cleanup: upload the current Fox Dash Unity project source under `final-project/FoxDash/`.
 - [x] Add `AGENTS.md` to `.gitignore` so local assistant notes are not uploaded.
 - [x] Professionalism final audit: verify repository structure, evidence map, issue status, and generated-file exclusions.
+- [x] Compress `Assets/Sounds/Enemies/Water.wav` from about `85 MB` to about `9.8 MB`.
+- [x] Add build/export evidence note and manual standalone build checklist.
+- [x] Prepare demo script for the presentation stage.
 
 ## In Progress
 
-- None. Non-presentation repository evidence is complete.
+- None for repository documentation.
 
 ## Testing
 
 - [ ] Final pre-submission Unity editor pass.
+- [ ] Real external playtest entries from classmates.
 
 ## To Do
 
-- None for the non-presentation repository evidence.
+- [ ] Export final standalone build ZIP from an activated Unity Editor.
+- [ ] Update `BUILD_EVIDENCE.md` with final ZIP or release link after export.
 
 ## Deferred
 
@@ -54,7 +59,8 @@ Presentation/demo preparation is deferred for now, so the current board focuses 
 
 ## Blocked / Risks
 
-- [ ] Large Unity assets should be reviewed before any future full asset-level push to avoid GitHub file-size warnings.
+- [x] Previous `Water.wav` large-file warning addressed by audio compression.
+- [ ] Unity license activation is required before automated or manual final build export can be completed.
 - [ ] Unity generated folders must remain excluded: `Library`, `Temp`, `Logs`, `UserSettings`, `.vscode`, IDE project files, and build caches.
 
 ## GitHub Issue Tracking

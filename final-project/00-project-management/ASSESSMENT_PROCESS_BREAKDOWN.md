@@ -2,16 +2,18 @@
 
 This document breaks the project process into smaller evidence tasks that match the module assessment criteria. The aim is to make the GitHub process easier to assess, rather than only showing a broad final upload.
 
-Presentation/demo preparation is intentionally deferred for now. The current focus is game testing, report evidence, and professionalism.
+Live presentation/demo rehearsal is intentionally deferred for now. The current
+repository evidence includes planning, development, testing, report,
+professionalism, build-attempt evidence, and a prepared demo script.
 
 ## Summary
 
 | Assessment Area | Weight | Current Repository Evidence | Status |
 | --- | ---: | --- | --- |
 | Game Concept and Design | 20% | `01-concept-design/`, Issue #13 | Complete |
-| Final Game / Game and Report | 40% | `02-game-development/`, `03-testing/`, `04-report/`, Issues #14-#22 | In progress |
-| Game Demo / Presentation | 20% | `05-presentation/`, Issue #17 | Deferred |
-| Professionalism | 20% | `00-project-management/`, README files, Issues, commits, Issue #23 | Ongoing |
+| Final Game / Game and Report | 40% | `02-game-development/`, `03-testing/`, `04-report/`, Issues #14-#22 | Complete for source/report evidence; final standalone ZIP pending |
+| Game Demo / Presentation | 20% | `05-presentation/`, Issue #17 | Demo script prepared; live demo deferred |
+| Professionalism | 20% | `00-project-management/`, README files, Issues, commits, Issue #23 | Complete |
 
 ## 1. Game Concept and Design
 
@@ -47,7 +49,7 @@ Status: core source upload complete.
 
 ### 2.2 Testing And Iteration Evidence
 
-Status: active next work.
+Status: complete for recorded repository evidence.
 
 | Stage | Issue | Evidence Task | Assessment Link |
 | --- | --- | --- | --- |
@@ -56,7 +58,7 @@ Status: active next work.
 | 3C | #19 | Level flow, difficulty, and feedback iteration | coherent vertical slice |
 | 3D | #20 | Bug fixing and regression record | testing, debugging, improvement |
 
-Planned files for `03-testing/`:
+Files in `03-testing/`:
 
 - `PLAYTEST_LOG.md`
 - `BUG_LOG.md`
@@ -67,7 +69,7 @@ Planned files for `03-testing/`:
 
 ### 2.3 Report Evidence
 
-Status: not started until testing evidence exists.
+Status: complete for report evidence.
 
 | Stage | Issue | Evidence Task | Assessment Link |
 | --- | --- | --- | --- |
@@ -75,15 +77,15 @@ Status: not started until testing evidence exists.
 | 4B | #21 | Testing, limitations, and reflection | explain changes and problems |
 | 4C | #22 | Legal, accessibility, and final completeness check | responsible final submission |
 
-Planned files for `04-report/`:
+Files in `04-report/`:
 
-- `REPORT_DRAFT.md`
+- `FINAL_REPORT.md`
 - `REPORT_TESTING_REFLECTION.md`
 - `FINAL_REPORT_CHECKLIST.md`
 
 ## 3. Professionalism
 
-Status: ongoing.
+Status: complete.
 
 | Evidence Task | Assessment Link | Repository Evidence |
 | --- | --- | --- |
@@ -95,4 +97,6 @@ Status: ongoing.
 
 ## Deferred: Game Demo / Presentation
 
-Issue #17 is kept as deferred. It should be reopened as active only after the testing and report evidence are stronger.
+Issue #17 remains open for the live demo. `05-presentation/DEMO_SCRIPT.md` is
+prepared, but the final presentation rehearsal and any required final recording
+are still deferred.

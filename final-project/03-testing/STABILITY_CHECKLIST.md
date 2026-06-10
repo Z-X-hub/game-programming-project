@@ -1,6 +1,6 @@
 # Stage 3A Stability And Controls Checklist
 
-Updated: 2026-06-09
+Updated: 2026-06-10
 
 Stage 3A records whether the Fox Dash vertical slice is stable enough to be
 played and explained. It focuses on controls, scene flow, UI flow, and obvious
@@ -21,6 +21,22 @@ dotnet build Assembly-CSharp.csproj --no-restore
 ```
 
 Result on 2026-06-09:
+
+```text
+0 warnings
+0 errors
+```
+
+Final C# validation after build-evidence and audio-cleanup changes on
+2026-06-10:
+
+```bash
+dotnet build Assembly-CSharp.csproj --no-restore
+dotnet restore Assembly-CSharp-Editor.csproj
+dotnet build Assembly-CSharp-Editor.csproj --no-restore
+```
+
+Result:
 
 ```text
 0 warnings
@@ -50,6 +66,34 @@ Stage 3A is complete for repository evidence. The project has a clear playable
 entry point, documented controls, start/pause/end flow, score and coin feedback,
 and a successful local build check.
 
-Before the final hand-in, one short Unity editor run should still be performed
-as part of the final completeness check.
+## Final Unity Editor Pre-submission Check
 
+Date prepared: 2026-06-10
+
+Unity version: `2022.3.62f3c1`
+
+Scene: `Assets/Scenes/Play.unity`
+
+Status: pending manual GUI confirmation.
+
+An automated command-line Unity run was attempted on 2026-06-10, but the local
+Unity installation stopped at license activation before entering the editor or
+exporting a build. Because of that, the final editor pass should be completed
+manually in the activated Unity Editor before hand-in or demo.
+
+| Check | Result |
+| --- | --- |
+| Project opens in Unity | Pending manual GUI check |
+| Play scene loads | Pending manual GUI check |
+| Main menu appears | Pending manual GUI check |
+| `PLAYER` can be selected and played | Pending manual GUI check |
+| `SOLDIER` revive works once | Pending manual GUI check |
+| `ADVENTURER` double jump works | Pending manual GUI check |
+| Coins update during gameplay | Pending manual GUI check |
+| Hazards trigger death reason | Pending manual GUI check |
+| End screen shows score, coins, death reason | Pending manual GUI check |
+| Restart button works | Pending manual GUI check |
+| Home button works | Pending manual GUI check |
+| Console errors | Pending manual GUI check |
+
+This checklist is included so the final verification is clear and repeatable.

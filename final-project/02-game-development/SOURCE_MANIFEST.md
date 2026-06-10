@@ -101,6 +101,9 @@ THIRD_PARTY_NOTICES.md
 AI_DECLARATION.md
 ```
 
+Editor helper scripts include `FoxDashProjectBranding.cs`,
+`FoxDashPlayModeLauncher.cs`, and `FoxDashBuildCommand.cs`.
+
 ## Excluded Generated Areas
 
 These are intentionally not source evidence:
@@ -167,10 +170,12 @@ Assets/Scripts/FoxDash/Utilities/GroundCheck.cs
 The local project contains a large water sound asset:
 
 ```text
-Assets/Sounds/Enemies/Water.wav - about 85 MB
+Assets/Sounds/Enemies/Water.wav - compressed to about 9.8 MB
 ```
 
-This explains why the clean source package is close to GitHub's normal single-file warning threshold. The staged source upload focuses on code and text source metadata, while large runtime assets can be handled separately if required.
+This asset was reduced from the earlier large source file before final evidence
+cleanup. The same filename and Unity `.meta` GUID were kept so existing Unity
+references do not need to change.
 
 ## Stage 3C/3D Animation Resource Update
 

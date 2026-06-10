@@ -48,6 +48,12 @@ Use Unity `2022.3.62f3c1` or a compatible 2022 LTS editor. The main scene is:
 Assets/Scenes/Play.unity
 ```
 
+Build/export evidence and the final manual export checklist are documented in:
+
+```text
+../02-game-development/BUILD_EVIDENCE.md
+```
+
 ## Ownership And Reference
 
 Project-specific naming, packaging, comments, folder cleanup, and Unity branding are prepared for Zhu Xuan Studio.

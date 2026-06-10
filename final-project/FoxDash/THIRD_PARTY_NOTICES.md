@@ -73,6 +73,13 @@ SOFTWARE.
 - SaveGameFree / Save Game reference: bundled save-system code used by the original project.
 - Kenney Platformer Characters: used as a character-art reference/source for the Fox Dash playable characters.
 
+## Asset Management Note
+
+The bundled water audio asset `Assets/Sounds/Enemies/Water.wav` was compressed
+in place before final evidence cleanup. The purpose was repository-size and
+professional file-management improvement; the asset credit/licensing position
+is unchanged.
+
 ## AI Assistance Note
 
 AI assistance is documented separately in `AI_DECLARATION.md`. This is a process declaration for selected implementation/debugging support, not a replacement for third-party licensing or asset credits.

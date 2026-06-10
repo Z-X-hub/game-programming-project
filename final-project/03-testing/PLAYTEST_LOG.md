@@ -1,6 +1,6 @@
 # Stage 3 Playtest Log
 
-Updated: 2026-06-09
+Updated: 2026-06-10
 
 This log records small testing and stability progress for the playable Fox Dash slice.
 
@@ -112,3 +112,41 @@ Result:
 - Build completed with `0 warnings` and `0 errors` on 2026-06-09.
 - Stage 3A is considered complete as testing documentation evidence.
 - Any remaining Unity-editor-only confirmation is moved to the final completeness check rather than blocking Stage 3A.
+
+## Session 4 - External Playtest Record
+
+Date prepared: 2026-06-10
+
+Status: prepared for real external testers; results still need to be filled in
+after classmates play the game.
+
+Recommended testers: 2-3 students
+
+Recommended duration: 5 minutes per tester
+
+Focus: controls, role clarity, difficulty, feedback, restart flow
+
+This section is intentionally not filled with fake player results. It should be
+completed after actual classmates try the exported build or Unity editor run.
+
+| Tester | Character Used | Observation | Change Made / Decision |
+| --- | --- | --- | --- |
+| Tester A | `PLAYER` | To be recorded after playtest. | To be recorded after playtest. |
+| Tester B | `SOLDIER` | To be recorded after playtest. | To be recorded after playtest. |
+| Tester C | `ADVENTURER` | To be recorded after playtest. | To be recorded after playtest. |
+
+## Session 4 Questions
+
+- Did the player understand the goal without extra explanation?
+- Did the player understand the selected character ability?
+- Did the player notice coins and score feedback?
+- Did the player understand why they died?
+- Did restart and home flow feel clear?
+- Which character felt easiest or hardest?
+
+## Session 4 Summary Template
+
+External players should confirm whether the basic goal is clear, whether the
+three roles feel different, and whether feedback after death is enough. Any
+unclear point should be recorded here and either fixed before submission or
+moved to future work in `KNOWN_LIMITATIONS.md`.

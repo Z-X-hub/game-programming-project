@@ -2,6 +2,16 @@
 
 This repository records my work for the Game Programming module. It is used to show both the final game outcome and the development process behind it.
 
+## Quick Marking Guide
+
+1. Open `final-project/README.md` for the assessment evidence map.
+2. Open `final-project/FoxDash/` for the current Unity project source.
+3. Open `final-project/02-game-development/RUN_INSTRUCTIONS.md` to run the game in Unity.
+4. Open `final-project/02-game-development/BUILD_EVIDENCE.md` for final build/export evidence and the current build-status note.
+5. Open `final-project/03-testing/` for testing, bugs, improvements, and limitations.
+6. Open `final-project/04-report/FINAL_REPORT.md` for the final written report.
+7. Open `final-project/FoxDash/THIRD_PARTY_NOTICES.md` and `final-project/FoxDash/AI_DECLARATION.md` for attribution and AI-use transparency.
+
 ## Repository Structure
 
 - `class-exercises/` - classroom exercises and practice Unity projects

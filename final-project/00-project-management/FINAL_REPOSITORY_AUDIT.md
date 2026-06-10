@@ -1,6 +1,6 @@
 # Final Repository Audit
 
-Updated: 2026-06-09
+Updated: 2026-06-10
 
 This audit checks whether the repository is clear enough for assessment and whether the final project evidence can be followed from planning through implementation, testing, report writing, and professional project management.
 
@@ -33,9 +33,11 @@ The demo/presentation stage remains deferred as Issue #17.
 | Legal, ethical, accessibility, and security notes | `01-concept-design/LEGAL_ACCESSIBILITY_SECURITY.md`, `FoxDash/THIRD_PARTY_NOTICES.md`, `FoxDash/AI_DECLARATION.md` |
 | Playable game source | `final-project/FoxDash/`, `02-game-development/SOURCE_MANIFEST.md` |
 | Run instructions | `02-game-development/RUN_INSTRUCTIONS.md` |
-| Implementation explanation | `02-game-development/IMPLEMENTATION_NOTES.md`, `04-report/REPORT_DRAFT.md` |
+| Implementation explanation | `02-game-development/IMPLEMENTATION_NOTES.md`, `04-report/FINAL_REPORT.md` |
 | Testing and improvement | `03-testing/`, `04-report/REPORT_TESTING_REFLECTION.md` |
-| Report evidence | `04-report/REPORT_DRAFT.md`, `REPORT_TESTING_REFLECTION.md`, `FINAL_REPORT_CHECKLIST.md` |
+| Report evidence | `04-report/FINAL_REPORT.md`, `REPORT_TESTING_REFLECTION.md`, `FINAL_REPORT_CHECKLIST.md` |
+| Build/export evidence | `02-game-development/BUILD_EVIDENCE.md` |
+| Demo preparation | `05-presentation/DEMO_SCRIPT.md` |
 | Professional process | `00-project-management/`, staged commits, GitHub Issues, repository README files |
 
 ## GitHub Issue Status
@@ -85,7 +87,8 @@ Result: no tracked matches were found.
 ## Remaining Risks Or Limitations
 
 - The demo/presentation evidence is intentionally deferred and should be prepared under `05-presentation/`.
-- GitHub previously warned that `Assets/Sounds/Enemies/Water.wav` is a large file. It is below GitHub's hard size limit, but it should be compressed or moved to Git LFS if the project is expanded later.
+- The previous large-file warning for `Assets/Sounds/Enemies/Water.wav` has been addressed by compressing the asset from about `85 MB` to about `9.8 MB`.
+- A final standalone ZIP still needs to be exported from an activated Unity Editor; command-line export was attempted but blocked by local license activation.
 - A final Unity editor pass should still be done before the live demo or final packaged submission to make sure the local scene opens and plays correctly on the presentation machine.
 
 ## Final Professionalism Conclusion

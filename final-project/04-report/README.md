@@ -16,7 +16,7 @@ The report should explain the final game using evidence from the actual build an
 
 ## Completed Evidence
 
-- `REPORT_DRAFT.md` - main report draft covering concept, design decisions, implementation, contribution, external references, testing, and reflection.
+- `FINAL_REPORT.md` - final report covering concept, design decisions, implementation, contribution, external references, testing, and reflection.
 - `REPORT_TESTING_REFLECTION.md` - testing evidence, problems encountered, changes made, limitations, and reflection.
 - `FINAL_REPORT_CHECKLIST.md` - final report check against assessment criteria.
 

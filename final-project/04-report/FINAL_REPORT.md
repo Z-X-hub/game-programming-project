@@ -1,6 +1,8 @@
-# Fox Dash Report Draft
+# Fox Dash Final Report
 
-Updated: 2026-06-09
+Status: final submission version for repository evidence.
+
+Updated: 2026-06-10
 
 ## 1. Introduction
 
@@ -148,7 +150,26 @@ final-project/FoxDash/AI_DECLARATION.md
 AI was used as selective support for difficult debugging and structuring, not as
 a replacement for student responsibility.
 
-## 6. Testing And Improvement Summary
+## 6. Original Contribution
+
+Fox Dash was developed from an open-source runner foundation, but the final
+assessed work includes several project-specific contributions:
+
+- redesigned the game identity as Fox Dash
+- added a three-character selection system
+- implemented `PLAYER` as a faster high-risk role
+- implemented `SOLDIER` as a one-time automatic revive role
+- implemented `ADVENTURER` as a double-jump role
+- redesigned the home screen to explain the game and character abilities
+- added clearer score, coin, death reason, restart, and home feedback
+- improved the fast character run animation and fixed the run-size mismatch
+- fixed UI overlap and terrain cleanup problems found during testing
+- documented testing, limitations, third-party use, and AI assistance
+
+These changes are the main student contribution beyond using RedRunner as a
+reference structure.
+
+## 7. Testing And Improvement Summary
 
 Stage 3 testing evidence is stored in:
 
@@ -175,18 +196,39 @@ dotnet build Assembly-CSharp.csproj --no-restore
 0 errors
 ```
 
-## 7. Limitations
+After the final evidence cleanup, the runtime and editor C# projects were
+checked again on 2026-06-10 with `0 warnings` and `0 errors`.
+
+The final build/export evidence is recorded in:
+
+```text
+final-project/02-game-development/BUILD_EVIDENCE.md
+```
+
+The build export command was prepared and attempted on 2026-06-10, but command
+line export was blocked by the local Unity license state. This is recorded
+honestly as a remaining packaging task rather than being presented as a
+successful exported build.
+
+## 8. Technical Limitation
 
 The game is a vertical slice, so it has limitations:
 
 - platform and hazard balance could be improved with more player data
-- a final exported standalone build is still a future completeness task
-- the water sound file is large and should be compressed in a future version
+- final standalone build export still needs to be completed from an activated
+  Unity editor before final distribution
 - accessibility is basic and could be improved with remappable controls or
   larger text options
-- presentation/demo material is still deferred
+- `RedCharacter.cs` still contains several responsibilities inherited from the
+  original runner structure. With more time, I would separate movement, role
+  abilities, and visual feedback into smaller components such as
+  `PlayerMovement`, `CharacterAbilityController`, and `CharacterVisualController`.
 
-## 8. Conclusion
+One professionalism improvement was completed before final submission evidence:
+`Assets/Sounds/Enemies/Water.wav` was compressed from about `85 MB` to about
+`9.8 MB` while keeping the same file path and Unity `.meta` GUID.
+
+## 9. Conclusion
 
 Fox Dash meets the goal of a small, playable Unity vertical slice. It has a
 clear runner loop, three role-based characters, collectables, hazards, UI
@@ -195,4 +237,3 @@ feedback, testing evidence, and staged GitHub documentation.
 The strongest part of the project is the character role system and the way
 testing changed the game from a basic runner into a more complete and readable
 player experience.
-

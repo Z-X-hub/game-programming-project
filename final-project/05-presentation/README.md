@@ -1,19 +1,17 @@
 # Stage 5 - Demo and Presentation
 
-Status: deferred.
+Status: demo script prepared; live demo/presentation deferred.
 
-Presentation/demo preparation is not part of the current refinement pass. The current priority is testing evidence, report evidence, and professionalism.
+This folder contains preparation material for the live demo/presentation stage.
+The full live presentation is still deferred, but the main speaking structure
+has been prepared so the game can be demonstrated clearly.
 
-This stage should become active after:
+Evidence:
 
-- Stage 3 testing and bug-fix evidence is recorded
-- Stage 4 report evidence is drafted
-- the playable slice is stable enough to demonstrate confidently
+- `DEMO_SCRIPT.md` - demo order, feature list, technical explanation points, and likely question answers.
 
-Planned evidence later:
+Still to complete later:
 
-- demo order
-- explanation of the game goal and player experience
-- explanation of main gameplay features
-- explanation of design and programming decisions
-- reflection notes for questions
+- final live demo rehearsal
+- final exported standalone build, if required by the submission method
+- optional screenshots or short gameplay recording

@@ -1,6 +1,6 @@
 # Stage 4B Testing, Difficulties, And Reflection
 
-Updated: 2026-06-09
+Updated: 2026-06-10
 
 This file records problems encountered during development and testing, what was
 changed, and what was learned. The aim is to show the process behind the final
@@ -35,7 +35,9 @@ final-project/03-testing/KNOWN_LIMITATIONS.md
 | Terrain cleanup | Generated terrain cleanup had a null-reference risk when generated blocks were already destroyed or missing. | Changed cleanup to remove by dictionary key and safely handle null entries. | Object lifetime in generated levels needs defensive code, especially when objects can be destroyed. |
 | Unity compatibility | Unity 2022 produced compatibility issues such as old font lookup behaviour. | Replaced old built-in font assumptions with compatible runtime handling where needed. | Updating Unity versions can expose assumptions from older projects. |
 | GitHub structure | The repository still contained an old `ShiftTheWorld` final-project folder, which made the final project unclear. | Removed `final-project/ShiftTheWorld/`, uploaded the current complete Fox Dash project under `final-project/FoxDash/`, and updated README files. | Repository organisation is part of professionalism because the teacher should quickly understand what is current. |
-| Large asset warning | GitHub warned that `Water.wav` is about `84.95 MB`, above the recommended 50 MB size. | Kept the file because it is below the 100 MB hard limit, recorded the warning as a known limitation. | Future versions should compress large audio assets or use Git LFS. |
+| Large asset warning | GitHub warned that `Water.wav` was about `84.95 MB`, above the recommended 50 MB size. | Compressed the same `Water.wav` asset in place to about `9.8 MB`, keeping the file path and Unity `.meta` GUID. | Large assets should be reviewed before upload; compression can improve professionalism without changing gameplay. |
+| Standalone build export | Command-line Unity export was attempted, but the local Unity installation stopped at license activation. | Added `BUILD_EVIDENCE.md` with the exact attempted command, blocker, and manual export checklist. | Build evidence should be honest: source/build preparation is documented, but the exported ZIP still needs manual completion from an activated editor. |
+| External playtest evidence | Testing was mainly self-directed and based on local checks. | Added a Session 4 external playtest record template instead of inventing fake classmates' results. | Real external testing should be recorded before final demo if time allows. |
 
 ## What Changed Because Of Testing
 
@@ -57,10 +59,10 @@ With more time, I would:
 
 - collect repeated score/coin/death data for each character
 - tune platform gaps and hazard frequency from player results
-- compress large audio files
+- finish the real external playtest entries
 - add more accessibility options such as larger text or remappable controls
-- create and document a final standalone build
-- prepare a short demo script and screenshots for presentation
+- create and document a final standalone build from an activated Unity Editor
+- rehearse the demo using the prepared demo script
 
 ## Reflection
 
@@ -72,4 +74,3 @@ that felt wrong.
 The final project improved because I tested the game in smaller stages, recorded
 problems, and changed features based on what made the game clearer and more
 playable.
-

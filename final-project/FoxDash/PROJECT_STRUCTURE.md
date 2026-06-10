@@ -34,6 +34,11 @@
 - `ProjectSettings`
   - Unity 项目设置。游戏展示名由 `Assets/Editor/FoxDashProjectBranding.cs` 统一写入。
 
+- `Assets/Editor`
+  - `FoxDashProjectBranding.cs`：统一设置项目展示名、公司名和包名。
+  - `FoxDashPlayModeLauncher.cs`：从 Unity 菜单快速打开并运行主场景。
+  - `FoxDashBuildCommand.cs`：命令行/菜单外导出 macOS standalone build 时使用的辅助脚本。
+
 - `THIRD_PARTY_NOTICES.md`
   - RedRunner、素材、存档系统、字体等引用说明和许可证保留。
 

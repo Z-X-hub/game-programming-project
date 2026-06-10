@@ -2,7 +2,8 @@
 
 This plan follows the module assessment structure and breaks the work into smaller evidence stages. The repository should show how Fox Dash developed through planning, implementation, testing, reflection, and professional project management.
 
-Presentation/demo preparation is intentionally deferred for now. The current focus is the game, testing evidence, report evidence, and professionalism.
+Live presentation/demo rehearsal is intentionally deferred for now. The current
+focus is final build/export confirmation and any real external playtest entries.
 
 ## Assessment Breakdown
 
@@ -23,6 +24,7 @@ Stage 3C-3D - Level iteration and bug evidence: complete
 Stage 4A-4C - Final report evidence: complete
 Professionalism - complete
 Presentation - deferred
+Build ZIP export - pending activated Unity Editor
 ```
 
 ## Stage 1 - Game Concept and Design (Complete)
@@ -62,6 +64,7 @@ Evidence:
 - `02-game-development/README.md`
 - `02-game-development/SOURCE_MANIFEST.md`
 - `02-game-development/RUN_INSTRUCTIONS.md`
+- `02-game-development/BUILD_EVIDENCE.md`
 - `02-game-development/IMPLEMENTATION_NOTES.md`
 - `02-game-development/UPLOAD_NOTES.md`
 - `02-game-development/CODE_STAGING_PLAN.md`
@@ -69,6 +72,9 @@ Evidence:
 - Issue #14
 
 Status: complete.
+
+Remaining packaging task: export the final standalone ZIP from an activated
+Unity Editor and update `BUILD_EVIDENCE.md` with the final link.
 
 ## Stage 3 - Testing And Iteration (Complete)
 
@@ -104,7 +110,7 @@ Sub-stages:
 
 Evidence:
 
-- `04-report/REPORT_DRAFT.md`
+- `04-report/FINAL_REPORT.md`
 - `04-report/REPORT_TESTING_REFLECTION.md`
 - `04-report/FINAL_REPORT_CHECKLIST.md`
 
@@ -130,7 +136,9 @@ Status: complete.
 
 ## Deferred - Demo / Presentation
 
-Issue #17 is kept as deferred. It should be prepared later, after testing evidence and report evidence are stronger.
+Issue #17 is kept as deferred for the live presentation. A demo script has been
+prepared in `05-presentation/DEMO_SCRIPT.md`; the remaining work is rehearsal
+and any final screenshots/video required by the module.
 
 ## Professional GitHub Practice
 
