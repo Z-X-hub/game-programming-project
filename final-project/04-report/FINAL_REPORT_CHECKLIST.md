@@ -1,6 +1,6 @@
 # Stage 4C Final Report Checklist
 
-Updated: 2026-06-10
+Updated: 2026-06-13
 
 This checklist maps the report evidence against the module assessment
 requirements.
@@ -89,6 +89,8 @@ final-project/FoxDash/AI_DECLARATION.md
 - [x] Large `Water.wav` asset compressed from about `85 MB` to about `9.8 MB`.
 - [x] Final professionalism audit issue completed.
 - [x] Demo script prepared.
+- [x] Live demo / presentation completed.
+- [x] Project-structure mind map added as presentation support evidence.
 
 Evidence:
 
@@ -101,5 +103,4 @@ final-project/05-presentation/DEMO_SCRIPT.md
 
 ## Still To Finish
 
-- [ ] Live demo / presentation rehearsal.
 - [ ] Optional Windows standalone build if Windows Build Support is installed later.

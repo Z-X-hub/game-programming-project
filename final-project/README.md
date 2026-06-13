@@ -4,9 +4,9 @@
 
 The project is uploaded in stages so the repository clearly shows planning, development, testing, reflection, and professional working practice over time.
 
-All non-presentation repository evidence is complete. The macOS standalone
-build is linked from `02-game-development/BUILD_EVIDENCE.md`. Presentation/demo
-preparation remains deferred for live rehearsal.
+Final repository evidence is complete. The macOS standalone build is linked
+from `02-game-development/BUILD_EVIDENCE.md`, and the presentation stage is
+recorded under `05-presentation/`.
 
 ## Current Stage
 
@@ -19,7 +19,7 @@ Stage 3C - Level iteration and feedback evidence: complete
 Stage 3D - Bug fixing and regression record: complete
 Stage 4A-4C - Report evidence: complete
 Professionalism - final repository evidence audit: complete
-Presentation - deferred
+Presentation - complete
 ```
 
 ## Folder Structure
@@ -70,7 +70,11 @@ final-project/
 |   `-- FINAL_REPORT_CHECKLIST.md
 `-- 05-presentation/
     |-- README.md
-    `-- DEMO_SCRIPT.md
+    |-- DEMO_SCRIPT.md
+    |-- PROJECT_STRUCTURE_MINDMAP.md
+    |-- PROJECT_STRUCTURE_MINDMAP.puml
+    |-- PROJECT_STRUCTURE_MINDMAP.png
+    `-- PROJECT_STRUCTURE_MINDMAP.svg
 ```
 
 ## Assessment Mapping
@@ -82,7 +86,7 @@ final-project/
 | Testing and Improvement | `03-testing/`, Issues #15 and #18-#20 |
 | Report | `04-report/`, Issues #16 and #21-#22 |
 | Professionalism | `00-project-management/`, commit history, README files, Issue #23 |
-| Demo / Presentation | `05-presentation/`, Issue #17, demo script prepared and live demo deferred |
+| Demo / Presentation | `05-presentation/`, Issue #17, demo script and project-structure mind map |
 
 ## Game Summary
 
@@ -140,7 +144,7 @@ but the active final game source is now Fox Dash.
 
 ## Current Focus
 
-The main non-presentation evidence is complete. The macOS standalone ZIP has
-been exported and linked as release evidence. A Windows build can be added later
-if Unity Windows Build Support is installed. The demo script is prepared; the
-live demo/presentation remains the final deferred stage.
+The final repository evidence is complete. The macOS standalone ZIP has been
+exported and linked as release evidence. The presentation stage is recorded with
+a demo script and project-structure mind map. A Windows build can be added later
+if Unity Windows Build Support is installed.

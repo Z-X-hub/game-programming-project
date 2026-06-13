@@ -2,9 +2,9 @@
 
 This document breaks the project process into smaller evidence tasks that match the module assessment criteria. The aim is to make the GitHub process easier to assess, rather than only showing a broad final upload.
 
-Live presentation/demo rehearsal is intentionally deferred for now. The current
-repository evidence includes planning, development, testing, report,
-professionalism, macOS build evidence, and a prepared demo script.
+The repository evidence now includes planning, development, testing, report,
+professionalism, macOS build evidence, and completed presentation support
+material.
 
 ## Summary
 
@@ -12,7 +12,7 @@ professionalism, macOS build evidence, and a prepared demo script.
 | --- | ---: | --- | --- |
 | Game Concept and Design | 20% | `01-concept-design/`, Issue #13 | Complete |
 | Final Game / Game and Report | 40% | `02-game-development/`, `03-testing/`, `04-report/`, Issues #14-#22 | Complete, including macOS standalone build evidence |
-| Game Demo / Presentation | 20% | `05-presentation/`, Issue #17 | Demo script prepared; live demo deferred |
+| Game Demo / Presentation | 20% | `05-presentation/`, Issue #17 | Complete; demo script and project-structure mind map added |
 | Professionalism | 20% | `00-project-management/`, README files, Issues, commits, Issue #23 | Complete |
 
 ## 1. Game Concept and Design
@@ -95,8 +95,8 @@ Status: complete.
 | PRO-4 Credits and declarations | responsible work | `THIRD_PARTY_NOTICES.md`, `AI_DECLARATION.md` |
 | PRO-5 Final repository audit | professional submission | Issue #23 |
 
-## Deferred: Game Demo / Presentation
+## Game Demo / Presentation
 
-Issue #17 remains open for the live demo. `05-presentation/DEMO_SCRIPT.md` is
-prepared, but the final presentation rehearsal and any required final recording
-are still deferred.
+Issue #17 tracks the completed presentation stage. `05-presentation/DEMO_SCRIPT.md`
+records the demo structure, and `05-presentation/PROJECT_STRUCTURE_MINDMAP.png`
+records the simplified project overview used as presentation support evidence.

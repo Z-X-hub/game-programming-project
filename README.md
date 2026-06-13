@@ -10,7 +10,8 @@ This repository records my work for the Game Programming module. It is used to s
 4. Open `final-project/02-game-development/BUILD_EVIDENCE.md` for the macOS build/export evidence and release link.
 5. Open `final-project/03-testing/` for testing, bugs, improvements, and limitations.
 6. Open `final-project/04-report/FINAL_REPORT.md` for the final written report.
-7. Open `final-project/FoxDash/THIRD_PARTY_NOTICES.md` and `final-project/FoxDash/AI_DECLARATION.md` for attribution and AI-use transparency.
+7. Open `final-project/05-presentation/` for the demo script and project-structure mind map.
+8. Open `final-project/FoxDash/THIRD_PARTY_NOTICES.md` and `final-project/FoxDash/AI_DECLARATION.md` for attribution and AI-use transparency.
 
 ## Repository Structure
 
@@ -41,24 +42,25 @@ Stage 4B - Report testing, limitations, and reflection evidence
 Stage 4C - Report final completeness checklist
 Professionalism - remove old ShiftTheWorld folder and upload current FoxDash project source
 Professionalism - final repository evidence audit
+Presentation - demo completed and project-structure mind map added
 ```
 
 Current:
 
 ```text
-macOS build evidence is uploaded; only the live demo / presentation stage remains.
+Final repository evidence is complete.
 ```
 
 Next:
 
 ```text
-Prepare the demo / presentation when requested.
+Optional Windows standalone build if Unity Windows Build Support is installed later.
 ```
 
-Deferred:
+Remaining items:
 
 ```text
-Demo / Presentation
+None
 ```
 
 ## Assessment Evidence Map
@@ -70,7 +72,7 @@ Demo / Presentation
 | Testing and Improvement | `final-project/03-testing/` |
 | Report | `final-project/04-report/` |
 | Professionalism | `final-project/00-project-management/`, Issues, README files, commit history |
-| Presentation | `final-project/05-presentation/`, deferred for now |
+| Presentation | `final-project/05-presentation/`, demo script and project-structure mind map |
 
 Detailed process breakdown:
 

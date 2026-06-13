@@ -1,16 +1,14 @@
 # Final Repository Audit
 
-Updated: 2026-06-10
+Updated: 2026-06-13
 
 This audit checks whether the repository is clear enough for assessment and whether the final project evidence can be followed from planning through implementation, testing, report writing, and professional project management.
 
 ## Summary
 
-Status: passed for the non-presentation repository evidence.
+Status: passed for final repository evidence.
 
-The repository now separates class exercises from the final project, points clearly to Fox Dash as the final game, includes the current Unity project source, and records the staged development process through README files, planning documents, testing logs, report evidence, commit history, and GitHub Issues.
-
-The demo/presentation stage remains deferred as Issue #17.
+The repository now separates class exercises from the final project, points clearly to Fox Dash as the final game, includes the current Unity project source, and records the staged development process through README files, planning documents, testing logs, report evidence, presentation evidence, commit history, and GitHub Issues.
 
 ## Structure Check
 
@@ -37,7 +35,7 @@ The demo/presentation stage remains deferred as Issue #17.
 | Testing and improvement | `03-testing/`, `04-report/REPORT_TESTING_REFLECTION.md` |
 | Report evidence | `04-report/FINAL_REPORT.md`, `REPORT_TESTING_REFLECTION.md`, `FINAL_REPORT_CHECKLIST.md` |
 | Build/export evidence | `02-game-development/BUILD_EVIDENCE.md` |
-| Demo preparation | `05-presentation/DEMO_SCRIPT.md` |
+| Demo / presentation evidence | `05-presentation/DEMO_SCRIPT.md`, `05-presentation/PROJECT_STRUCTURE_MINDMAP.png` |
 | Professional process | `00-project-management/`, staged commits, GitHub Issues, repository README files |
 
 ## GitHub Issue Status
@@ -58,9 +56,9 @@ Current professionalism stage:
 
 - Issue #23: repository organisation and evidence audit. This document completes the audit evidence.
 
-Remaining deferred stage:
+Final presentation stage:
 
-- Issue #17: demo and presentation.
+- Issue #17: demo and presentation, now completed after the live presentation.
 
 ## Exclusion Check
 
@@ -86,14 +84,13 @@ Result: no tracked matches were found.
 
 ## Remaining Risks Or Limitations
 
-- The demo/presentation evidence is intentionally deferred and should be prepared under `05-presentation/`.
 - The previous large-file warning for `Assets/Sounds/Enemies/Water.wav` has been addressed by compressing the asset from about `85 MB` to about `9.8 MB`.
 - The macOS standalone ZIP has been exported from the Unity GUI and linked in `BUILD_EVIDENCE.md`.
 - A Windows standalone ZIP is not included because the current local Unity installation only has macOS standalone support installed.
-- The final live demo should still be rehearsed on the presentation machine.
+- The live presentation is complete; `05-presentation/` now keeps the demo script and project-structure mind map as supporting evidence.
 
 ## Final Professionalism Conclusion
 
-The repository now tells a clear development story: the original idea was planned, the Fox Dash Unity project was uploaded in stages, testing and bug fixes were documented, report evidence was written from actual work, third-party and AI assistance notes were separated, and local/generated files were kept out of Git.
+The repository now tells a clear development story: the original idea was planned, the Fox Dash Unity project was uploaded in stages, testing and bug fixes were documented, report evidence was written from actual work, presentation evidence was added, third-party and AI assistance notes were separated, and local/generated files were kept out of Git.
 
-For the non-presentation assessment evidence, the repository is ready for final review.
+The repository is ready for final review.

@@ -1,10 +1,11 @@
 # Fox Dash Kanban
 
-Updated: 2026-06-10
+Updated: 2026-06-13
 
 This board tracks the staged submission plan against the module assessment criteria. Only completed evidence is marked as done.
 
-Live presentation/demo rehearsal is deferred for now, but the demo script is prepared.
+The presentation/demo stage has been completed and supporting evidence has been
+added under `05-presentation/`.
 
 ## Done
 
@@ -41,6 +42,8 @@ Live presentation/demo rehearsal is deferred for now, but the demo script is pre
 - [x] Complete final pre-submission Unity editor pass.
 - [x] Record external playtest entries from David, Zane, and Ken.
 - [x] Prepare demo script for the presentation stage.
+- [x] Complete live demo / presentation.
+- [x] Add project-structure mind map evidence for presentation.
 
 ## In Progress
 
@@ -55,9 +58,9 @@ Live presentation/demo rehearsal is deferred for now, but the demo script is pre
 
 - [ ] Optional Windows standalone build if Unity Windows Build Support is installed later.
 
-## Deferred
+## Future Items
 
-- [ ] Demo and presentation. Issue #17.
+- None.
 
 ## Blocked / Risks
 
@@ -77,4 +80,4 @@ Live presentation/demo rehearsal is deferred for now, but the demo script is pre
 - [x] Stage 4B: https://github.com/Z-X-hub/game-programming-project/issues/21
 - [x] Stage 4C: https://github.com/Z-X-hub/game-programming-project/issues/22
 - [x] Professionalism: https://github.com/Z-X-hub/game-programming-project/issues/23
-- [ ] Deferred presentation: https://github.com/Z-X-hub/game-programming-project/issues/17
+- [x] Presentation: https://github.com/Z-X-hub/game-programming-project/issues/17

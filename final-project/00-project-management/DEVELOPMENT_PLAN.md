@@ -2,15 +2,15 @@
 
 This plan follows the module assessment structure and breaks the work into smaller evidence stages. The repository should show how Fox Dash developed through planning, implementation, testing, reflection, and professional project management.
 
-Live presentation/demo rehearsal is intentionally deferred for now. The current
-focus is final build/export confirmation and any real external playtest entries.
+The final presentation/demo stage has been completed. The current repository
+focus is final review and keeping the evidence clear for assessment.
 
 ## Assessment Breakdown
 
 - Game Concept and Design: 20%
 - Final Game: 60%
   - Game and Report: 40%
-  - Game Demo / Presentation: 20% (deferred for now)
+  - Game Demo / Presentation: 20%
 - Professionalism: 20%
 
 ## Current Evidence Status
@@ -23,8 +23,8 @@ Stage 3B - Character ability and balance testing: complete
 Stage 3C-3D - Level iteration and bug evidence: complete
 Stage 4A-4C - Final report evidence: complete
 Professionalism - complete
-Presentation - deferred
-Build ZIP export - pending activated Unity Editor
+Presentation - complete
+Build ZIP export - macOS build complete
 ```
 
 ## Stage 1 - Game Concept and Design (Complete)
@@ -135,11 +135,11 @@ Evidence:
 
 Status: complete.
 
-## Deferred - Demo / Presentation
+## Demo / Presentation
 
-Issue #17 is kept as deferred for the live presentation. A demo script has been
-prepared in `05-presentation/DEMO_SCRIPT.md`; the remaining work is rehearsal
-and any final screenshots/video required by the module.
+Issue #17 records the completed live presentation stage. Presentation evidence
+is kept in `05-presentation/`, including the demo script and project-structure
+mind map.
 
 ## Professional GitHub Practice
 

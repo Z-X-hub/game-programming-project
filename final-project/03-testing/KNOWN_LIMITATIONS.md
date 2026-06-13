@@ -1,6 +1,6 @@
 # Stage 3 Known Limitations
 
-Updated: 2026-06-10
+Updated: 2026-06-13
 
 This file records honest limitations that should be discussed in the final
 report. These do not block the current vertical slice, but they show awareness
@@ -13,7 +13,7 @@ of what could be improved with more time.
 | Playtest sample size | External feedback was gathered from David, Zane, and Ken, but each tester only played a short session. | Balance conclusions are suitable for a student vertical slice, but not statistically strong. | Run longer sessions and record score/coin/death results for each role. |
 | Level balance | Platform spacing, hazard density, and coin placement have not been tuned from a large set of player results. | Some sections may feel easier or harder depending on selected character. | Record repeated runs for each role and adjust block/hazard frequency. |
 | Windows build evidence | The macOS standalone build has been exported and uploaded, but a Windows build is not included because the local Unity install only has macOS standalone support. | Assessors on macOS can run the submitted app directly; assessors on Windows may need to run from Unity source unless a Windows build is produced later. | Install Unity Windows Build Support and export `FoxDash_Final_Build_Windows.zip` if cross-platform marking is required. |
-| Presentation evidence | A demo script is prepared, but the live presentation rehearsal is still deferred. | The speaking structure is ready, but the final live demonstration still needs rehearsal. | Use `05-presentation/DEMO_SCRIPT.md` for the final presentation. |
+| Presentation evidence | The live presentation has been completed and supporting materials are recorded in `05-presentation/`. | The repository now includes presentation support evidence, but no optional video recording is included. | Add a short gameplay recording later if required by a future submission method. |
 | Accessibility | Controls and character differences are documented, but there are no advanced accessibility settings. | Basic clarity is present; deeper accessibility is limited. | Add remappable controls, larger text mode, or audio/visual feedback options. |
 
 ## Resolved Before Final Evidence
