@@ -368,7 +368,7 @@ namespace FoxDash.Characters
 		}
 
 		/// <summary>
-		/// 游戏运行时处理掉落死亡、速度计算、移动跳跃和防御动作输入。
+		/// Handles fall death checks, speed calculation, movement, jumping, and action input during gameplay.
 		/// </summary>
 		void Update ()
 		{
@@ -463,7 +463,7 @@ namespace FoxDash.Characters
 		}
 
 		/// <summary>
-		/// 在所有输入和物理状态更新后，把角色状态同步给 Animator。
+		/// Synchronises the current character state to the Animator after input and physics updates.
 		/// </summary>
 		void LateUpdate ()
 		{
@@ -519,7 +519,7 @@ namespace FoxDash.Characters
 		#region Private Methods
 
 		/// <summary>
-		/// 死亡后逐步收起骨骼眼睛，作为角色失败反馈的一部分。
+		/// Gradually hides the skeleton eyes after death as part of the failure feedback.
 		/// </summary>
 		IEnumerator CloseEye ()
 		{
@@ -1177,7 +1177,7 @@ namespace FoxDash.Characters
 		}
 
 		/// <summary>
-		/// 根据水平输入设置刚体速度，并按移动方向翻转角色朝向。
+		/// Sets Rigidbody2D horizontal velocity and flips the character to match movement direction.
 		/// </summary>
 		public override void Move ( float horizontalAxis )
 		{
@@ -1207,7 +1207,7 @@ namespace FoxDash.Characters
 		}
 
 		/// <summary>
-		/// 只有站在地面上时允许跳跃，避免空中连续跳。
+		/// Allows normal jumps from the ground and limits extra air jumps to the ADVENTURER role.
 		/// </summary>
 		public override void Jump ()
 		{
@@ -1240,7 +1240,7 @@ namespace FoxDash.Characters
 		}
 
 		/// <summary>
-		/// 切换到死亡状态，启用骨骼表现；受到攻击时可额外播放血液粒子。
+		/// Switches into the death state, enables skeleton feedback, and optionally plays hit particles.
 		/// </summary>
 		public override void Die ( bool blood )
 		{
@@ -1290,7 +1290,7 @@ namespace FoxDash.Characters
 		}
 
 		/// <summary>
-		/// 复活或重新开始时恢复角色初始状态、速度和骨骼显示。
+		/// Restores the initial character state, velocity, and skeleton display after revive or restart.
 		/// </summary>
 		public override void Reset ()
 		{

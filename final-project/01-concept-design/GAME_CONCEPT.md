@@ -2,7 +2,7 @@
 
 ## Working Title Change
 
-The project previously used the working title `旋转世界 / Rotating World`. The final title is `Fox Dash`.
+The project previously used the working title `Rotating World`. The final title is `Fox Dash`.
 
 ## High Concept
 

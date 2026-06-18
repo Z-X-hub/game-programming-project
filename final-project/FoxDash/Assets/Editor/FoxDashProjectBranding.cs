@@ -27,7 +27,7 @@ namespace FoxDash.EditorTools
         [MenuItem("Tools/Fox Dash/Apply Project Branding")]
         public static void Apply()
         {
-            // 统一维护 Unity PlayerSettings，避免项目名散落在多个设置面板里。
+            // Keep Unity PlayerSettings branding in one place instead of editing several panels manually.
             PlayerSettings.productName = ProductName;
             PlayerSettings.companyName = CompanyName;
             PlayerSettings.bundleVersion = "1.0.0";

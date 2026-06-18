@@ -92,7 +92,7 @@ namespace FoxDash.Collectables
 					return;
 				}
 
-				// 部分金币是随地形块直接实例化的，没有绑定对象池；这种情况收集后直接销毁。
+				// Some coins are spawned directly by terrain blocks without a pool binding, so collect-and-destroy is safe here.
 				float destroyDelay = Mathf.Max(m_destructTime, m_ParticleSystem.main.duration);
 				Destroy(gameObject, destroyDelay);
 			}

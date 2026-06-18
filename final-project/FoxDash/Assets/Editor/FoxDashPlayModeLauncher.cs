@@ -38,7 +38,7 @@ namespace FoxDash.EditorTools
         [MenuItem("Tools/Fox Dash/Open Play Scene")]
         public static void OpenPlayScene()
         {
-            // 统一从主场景启动，避免打开其它资源后直接播放导致缺少管理器对象。
+            // Always launch from the main scene so Play Mode has the required manager objects.
             EditorSceneManager.OpenScene(PlayScenePath);
         }
 

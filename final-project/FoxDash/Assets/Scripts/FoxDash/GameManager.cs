@@ -76,7 +76,7 @@ namespace FoxDash
         private bool m_AudioEnabled = true;
 
         /// <summary>
-        /// 金币数量使用 Property 包装，UI 订阅后可以在数值变化时自动刷新。
+        /// Coin totals use Property wrappers so subscribed UI can refresh when values change.
         /// </summary>
         public Property<int> m_Coin = new Property<int>(0);
 
@@ -190,7 +190,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 响应角色死亡状态变化；死亡时进入结算协程，复活或重置时停止结算流程。
+        /// Responds to character death-state changes and starts or stops the result flow.
         /// </summary>
         void UpdateDeathEvent(bool isDead)
         {
@@ -205,7 +205,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 死亡后的延迟结算：锁定本局分数、更新最高分，再切换到结束界面。
+        /// Delays result handling after death, records the run score, updates best score, and opens the end screen.
         /// </summary>
         IEnumerator DeathCrt()
         {
@@ -230,7 +230,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 场景启动后绑定角色死亡事件，并记录分数计算的起点位置。
+        /// Binds character death events after scene startup and records the score baseline position.
         /// </summary>
         private void Start()
         {
@@ -269,7 +269,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 重新初始化一局游戏：先停住游戏，再初始化 UI 并显示加载/开始界面。
+        /// Reinitialises a run by pausing gameplay, resetting UI, and showing the loading/start flow.
         /// </summary>
         public void Init()
         {
@@ -279,7 +279,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 游戏运行时用角色的 X 坐标推进分数，只允许分数向前增长。
+        /// Advances score from the character X position during gameplay and only allows score to increase.
         /// </summary>
         void Update()
         {
@@ -303,7 +303,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 给加载界面保留短暂停留时间，然后打开开始界面。
+        /// Keeps the loading screen visible briefly before opening the start screen.
         /// </summary>
         IEnumerator Load()
         {
@@ -313,7 +313,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 退出游戏前保存金币、最后分数和最高分。
+        /// Saves coins, last score, and best score before the game quits.
         /// </summary>
         void OnApplicationQuit()
         {
@@ -339,7 +339,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 同步音频开关到全局音量，并通知 UI 按钮刷新状态。
+        /// Syncs the audio toggle to global volume and notifies UI buttons to refresh.
         /// </summary>
         public void SetAudioEnabled(bool active)
         {
@@ -352,7 +352,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 从开始界面进入游戏状态。
+        /// Enters the active gameplay state from the start screen.
         /// </summary>
         public void StartGame()
         {
@@ -369,7 +369,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 暂停游戏时间流动，供暂停界面和结算流程使用。
+        /// Pauses game time for pause screens and result handling.
         /// </summary>
         public void StopGame()
         {
@@ -378,7 +378,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 恢复游戏时间流动。
+        /// Resumes game time.
         /// </summary>
         public void ResumeGame()
         {
@@ -387,7 +387,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 结束当前局，清除已开始状态并停住游戏。
+        /// Ends the current run, clears the started flag, and pauses gameplay.
         /// </summary>
         public void EndGame()
         {
@@ -407,7 +407,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 把角色放回当前所在地形块上方，避免复活后掉出平台。
+        /// Places the character above the current terrain block to avoid respawning off-platform.
         /// </summary>
         public void RespawnCharacter(Character character)
         {
@@ -423,7 +423,7 @@ namespace FoxDash
         }
 
         /// <summary>
-        /// 重置本局分数，并广播给角色、地形和 UI 做各自的重置。
+        /// Resets the current run score and broadcasts reset events to character, terrain, and UI systems.
         /// </summary>
         public void Reset()
         {

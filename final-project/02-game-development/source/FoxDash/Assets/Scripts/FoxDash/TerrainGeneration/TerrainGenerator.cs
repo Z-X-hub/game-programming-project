@@ -87,7 +87,7 @@ namespace FoxDash.TerrainGeneration
 		}
 
 		/// <summary>
-		/// 清空当前生成的地形和背景，把生成游标恢复到关卡起点。
+		/// Clears generated terrain/background objects and restores the generation cursor to the start.
 		/// </summary>
 		protected virtual void Reset ()
 		{
@@ -115,7 +115,7 @@ namespace FoxDash.TerrainGeneration
 		}
 
 		/// <summary>
-		/// 每帧按角色位置补齐前方地形，并定时清理身后过远的对象。
+		/// Extends terrain ahead of the character each frame and periodically removes distant objects behind the run.
 		/// </summary>
 		protected virtual void Update ()
 		{
@@ -132,7 +132,7 @@ namespace FoxDash.TerrainGeneration
 		}
 
 		/// <summary>
-		/// 按开始段、中间段、结束段的顺序生成地形块，同时随机补充远景背景块。
+		/// Generates terrain blocks in start/middle/end order and randomly fills distant background layers.
 		/// </summary>
 		public virtual void Generate ()
 		{
@@ -218,7 +218,7 @@ namespace FoxDash.TerrainGeneration
 		}
 
 		/// <summary>
-		/// 移除已经远离生成游标的地形和背景，控制场景对象数量。
+		/// Removes terrain and background blocks that are far from the generation cursor to control object count.
 		/// </summary>
 		public virtual void Remove ()
 		{
@@ -257,7 +257,7 @@ namespace FoxDash.TerrainGeneration
 		}
 
 		/// <summary>
-		/// 重开一局时移除所有运行时生成对象。
+		/// Removes all runtime-generated objects when restarting a run.
 		/// </summary>
 		public virtual void RemoveAll ()
 		{
@@ -367,7 +367,7 @@ namespace FoxDash.TerrainGeneration
 		}
 
 		/// <summary>
-		/// 实例化一个地形块，并推进主地形生成游标。
+		/// Instantiates a terrain block and advances the main terrain generation cursor.
 		/// </summary>
 		public virtual bool CreateBlock ( Block blockPrefab, Vector3 position )
 		{
@@ -386,7 +386,7 @@ namespace FoxDash.TerrainGeneration
 		}
 
 		/// <summary>
-		/// 实例化背景块，并按随机宽度推进对应背景层的生成游标。
+		/// Instantiates a background block and advances that layer cursor by a randomised width.
 		/// </summary>
 		public virtual bool CreateBackgroundBlock ( BackgroundBlock blockPrefab, Vector3 position, BackgroundLayer layer, int layerIndex )
 		{
@@ -413,7 +413,7 @@ namespace FoxDash.TerrainGeneration
 		}
 
 		/// <summary>
-		/// 查找角色当前脚下所在的地形块，重生时会用它计算安全位置。
+		/// Finds the terrain block currently under the character so respawn logic can choose a safe position.
 		/// </summary>
 		public Block GetCharacterBlock ()
 		{
@@ -430,7 +430,7 @@ namespace FoxDash.TerrainGeneration
 		}
 
 		/// <summary>
-		/// 按每个地形块的 Probability 权重随机选择一个预制体。
+		/// Chooses a prefab using each terrain block's Probability weight.
 		/// </summary>
 		public static Block ChooseFrom ( Block[] blocks )
 		{
